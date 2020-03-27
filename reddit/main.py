@@ -2,7 +2,9 @@ import secret
 import praw
 import pprint
 import pymongo
-from datetime import datetime
+import requests
+from datetime import datetime,timedelta,date
+URL_PUSHSHIFT = "https://api.pushshift.io/reddit/search/submission/"
 
 def is_daily_discussion(id_subreddit, title):
 	id_to_name = {"t5_v7civ" : "Daily General Discussion", #r/
@@ -15,17 +17,46 @@ def is_daily_discussion(id_subreddit, title):
 		return True
 	return False
 
+def generate_dates():
+	start = date(2019,9,1)
+	end = date.today()
+	n_days = (end-start).days
+	print(n_days)
+	for i in range(0,n_days):
+		day = start+timedelta(i)
+		start_epoch = int(datetime(day.year,day.month,day.day,0,0,0).timestamp())
+		end_epoch = int(datetime(day.year,day.month,day.day,23,59,59).timestamp())
+		yield start_epoch, end_epoch
+
 #connect to reddit API
 reddit = praw.Reddit(client_id=secret.client_id,
  					client_secret=secret.client_secret,
  					user_agent=secret.user_agent)
 
+subreddits = ["xrp", "ripple", "bitcoin", "btc", "litecoin", "litecoinmarkets", "ethtrader", "ethfinance"]
+
 #connect to database
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-print(myclient.list_database_names())
 mydb = myclient["reddit_data"]
 submissions_db = mydb["submissions"]
 comments_db = mydb["comments"]
+
+for subreddit in subreddits:
+	#make request to the pushshift API
+	print(subreddit)
+	for start_date, end_date in generate_dates():
+		print(start_date,end_date)
+		params = {
+					"sort": "desc", 
+					"sort_type": "created_utc", 
+					"subreddit": subreddit, 
+					"after": start_date, 
+					"before": end_date
+				}
+		response = requests.get(url=URL_PUSHSHIFT,params=params)
+		data = response.json()
+		print(len(data["data"]))
+
 
 #obtain and construct submission object
 submission = reddit.submission(id="fnylpq")

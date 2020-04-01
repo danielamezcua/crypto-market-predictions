@@ -1,0 +1,33 @@
+Starting the collection of data from the start date to today @ 30-03-2020 18:13:22
+Collecting submissions and comments from xrp... @ 30-03-2020 18:13:22
+Done. 211 submissions and 4580comments from xrp where obtained. @ 30-03-2020 18:25:52
+Collecting submissions and comments from ripple... @ 30-03-2020 18:25:52
+Done. 211 submissions and 31865comments from ripple where obtained. @ 30-03-2020 18:47:36
+Collecting submissions and comments from bitcoin... @ 30-03-2020 18:47:36
+Starting the collection of data from the start date to today @ 31-03-2020 13:56:51
+Collecting submissions and comments from bitcoin... @ 31-03-2020 13:56:51
+Done. 60 submissions and 130732comments from bitcoin where obtained. @ 31-03-2020 15:17:28
+Starting the collection of data from the start date to today @ 31-03-2020 15:19:58
+Collecting submissions and comments from btc... @ 31-03-2020 15:19:58
+Starting the collection of data from the start date to today @ 31-03-2020 15:20:58
+Collecting submissions and comments from btc... @ 31-03-2020 15:20:58
+Starting the collection of data from the start date to today @ 31-03-2020 15:54:36
+Collecting submissions and comments from btc... @ 31-03-2020 15:54:36
+Starting the collection of data from the start date to today @ 31-03-2020 15:56:43
+Collecting submissions and comments from btc... @ 31-03-2020 15:56:43
+Starting the collection of data from the start date to today @ 31-03-2020 16:02:48
+Collecting submissions and comments from btc... @ 31-03-2020 16:02:48
+Unexpected error on subrredit btc and submission dcqjse: <class 'prawcore.exceptions.NotFound'> @ 31-03-2020 16:03:32
+Starting the collection of data from the start date to today @ 31-03-2020 16:05:21
+Collecting submissions and comments from btc... @ 31-03-2020 16:05:21
+Unexpected error on subrredit btc and submission dcqjse: <class 'prawcore.exceptions.NotFound'> @ 31-03-2020 16:05:57Starting the collection of data from the start date to today @ 31-03-2020 16:16:04
+Collecting submissions and comments from btc... @ 31-03-2020 16:16:04
+Starting the collection of data from the start date to today @ 31-03-2020 16:17:45
+Collecting submissions and comments from btc... @ 31-03-2020 16:17:45
+Starting the collection of data from the start date to today @ 31-03-2020 16:18:16
+Collecting submissions and comments from btc... @ 31-03-2020 16:18:16
+Starting the collection of data from the start date to today @ 31-03-2020 16:21:25
+Collecting submissions and comments from btc... @ 31-03-2020 16:21:25
+Unexpected error on subrredit btc and submission dcqjse: <class 'prawcore.exceptions.NotFound'> @ 31-03-2020 16:22:14
+Starting the collection of data from the start date to today @ 31-03-2020 20:10:02
+Collecting submissions and comments from btc... @ 31-03-2020 20:10:02

@@ -68,7 +68,7 @@ reddit = praw.Reddit(client_id=secret.client_id,
  					client_secret=secret.client_secret,
  					user_agent=secret.user_agent)
 
-subreddits = ["btc"]#["btc", "litecoin", "litecoinmarkets", "ethtrader", "ethfinance"]#["xrp","ripple", "bitcoin", "btc", "litecoin", "litecoinmarkets", "ethtrader", "ethfinance"]
+subreddits = ["ethtrader", "ethfinance"]#["xrp","ripple", "bitcoin", "btc", "litecoin", "litecoinmarkets", "ethtrader", "ethfinance"]
 
 #connect to database
 myclient = pymongo.MongoClient(MONGO_SERVICE)
@@ -82,7 +82,7 @@ for subreddit in subreddits:
 	total_submissions = 0
 	total_comments = 0
 	#make request to the pushshift API
-	for start_date, end_date in generate_dates(date(2019,12,9), date.today()):
+	for start_date, end_date in generate_dates(date(2020,3,30), date.today()):
 		params = {
 					"sort": "desc", 
 					"sort_type": "created_utc", 
@@ -92,7 +92,7 @@ for subreddit in subreddits:
 					"before": end_date
 				}
 		response = requests.get(url=URL_PUSHSHIFT,params=params)
-		print(response)
+		print(date.fromtimestamp(start_date))
 		data = response.json()
 
 		#now that we have the data of the submissions of a day, 
@@ -157,4 +157,4 @@ for subreddit in subreddits:
 					write_log("Unexpected error on subrredit " + subreddit + " and submission "+ sub["id"] + ": " + str(sys.exc_info()[0]))
 					continue
 
-	write_log("Done. " + str(total_submissions) + " submissions and " + str(total_comments) + "comments from " + subreddit + " where obtained.")
+	write_log("Done. " + str(total_submissions) + " submissions and " + str(total_comments) + " comments from " + subreddit + " where obtained.")

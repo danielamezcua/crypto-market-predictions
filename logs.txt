@@ -1,0 +1,20 @@
+Executing bash shell to collect data from reddit @ $date
+Executing bash shell to collect data from reddit @ $date
+Executing bash shell to collect data from reddit @ $date
+Starting the collection of data from the start date to today @ 06-04-2020 18:24:43
+Collecting submissions and comments from xrp... @ 06-04-2020 18:24:43
+Done. 5 submissions and 0 comments from xrp where obtained. @ 06-04-2020 18:24:44
+Collecting submissions and comments from ripple... @ 06-04-2020 18:24:44
+Done. 5 submissions and 0 comments from ripple where obtained. @ 06-04-2020 18:24:46
+Collecting submissions and comments from bitcoin... @ 06-04-2020 18:24:46
+Done. 162 submissions and 0 comments from bitcoin where obtained. @ 06-04-2020 18:24:48
+Collecting submissions and comments from btc... @ 06-04-2020 18:24:48
+Done. 66 submissions and 0 comments from btc where obtained. @ 06-04-2020 18:24:51
+Collecting submissions and comments from litecoin... @ 06-04-2020 18:24:51
+Done. 8 submissions and 0 comments from litecoin where obtained. @ 06-04-2020 18:24:54
+Collecting submissions and comments from litecoinmarkets... @ 06-04-2020 18:24:54
+Done. 2 submissions and 0 comments from litecoinmarkets where obtained. @ 06-04-2020 18:24:54
+Collecting submissions and comments from ethtrader... @ 06-04-2020 18:24:54
+Done. 94 submissions and 0 comments from ethtrader where obtained. @ 06-04-2020 18:24:56
+Collecting submissions and comments from ethfinance... @ 06-04-2020 18:24:56
+Done. 25 submissions and 0 comments from ethfinance where obtained. @ 06-04-2020 18:24:58

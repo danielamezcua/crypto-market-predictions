@@ -31,3 +31,47 @@ Collecting submissions and comments from btc... @ 31-03-2020 16:21:25
 Unexpected error on subrredit btc and submission dcqjse: <class 'prawcore.exceptions.NotFound'> @ 31-03-2020 16:22:14
 Starting the collection of data from the start date to today @ 31-03-2020 20:10:02
 Collecting submissions and comments from btc... @ 31-03-2020 20:10:02
+Starting the collection of data from the start date to today @ 02-04-2020 17:56:33
+Collecting submissions and comments from btc... @ 02-04-2020 17:56:33
+Done. 5976 submissions and 75479comments from btc where obtained. @ 02-04-2020 18:35:33
+Starting the collection of data from the start date to today @ 02-04-2020 18:43:33
+Collecting submissions and comments from litecoin... @ 02-04-2020 18:43:33
+Done. 1663 submissions and 7354 comments from litecoin where obtained. @ 02-04-2020 18:58:10
+Collecting submissions and comments from litecoinmarkets... @ 02-04-2020 18:58:10
+Done. 682 submissions and 14574 comments from litecoinmarkets where obtained. @ 02-04-2020 19:12:43
+Collecting submissions and comments from ethtrader... @ 02-04-2020 19:12:43
+Starting the collection of data from the start date to today @ 02-04-2020 20:10:04
+Collecting submissions and comments from ethtrader... @ 02-04-2020 20:10:04
+Starting the collection of data from the start date to today @ 02-04-2020 20:10:33
+Collecting submissions and comments from ethtrader... @ 02-04-2020 20:10:33
+Starting the collection of data from the start date to today @ 02-04-2020 20:22:07
+Collecting submissions and comments from ethtrader... @ 02-04-2020 20:22:07
+Starting the collection of data from the start date to today @ 02-04-2020 22:54:44
+Collecting submissions and comments from ethtrader... @ 02-04-2020 22:54:44
+Done. 4165 submissions and 4349 comments from ethtrader where obtained. @ 03-04-2020 00:32:06
+Collecting submissions and comments from ethfinance... @ 03-04-2020 00:32:06
+Done. 858 submissions and 29644 comments from ethfinance where obtained. @ 03-04-2020 00:57:04
+Starting the collection of data from the start date to today @ 03-04-2020 10:09:21
+Collecting submissions and comments from ethtrader... @ 03-04-2020 10:09:21
+Done. 14483 submissions and 109 comments from ethtrader where obtained. @ 03-04-2020 10:15:20
+Collecting submissions and comments from ethfinance... @ 03-04-2020 10:15:20
+Done. 5170 submissions and 117084 comments from ethfinance where obtained. @ 03-04-2020 11:41:24
+Starting the collection of data from the start date to today @ 06-04-2020 18:20:00
+Collecting submissions and comments from xrp... @ 06-04-2020 18:20:00
+Done. 5 submissions and 2 comments from xrp where obtained. @ 06-04-2020 18:20:04
+Collecting submissions and comments from ripple... @ 06-04-2020 18:20:04
+Done. 5 submissions and 1 comments from ripple where obtained. @ 06-04-2020 18:20:07
+Collecting submissions and comments from bitcoin... @ 06-04-2020 18:20:07
+Done. 161 submissions and 956 comments from bitcoin where obtained. @ 06-04-2020 18:20:57
+Collecting submissions and comments from btc... @ 06-04-2020 18:20:57
+Done. 66 submissions and 561 comments from btc where obtained. @ 06-04-2020 18:21:19
+Collecting submissions and comments from litecoin... @ 06-04-2020 18:21:19
+Done. 8 submissions and 14 comments from litecoin where obtained. @ 06-04-2020 18:21:22
+Collecting submissions and comments from litecoinmarkets... @ 06-04-2020 18:21:22
+Done. 2 submissions and 0 comments from litecoinmarkets where obtained. @ 06-04-2020 18:21:25
+Collecting submissions and comments from ethtrader... @ 06-04-2020 18:21:25
+Done. 94 submissions and 44 comments from ethtrader where obtained. @ 06-04-2020 18:22:20
+Collecting submissions and comments from ethfinance... @ 06-04-2020 18:22:20
+Done. 25 submissions and 464 comments from ethfinance where obtained. @ 06-04-2020 18:22:35
+Starting the collection of data from the start date to today @ 06-04-2020 18:24:14
+Collecting submissions and comments from ethtrader... @ 06-04-2020 18:24:14

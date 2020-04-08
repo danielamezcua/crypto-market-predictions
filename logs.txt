@@ -18,3 +18,5 @@ Collecting submissions and comments from ethtrader... @ 06-04-2020 18:24:54
 Done. 94 submissions and 0 comments from ethtrader where obtained. @ 06-04-2020 18:24:56
 Collecting submissions and comments from ethfinance... @ 06-04-2020 18:24:56
 Done. 25 submissions and 0 comments from ethfinance where obtained. @ 06-04-2020 18:24:58
+Executing bash shell to collect data from reddit @ $now
+Executing bash shell to collect data from reddit @ Tue Apr  7 22:35:13 CDT 2020

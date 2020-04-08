@@ -68,7 +68,7 @@ reddit = praw.Reddit(client_id=secret.client_id,
  					client_secret=secret.client_secret,
  					user_agent=secret.user_agent)
 
-subreddits = ["ethtrader", "ethfinance"]#["xrp","ripple", "bitcoin", "btc", "litecoin", "litecoinmarkets", "ethtrader", "ethfinance"]
+subreddits = ["xrp","ripple", "bitcoin", "btc", "litecoin", "litecoinmarkets", "ethtrader", "ethfinance"]
 
 #connect to database
 myclient = pymongo.MongoClient(MONGO_SERVICE)
@@ -82,7 +82,7 @@ for subreddit in subreddits:
 	total_submissions = 0
 	total_comments = 0
 	#make request to the pushshift API
-	for start_date, end_date in generate_dates(date(2020,3,30), date.today()):
+	for start_date, end_date in generate_dates(date(2020,4,6), date(2020,4,7)):
 		params = {
 					"sort": "desc", 
 					"sort_type": "created_utc", 

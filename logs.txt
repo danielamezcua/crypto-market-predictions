@@ -22,3 +22,5 @@ Executing bash shell to collect data from reddit @ $now
 Executing bash shell to collect data from reddit @ Tue Apr  7 22:35:13 CDT 2020
 Executing bash shell to collect data from reddit @ Tue Apr  7 23:45:00 CDT 2020
 Done @ Tue Apr  7 23:47:44 CDT 2020
+Executing bash shell to collect data from reddit @ Wed Apr  8 23:45:00 CDT 2020
+Done @ Wed Apr  8 23:47:16 CDT 2020

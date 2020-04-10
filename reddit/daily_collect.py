@@ -142,3 +142,4 @@ for subreddit in subreddits:
 				continue
 
 	write_log("Done. " + str(total_submissions) + " submissions and " + str(total_comments) + " comments from " + subreddit + " where obtained.")
+	myclient.close()

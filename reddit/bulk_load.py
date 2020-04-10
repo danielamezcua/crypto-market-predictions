@@ -13,6 +13,10 @@ DATABASE_NAME = "reddit_data"
 LOG_FILE = "./logs.txt"
 MONGO_SERVICE = "mongodb://localhost:27017/"
 
+#specify which between which dates we want to retrieve info
+START_DATE_QUERY = date(2019,9,1)
+END_DATE_QUERY = date.today()
+
 def is_daily_discussion(id_subreddit, title):
 	""" 
 	This function tells us if a reddit submission is a Daily Discussion thread
@@ -82,7 +86,7 @@ for subreddit in subreddits:
 	total_submissions = 0
 	total_comments = 0
 	#make request to the pushshift API
-	for start_date, end_date in generate_dates(date(2020,4,6), date(2020,4,7)):
+	for start_date, end_date in generate_dates(START_DATE_QUERY, END_DATE_QUERY):
 		params = {
 					"sort": "desc", 
 					"sort_type": "created_utc", 
@@ -158,3 +162,4 @@ for subreddit in subreddits:
 					continue
 
 	write_log("Done. " + str(total_submissions) + " submissions and " + str(total_comments) + " comments from " + subreddit + " where obtained.")
+	myclient.close()

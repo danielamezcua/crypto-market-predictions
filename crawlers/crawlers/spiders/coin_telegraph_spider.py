@@ -1,6 +1,7 @@
 import scrapy
 from datetime import datetime as dt
 import pprint
+import json
 DATETIME_FORMAT_INPUT='%Y-%m-%dt%H%M%S%z' #2020-04-08t23:00:00+01:00 <- example of datetime in news item
 BASE_URL = "https://cointelegraph.com/"
 API_URL = "api/v1/content/json/_tp?"
@@ -10,18 +11,19 @@ class CoinTelegraphSpider(scrapy.Spider):
     name = "coin_telegraph"
     headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:74.0) Gecko/20100101 \
-            Firefox/74.0'
+            Firefox/74.0',
+            'cookies' : {}
     }
     def start_requests(self):
         urls = [BASE_URL+"tags/"+tag for tag in TAGS]
         url_json_response = [BASE_URL+API_URL+ "page=" + str(i) + "&tag=" + tag + "&lan=en"\
                             for i in range(2,4) for tag in TAGS]
-        urls = ['https://cointelegraph.com/tags/bitcoin']
 
         for url in urls:
             yield scrapy.Request(url=url, headers=self.headers, callback=self.parse_news_webpage)
 
-        # for url in url_json_response:
+        for url in url_json_response:
+            yield scrapy.Request(url=url, method="POST", headers=self.headers,callback=self.parse_api_response)
 
     def parse_news_webpage(self, response):
         #get the list of links we need for the news
@@ -39,6 +41,10 @@ class CoinTelegraphSpider(scrapy.Spider):
         #request for the api for more news (it only allows us to ask for page 2, 3 and 4 of the news)
 
 
+    def parse_api_response(self, response):
+        json_response = json.loads(response.body_as_unicode())
+        for new in json_response["posts"]["recent"]:
+            yield response.follow(new["url"], headers=self.headers, callback=self.parse_new)
 
     def parse_new(self,response):
         if response.status != 200:
@@ -60,7 +66,8 @@ class CoinTelegraphSpider(scrapy.Spider):
 
             #obtain the content of the new
             content = []
-            paragraphs = post.css('div.post-content div.post-full-text p')
+            paragraphs = post.xpath('//div[contains(@class,"post-content")]/div[contains(@class,"post-full-text")]/*[self::p or self::h2]')
+            #paragraphs = post.css('div.post-content div.post-full-text p')
             if paragraphs:
                 for paragraph in paragraphs:
                     #check if it's the caption of an image. image captions have an inline style
@@ -93,5 +100,5 @@ class CoinTelegraphSpider(scrapy.Spider):
                 'description': description,
                 'content': content,
                 'tags' : tags,
-                'url': response.request.url
+                'url': response.request.url,
             }

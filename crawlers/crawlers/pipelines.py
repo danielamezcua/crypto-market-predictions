@@ -43,7 +43,10 @@ class MongoDBPipeline(object):
 				item['ltc'] = "#Litecoin News" in item.get('tags')
 				item['eth'] = "#Ethereum News" in item.get('tags')
 				item['xrp'] = "#Ripple News" in item.get('tags')
-				self.coin_telegraph_collection.insert_one(dict(item))
+				if item['btc'] or item['ltc'] or item['eth'] or item['xrp']:
+					self.coin_telegraph_collection.insert_one(dict(item))
+				else:
+					raise DropItem("Item with id %d is not related to any currency" % item.get('id_new'))
 				return item
 			else:
 				raise DropItem("Item with id %d already exists" % item.get('id_new'))

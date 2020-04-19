@@ -39,10 +39,10 @@ class MongoDBPipeline(object):
 			if self.coin_telegraph_collection.count_documents({"id_new" : item.get("id_new")}) == 0:
 				item['analysis'] = "Price Analysis" in item.get('title')
 				#add column tags
-				item['btc'] = "#Bitcoin News" in item.get('tags')
-				item['ltc'] = "#Litecoin News" in item.get('tags')
-				item['eth'] = "#Ethereum News" in item.get('tags')
-				item['xrp'] = "#Ripple News" in item.get('tags')
+				item['btc'] = "#Bitcoin News" in item.get('tags') or "#Bitcoin" in item.get('tags')
+				item['ltc'] = "#Litecoin News" in item.get('tags') or "#Litecoin" in item.get('tags')
+				item['eth'] = "#Ethereum News" in item.get('tags') or "#Ethereum" in item.get('tags')
+				item['xrp'] = "#Ripple News" in item.get('tags') or "#Ripple" in item.get('tags')
 				if item['btc'] or item['ltc'] or item['eth'] or item['xrp']:
 					self.coin_telegraph_collection.insert_one(dict(item))
 				else:
@@ -51,4 +51,7 @@ class MongoDBPipeline(object):
 			else:
 				raise DropItem("Item with id %d already exists" % item.get('id_new'))
 		else:
-			raise DropItem("Couldn't fetch item because of response status: %d" % item.get('status'))
+			if item.get('status') == 0:
+				raise DropItem("Couldn't fetch item because of response status: %d" % item.get('status'))
+			else:
+				raise DropItem("Couldn't crawl the new with id because it doesn't have the format")

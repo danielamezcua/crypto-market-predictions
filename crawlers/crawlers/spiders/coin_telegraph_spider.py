@@ -5,7 +5,7 @@ import pprint
 import json
 from random import randint
 
-DATETIME_FORMAT_INPUT='%Y-%m-%dt%H%M%S%z' #2020-04-08t23:00:00+01:00 <- example of datetime in news item
+DATETIME_FORMAT_INPUT='%b %d, %Y' #"Apr 16, 2020" <- example of datetime in news item
 BASE_URL = "https://cointelegraph.com/"
 API_URL = "api/v1/content/json/_tp?"
 TAGS = ['bitcoin']#['ripple', 'ethereum', 'litecoin']
@@ -82,55 +82,67 @@ class CoinTelegraphSpider(scrapy.Spider):
                 'response_code': response.status
             }
         else:
-            post = response.css('div.post-area')[0]
-            id = int(response.xpath('/html/head/meta[@property="instant-view:news_page"]/@content').get())
-            #obtain attributes of the new
-            datetime = post.css('div.post-header div.date::attr(datetime)').get()
-            if datetime:
-                datetime = datetime.replace(':','')
+            post = response.css('div.post-page__item')
+
+            if post:
+                post = post[0]
+                # #obtain attributes of the new
+                id = int(post.xpath('//div[contains(@class, "post-page__article")]/article[contains\
+                    (@class, "post__article")]/@id').get().split('-')[1])
+                author = post.css('div.post-page__article article.post__article div.post-meta\
+                    div.post-meta__author a.post-meta__author-link div::text').get().strip()
+                datetime = post.css('div.post-page__article article.post__article div.post-meta \
+                    div.post-meta__publish-date::text').get().strip()              
                 datetime = dt.strptime(datetime, DATETIME_FORMAT_INPUT)
-            author = post.css('div.post-header div.staff div.name a::text').get().strip()
-            title = post.css('div.post-header h1.header::text').get().strip()
-            description = post.css('div.post-header p.post-description::text').get().strip()
+                title = post.css('div.post-page__article article.post__article h1.post__title::text').get().strip()
+                description = post.css('div.post-page__article article.post__article p.post__lead::text').get().strip()
 
-            #obtain the content of the new
-            content = []
-            paragraphs = post.xpath('//div[contains(@class,"post-content")]/div[contains(@class,"post-full-text")]/*[self::p or self::h2]')
-            #paragraphs = post.css('div.post-content div.post-full-text p')
-            if paragraphs:
-                for paragraph in paragraphs:
-                    #check if it's the caption of an image. image captions have an inline style
-                    style = paragraph.css('::attr(style)')
-                    if style:
-                        continue
+                #obtain the content of the new
+                content = []
+                paragraphs = post.xpath('//div[contains(@class, "post-page__article")]/article[contains\
+                    (@class, "post__article")]/div[contains(@class, "post__content-wrapper")]/\
+                    div[contains(@class, "post-content")]/*[self::p or self::h3 or self::blockquote]')
 
-                    text = paragraph.css('::text')
-                    if not text:
-                        continue
-                    #check if the text is splitted. (this usually happens because of <a> tags)
-                    if len(text) > 1:
-                        #join the splitted text and then remove the last character
-                        text = ''.join(text.getall()).strip()
-                    else:
-                        text = text.get().strip()
+                if paragraphs:
+                    for paragraph in paragraphs:
+                        #check if it's the caption of an image. image captions have an inline style
+                        style = paragraph.css('::attr(style)')
+                        if style:
+                            continue
 
-                    content.append(text) 
+                        text = paragraph.css('::text')
+                        if not text:
+                            continue
+                        #check if the text is splitted. (this usually happens because of <a> tags)
+                        if len(text) > 1:
+                            #join the splitted text and then remove the last character
+                            text = ''.join(text.getall()).strip()
+                        else:
+                            text = text.get().strip()
 
-            #obtain the tags related to the new
-            tags = [tag.strip() for tag in post.css('div.tags ul li a::text').getall()]
+                        content.append(text) 
 
-            #TODO: get the related news and follow
-            yield {
-                'status':1,
-                'id_new': id,
-                'title' : title,
-                'author' : author,
-                'datetime' : datetime,
-                'description': description,
-                'content': content,
-                'tags' : tags,
-                'url': response.request.url,
-            }
+                # #obtain the tags related to the new
+                tags = [tag.strip() for tag in post.css('div.tags-list ul li a::text').getall()]
+
+
+                #TODO: get the related news and follow
+                yield {
+                    'status':1,
+                    'id_new': id,
+                    'title' : title,
+                    'author' : author,
+                    'datetime' : datetime,
+                    'description': description,
+                    'content': content,
+                    'tags' : tags,
+                    'url': response.request.url,
+                }
+            else:
+                yield {
+                    'status': 3,
+                    'response_code': response.status
+                }
 
 class CoinTelegraphSpiderBulk(scrapy.Spider):
     name = "coin_telegraph_bulk"

@@ -68,3 +68,165 @@ Done. 1 submissions and 0 comments from ethfinance where obtained. @ 11-04-2020 
 Done collecting data from reddit @ Sat Apr 11 01:18:08 CDT 2020
 Executing bash shell to collect data from Coin Telegraph @ Sat Apr 11 01:18:08 CDT 2020
 Done collecting data from coin telegraph @ Sat Apr 11 01:18:31 CDT 2020
+Executing bash shell to collect data from reddit @ Sat Apr 11 23:45:01 CDT 2020
+Done collecting data from reddit @ Sat Apr 11 23:46:21 CDT 2020
+Executing bash shell to collect data from Coin Telegraph @ Sat Apr 11 23:46:21 CDT 2020
+Done collecting data from coin telegraph @ Sat Apr 11 23:46:21 CDT 2020
+Executing bash shell to collect data from reddit @ Sun Apr 12 23:45:00 CDT 2020
+Done collecting data from reddit @ Sun Apr 12 23:46:31 CDT 2020
+Executing bash shell to collect data from Coin Telegraph @ Sun Apr 12 23:46:31 CDT 2020
+Done collecting data from coin telegraph @ Sun Apr 12 23:46:31 CDT 2020
+Executing bash shell to collect data from reddit @ Tue Apr 14 00:07:02 CDT 2020
+Starting the collection of data from the start date to today @ 14-04-2020 00:07:05
+Collecting submissions and comments from xrp... @ 14-04-2020 00:07:05
+Done. 0 submissions and 0 comments from xrp where obtained. @ 14-04-2020 00:07:06
+Collecting submissions and comments from ripple... @ 14-04-2020 00:07:06
+Done. 0 submissions and 0 comments from ripple where obtained. @ 14-04-2020 00:07:06
+Collecting submissions and comments from bitcoin... @ 14-04-2020 00:07:06
+Done. 0 submissions and 0 comments from bitcoin where obtained. @ 14-04-2020 00:07:07
+Collecting submissions and comments from btc... @ 14-04-2020 00:07:07
+Done. 0 submissions and 0 comments from btc where obtained. @ 14-04-2020 00:07:07
+Collecting submissions and comments from litecoin... @ 14-04-2020 00:07:07
+Done. 0 submissions and 0 comments from litecoin where obtained. @ 14-04-2020 00:07:07
+Collecting submissions and comments from litecoinmarkets... @ 14-04-2020 00:07:07
+Done. 0 submissions and 0 comments from litecoinmarkets where obtained. @ 14-04-2020 00:07:08
+Collecting submissions and comments from ethtrader... @ 14-04-2020 00:07:08
+Done. 0 submissions and 0 comments from ethtrader where obtained. @ 14-04-2020 00:07:08
+Collecting submissions and comments from ethfinance... @ 14-04-2020 00:07:08
+Done. 0 submissions and 0 comments from ethfinance where obtained. @ 14-04-2020 00:07:09
+Done collecting data from reddit @ Tue Apr 14 00:07:09 CDT 2020
+Executing bash shell to collect data from Coin Telegraph @ Tue Apr 14 00:07:09 CDT 2020
+Done collecting data from coin telegraph @ Tue Apr 14 00:07:56 CDT 2020
+Executing bash shell to collect data from reddit @ Tue Apr 14 23:59:01 CDT 2020
+Starting the collection of data from the start date to today @ 14-04-2020 23:59:06
+Collecting submissions and comments from xrp... @ 14-04-2020 23:59:06
+Done. 11 submissions and 0 comments from xrp where obtained. @ 14-04-2020 23:59:07
+Collecting submissions and comments from ripple... @ 14-04-2020 23:59:07
+Done. 13 submissions and 0 comments from ripple where obtained. @ 14-04-2020 23:59:07
+Collecting submissions and comments from bitcoin... @ 14-04-2020 23:59:07
+Done. 223 submissions and 0 comments from bitcoin where obtained. @ 14-04-2020 23:59:08
+Collecting submissions and comments from btc... @ 14-04-2020 23:59:08
+Done. 69 submissions and 0 comments from btc where obtained. @ 14-04-2020 23:59:09
+Collecting submissions and comments from litecoin... @ 14-04-2020 23:59:09
+Done. 5 submissions and 0 comments from litecoin where obtained. @ 14-04-2020 23:59:09
+Collecting submissions and comments from litecoinmarkets... @ 14-04-2020 23:59:09
+Done. 3 submissions and 0 comments from litecoinmarkets where obtained. @ 14-04-2020 23:59:10
+Collecting submissions and comments from ethtrader... @ 14-04-2020 23:59:10
+Done. 100 submissions and 0 comments from ethtrader where obtained. @ 14-04-2020 23:59:11
+Collecting submissions and comments from ethfinance... @ 14-04-2020 23:59:11
+Done. 28 submissions and 0 comments from ethfinance where obtained. @ 14-04-2020 23:59:11
+Done collecting data from reddit @ Tue Apr 14 23:59:12 CDT 2020
+Executing bash shell to collect data from Coin Telegraph @ Tue Apr 14 23:59:12 CDT 2020
+Executing bash shell to collect data from reddit @ Tue Apr 14 23:59:38 CDT 2020
+Starting the collection of data from the start date to today @ 14-04-2020 23:59:39
+Collecting submissions and comments from xrp... @ 14-04-2020 23:59:39
+Done. 0 submissions and 0 comments from xrp where obtained. @ 14-04-2020 23:59:39
+Collecting submissions and comments from ripple... @ 14-04-2020 23:59:39
+Done. 0 submissions and 0 comments from ripple where obtained. @ 14-04-2020 23:59:40
+Collecting submissions and comments from bitcoin... @ 14-04-2020 23:59:40
+Done. 24 submissions and 416 comments from bitcoin where obtained. @ 14-04-2020 23:59:47
+Collecting submissions and comments from btc... @ 14-04-2020 23:59:47
+Done. 7 submissions and 16 comments from btc where obtained. @ 14-04-2020 23:59:49
+Collecting submissions and comments from litecoin... @ 14-04-2020 23:59:49
+Done. 0 submissions and 0 comments from litecoin where obtained. @ 14-04-2020 23:59:49
+Collecting submissions and comments from litecoinmarkets... @ 14-04-2020 23:59:49
+Done. 0 submissions and 0 comments from litecoinmarkets where obtained. @ 14-04-2020 23:59:50
+Collecting submissions and comments from ethtrader... @ 14-04-2020 23:59:50
+Done. 11 submissions and 4 comments from ethtrader where obtained. @ 14-04-2020 23:59:58
+Collecting submissions and comments from ethfinance... @ 14-04-2020 23:59:58
+Done. 2 submissions and 247 comments from ethfinance where obtained. @ 15-04-2020 00:00:02
+Done collecting data from reddit @ Wed Apr 15 00:00:03 CDT 2020
+Executing bash shell to collect data from Coin Telegraph @ Wed Apr 15 00:00:03 CDT 2020
+Done collecting data from coin telegraph @ Wed Apr 15 00:00:50 CDT 2020
+Executing bash shell to collect data from reddit @ Wed Apr 15 23:45:01 CDT 2020
+Done collecting data from reddit @ Wed Apr 15 23:46:06 CDT 2020
+Executing bash shell to collect data from Coin Telegraph @ Wed Apr 15 23:46:06 CDT 2020
+Done collecting data from coin telegraph @ Wed Apr 15 23:46:06 CDT 2020
+Executing bash shell to collect data from reddit @ Wed Apr 15 23:53:51 CDT 2020
+Starting the collection of data from the start date to today @ 15-04-2020 23:53:53
+Collecting submissions and comments from xrp... @ 15-04-2020 23:53:53
+Done. 7 submissions and 0 comments from xrp where obtained. @ 15-04-2020 23:53:54
+Collecting submissions and comments from ripple... @ 15-04-2020 23:53:54
+Done. 5 submissions and 0 comments from ripple where obtained. @ 15-04-2020 23:53:54
+Collecting submissions and comments from bitcoin... @ 15-04-2020 23:53:54
+Done. 59 submissions and 23 comments from bitcoin where obtained. @ 15-04-2020 23:53:56
+Collecting submissions and comments from btc... @ 15-04-2020 23:53:56
+Done. 16 submissions and 0 comments from btc where obtained. @ 15-04-2020 23:53:57
+Collecting submissions and comments from litecoin... @ 15-04-2020 23:53:57
+Done. 1 submissions and 0 comments from litecoin where obtained. @ 15-04-2020 23:53:57
+Collecting submissions and comments from litecoinmarkets... @ 15-04-2020 23:53:57
+Done. 3 submissions and 0 comments from litecoinmarkets where obtained. @ 15-04-2020 23:53:58
+Collecting submissions and comments from ethtrader... @ 15-04-2020 23:53:58
+Done. 27 submissions and 0 comments from ethtrader where obtained. @ 15-04-2020 23:53:59
+Collecting submissions and comments from ethfinance... @ 15-04-2020 23:53:59
+Done. 5 submissions and 0 comments from ethfinance where obtained. @ 15-04-2020 23:53:59
+Done collecting data from reddit @ Wed Apr 15 23:54:00 CDT 2020
+Executing bash shell to collect data from Coin Telegraph @ Wed Apr 15 23:54:00 CDT 2020
+Done collecting data from coin telegraph @ Wed Apr 15 23:54:48 CDT 2020
+Executing bash shell to collect data from reddit @ Thu Apr 16 23:45:00 CDT 2020
+Done collecting data from reddit @ Thu Apr 16 23:46:37 CDT 2020
+Executing bash shell to collect data from Coin Telegraph @ Thu Apr 16 23:46:37 CDT 2020
+Done collecting data from coin telegraph @ Thu Apr 16 23:46:37 CDT 2020
+Executing bash shell to collect data from reddit @ Thu Apr 16 23:59:21 CDT 2020
+Starting the collection of data from the start date to today @ 16-04-2020 23:59:23
+Collecting submissions and comments from xrp... @ 16-04-2020 23:59:23
+Done. 6 submissions and 0 comments from xrp where obtained. @ 16-04-2020 23:59:23
+Collecting submissions and comments from ripple... @ 16-04-2020 23:59:23
+Done. 11 submissions and 0 comments from ripple where obtained. @ 16-04-2020 23:59:24
+Collecting submissions and comments from bitcoin... @ 16-04-2020 23:59:24
+Done. 125 submissions and 7 comments from bitcoin where obtained. @ 16-04-2020 23:59:25
+Collecting submissions and comments from btc... @ 16-04-2020 23:59:25
+Done. 29 submissions and 12 comments from btc where obtained. @ 16-04-2020 23:59:26
+Collecting submissions and comments from litecoin... @ 16-04-2020 23:59:26
+Done. 5 submissions and 0 comments from litecoin where obtained. @ 16-04-2020 23:59:27
+Collecting submissions and comments from litecoinmarkets... @ 16-04-2020 23:59:27
+Done. 3 submissions and 0 comments from litecoinmarkets where obtained. @ 16-04-2020 23:59:27
+Collecting submissions and comments from ethtrader... @ 16-04-2020 23:59:27
+Done. 58 submissions and 0 comments from ethtrader where obtained. @ 16-04-2020 23:59:28
+Collecting submissions and comments from ethfinance... @ 16-04-2020 23:59:28
+Done. 9 submissions and 0 comments from ethfinance where obtained. @ 16-04-2020 23:59:28
+Done collecting data from reddit @ Thu Apr 16 23:59:29 CDT 2020
+Executing bash shell to collect data from Coin Telegraph @ Thu Apr 16 23:59:29 CDT 2020
+Done collecting data from coin telegraph @ Fri Apr 17 00:00:14 CDT 2020
+Executing bash shell to collect data from reddit @ Fri Apr 17 23:58:13 CDT 2020
+Starting the collection of data from the start date to today @ 17-04-2020 23:58:21
+Collecting submissions and comments from xrp... @ 17-04-2020 23:58:21
+Done. 5 submissions and 9 comments from xrp where obtained. @ 17-04-2020 23:58:25
+Collecting submissions and comments from ripple... @ 17-04-2020 23:58:25
+Done. 7 submissions and 35 comments from ripple where obtained. @ 17-04-2020 23:58:27
+Collecting submissions and comments from bitcoin... @ 17-04-2020 23:58:27
+Done. 212 submissions and 1381 comments from bitcoin where obtained. @ 17-04-2020 23:59:28
+Collecting submissions and comments from btc... @ 17-04-2020 23:59:28
+Done. 74 submissions and 591 comments from btc where obtained. @ 17-04-2020 23:59:50
+Collecting submissions and comments from litecoin... @ 17-04-2020 23:59:50
+Done. 4 submissions and 24 comments from litecoin where obtained. @ 17-04-2020 23:59:51
+Collecting submissions and comments from litecoinmarkets... @ 17-04-2020 23:59:51
+Done. 2 submissions and 3 comments from litecoinmarkets where obtained. @ 17-04-2020 23:59:52
+Collecting submissions and comments from ethtrader... @ 17-04-2020 23:59:52
+Done. 119 submissions and 53 comments from ethtrader where obtained. @ 18-04-2020 00:01:07
+Collecting submissions and comments from ethfinance... @ 18-04-2020 00:01:07
+Done. 0 submissions and 0 comments from ethfinance where obtained. @ 18-04-2020 00:01:07
+Done collecting data from reddit @ Sat Apr 18 00:01:07 CDT 2020
+Executing bash shell to collect data from Coin Telegraph @ Sat Apr 18 00:01:07 CDT 2020
+Done collecting data from coin telegraph @ Sat Apr 18 00:01:42 CDT 2020
+Executing bash shell to collect data from reddit @ Sat Apr 18 23:30:36 CDT 2020
+Starting the collection of data from the start date to today @ 18-04-2020 23:30:38
+Collecting submissions and comments from xrp... @ 18-04-2020 23:30:38
+Done. 9 submissions and 0 comments from xrp where obtained. @ 18-04-2020 23:30:42
+Collecting submissions and comments from ripple... @ 18-04-2020 23:30:42
+Done. 9 submissions and 9 comments from ripple where obtained. @ 18-04-2020 23:30:45
+Collecting submissions and comments from bitcoin... @ 18-04-2020 23:30:45
+Done. 208 submissions and 1662 comments from bitcoin where obtained. @ 18-04-2020 23:31:48
+Collecting submissions and comments from btc... @ 18-04-2020 23:31:48
+Done. 69 submissions and 494 comments from btc where obtained. @ 18-04-2020 23:32:08
+Collecting submissions and comments from litecoin... @ 18-04-2020 23:32:08
+Done. 4 submissions and 14 comments from litecoin where obtained. @ 18-04-2020 23:32:10
+Collecting submissions and comments from litecoinmarkets... @ 18-04-2020 23:32:10
+Done. 8 submissions and 2 comments from litecoinmarkets where obtained. @ 18-04-2020 23:32:13
+Collecting submissions and comments from ethtrader... @ 18-04-2020 23:32:13
+Done. 103 submissions and 107 comments from ethtrader where obtained. @ 18-04-2020 23:33:32
+Collecting submissions and comments from ethfinance... @ 18-04-2020 23:33:32
+Done. 12 submissions and 661 comments from ethfinance where obtained. @ 18-04-2020 23:33:55
+Done collecting data from reddit @ Sat Apr 18 23:33:55 CDT 2020
+Executing bash shell to collect data from Coin Telegraph @ Sat Apr 18 23:33:55 CDT 2020
+Done collecting data from coin telegraph @ Sat Apr 18 23:34:33 CDT 2020

@@ -1,9 +1,10 @@
-import secret
 import praw
 import pprint
 import pymongo
 import requests
-import sys
+import sys,os
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
+import secret
 from prawcore.exceptions import NotFound
 from datetime import datetime,timedelta,date
 URL_PUSHSHIFT = "https://api.pushshift.io/reddit/search/submission/"
@@ -59,13 +60,13 @@ mydb = myclient[DATABASE_NAME]
 submissions_db = mydb[SUBMISSIONS_COLLECTION]
 comments_db = mydb[COMMENTS_COLLECTION]
 
-write_log("Starting the collection of data from the start date to today")
+write_log("Start ing the collection of data from the start date to today")
 for subreddit in subreddits:
 	write_log("Collecting submissions and comments from " + subreddit + "...")
 	total_submissions = 0
 	total_comments = 0
 	#make request to the pushshift API
-	day = date.today()
+	day = date(2020,5,2)#.today()
 	start_date = int(datetime(day.year,day.month,day.day,0,0,0).timestamp())
 	end_date = int(datetime(day.year,day.month,day.day,23,59,59).timestamp())
 	params = {
@@ -77,6 +78,7 @@ for subreddit in subreddits:
 				"before": end_date
 			}
 	response = requests.get(url=URL_PUSHSHIFT,params=params)
+	print(response)
 	data = response.json()
 
 	#now that we have the data of the submissions of a day, 

@@ -1,9 +1,11 @@
-import secret
+from .. import secret
 import praw
 import pprint
 import pymongo
 import requests
-import sys
+import sys,os
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
+import secret
 from prawcore.exceptions import NotFound
 from datetime import datetime,timedelta,date
 URL_PUSHSHIFT = "https://api.pushshift.io/reddit/search/submission/"

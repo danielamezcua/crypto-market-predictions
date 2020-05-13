@@ -6,7 +6,7 @@ import pymongo
 
 DATABASE_NAME = "market_data"
 PRICES_COLLECTION = "prices"
-URL_CRYPTOCOMPARE_DAILY_PRICE = "https://min-api.cryptocompare.com/data/v2/histoday?&tsym=USD&limit=247&api_key="+secret.api_key_cryptocompare
+URL_CRYPTOCOMPARE_DAILY_PRICE = "https://min-api.cryptocompare.com/data/v2/histoday?&tsym=USD&limit=253&api_key="+secret.api_key_cryptocompare
 CRYPTO_COINS = ['ETH', 'BTC', 'XRP', 'LTC']
 MONGO_SERVICE = "mongodb://localhost:27017/"
 
@@ -32,10 +32,11 @@ for coin in CRYPTO_COINS:
 			new_item["low"] = item['low']
 			new_item["open"] = item['open']
 			new_item["close"] = item['close']
-			new_item["coin"] = item['conversionSymbol']
+			new_item["coin"] = coin
 			new_item["volumefrom"] = item['volumefrom']
 			new_item["volumeto"] = item['volumeto']
 
-			prices_info.append(item)
+
+			prices_info.append(new_item)
 
 prices_db.insert_many(prices_info)

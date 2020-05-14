@@ -5,66 +5,84 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 
-dataset_btc = pd.read_csv("./datasets/BTC.csv")
+dataset = pd.read_csv("./datasets/ETH.csv")
+print("--------------------------Ethereum--------------------------")
+print("Using the ratio of negative and positive comments:")
 
+n = len(dataset)
+x = []
+for i in range(0,n):
+	if dataset.iloc[i]['close'] >= dataset.iloc[i]['open']:
+		x.append(1)
+	else:
+		x.append(-1)
+
+dataset['status'] = x
+
+#streak
+x = []
+st = 0
 
 #without considering the scores (17,18,19,20,21)
-dataset_btc['number_comments_ns'] = dataset_btc['neg_ns'] + dataset_btc['pos_ns'] + dataset_btc['neutral_ns']
-dataset_btc['ratio_pos_ns'] = dataset_btc['pos_ns']/dataset_btc['number_comments_ns']
-dataset_btc['ratio_neg_ns'] = dataset_btc['neg_ns']/dataset_btc['number_comments_ns']
-dataset_btc['ratio_neu_ns'] = dataset_btc['neutral_ns']/dataset_btc['number_comments_ns']
-dataset_btc['avg_compound_ns'] = dataset_btc['comp_ns']/dataset_btc['number_comments_ns']
+dataset['number_comments_ns'] = dataset['neg_ns'] + dataset['pos_ns'] + dataset['neutral_ns']
+dataset['ratio_pos_ns'] = dataset['pos_ns']/dataset['number_comments_ns']
+dataset['ratio_neg_ns'] = dataset['neg_ns']/dataset['number_comments_ns']
+dataset['ratio_neu_ns'] = dataset['neutral_ns']/dataset['number_comments_ns']
+dataset['avg_compound_ns'] = dataset['comp_ns']/dataset['number_comments_ns']
+dataset['ratio_comsub_ns'] = dataset['number_comments_ns']/dataset['submissions']
+dataset['sq_avg_compound_ns'] = dataset['avg_compound_ns']**2
 
-# #x = dataset_btc.iloc[:, 17:21].values
-# print(dataset_btc["avg_compound_ns"])
-# #using just the number of comments
-# x = dataset_btc.iloc[:, [11,12,16,17,18,19,20]].values
-# y = dataset_btc.iloc[:, 15].values
+# print("Mean avg compound", dataset['avg_compound_ns'].mean())
+# print("Variance avg compound", dataset['avg_compound_ns'].var())
+# print("Std avg compound", dataset['avg_compound_ns'].std())
+# dataset_positive = dataset[dataset['label'] == 1]
+# dataset_negative = dataset[dataset['label'] == -1]
+# len_pos = len(dataset_positive)
+# len_neg = len(dataset_negative)
+# print("1: ", len_pos)
+# print("-1: ", len_neg)
 
-# x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=10)
-# regressor = RandomForestClassifier(n_estimators=100, random_state=0)
-# regressor.fit(x_train, y_train)
+x = dataset.loc[:, ["status", "sq_avg_compound_ns"]].values
+y = dataset.loc[:, "label"].values
 
-# y_pred = regressor.predict(x_test)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=0)
+regressor = RandomForestClassifier(n_estimators=100, random_state=0)
+regressor.fit(x_train, y_train)
+
+y_pred = regressor.predict(x_test)
 
 
-# print(confusion_matrix(y_test,y_pred))
-# print(classification_report(y_test,y_pred))
-# print(accuracy_score(y_test, y_pred))
+print(confusion_matrix(y_test,y_pred))
+print(classification_report(y_test,y_pred))
+print(accuracy_score(y_test, y_pred))
 
 #considering the scores. 22,23,24,25,26,27
 
-dataset_positive = dataset_btc[dataset_btc['label'] == 1]
-dataset_negative = dataset_btc[dataset_btc['label'] == -1]
-len_pos = len(dataset_positive)
-len_neg = len(dataset_negative)
+print("Using the score of the comments")
+dataset['number_comments_s'] = dataset['neg_s'] + dataset['pos_s'] + dataset['neu_s']
+dataset['ratio_pos_s'] = dataset['pos_s']/dataset['number_comments_s']
+dataset['ratio_neg_s'] = dataset['neg_s']/dataset['number_comments_s']
+dataset['ratio_neu_s'] = dataset['neu_s']/dataset['number_comments_s']
+dataset['avg_compound_s'] = ((dataset['comp_s']/dataset['number_comments_s']))
+dataset['ratio_comsub_s'] = dataset['number_comments_s']/dataset['submissions']
+dataset['sq_avg_compound_s'] = dataset['avg_compound_s']**2
 
-print("majority classifier: %f", len_pos/(len_pos+len_neg))
-print("majority classifier: %f", len_neg/(len_pos+len_neg))
-dataset_btc['number_comments_s'] = dataset_btc['neg_s'] + dataset_btc['pos_s'] + dataset_btc['neu_s']
-dataset_btc['ratio_pos_s'] = dataset_btc['pos_s']/dataset_btc['number_comments_s']
-dataset_btc['ratio_neg_s'] = dataset_btc['neg_s']/dataset_btc['number_comments_s']
-dataset_btc['ratio_neu_s'] = dataset_btc['neu_s']/dataset_btc['number_comments_s']
-dataset_btc['avg_compound_s'] = ((dataset_btc['comp_s']/dataset_btc['number_comments_s']))**2
-dataset_btc['sq_number_comments_s'] = dataset_btc['number_comments_s']**2
 
+# print("Mean avg compound", dataset['avg_compound_s'].mean())
+# print("Variance avg compound", dataset['avg_compound_s'].var())
+# print("Std avg compound", dataset['avg_compound_s'].std())
 
 # ax = plt.gca()
 # dataset_positive.plot(kind="scatter",x="number_comments_s", y="ratio_pos_s", color="blue", ax=ax)
 # dataset_negative.plot(kind="scatter",x="number_comments_s", y="ratio_pos_s", color="red", ax=ax)
-
 # plt.show()
 
-#Features
-print(dataset_btc['avg_compound_s'])
-print("mean of the aveage compound_s", dataset_btc['avg_compound_s'].mean())
-print("Variance of the average compound_s", dataset_btc['avg_compound_s'].std())
-x = dataset_btc.iloc[:, [15, 22,26]].values
-y = dataset_btc.iloc[:, 16].values
+x = dataset.loc[:, ["status", "sq_avg_compound_s"]].values
+y = dataset.loc[:, "label"].values
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=0)
 
-regressor = RandomForestClassifier(n_estimators=40, random_state=0)
+regressor = RandomForestClassifier(n_estimators=100, random_state=10)
 regressor.fit(x_train, y_train)
 
 y_pred = regressor.predict(x_test)

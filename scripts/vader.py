@@ -45,6 +45,9 @@ for subreddit in subreddits_regex:
 	no_comments = 0
 	if subreddit.split('/')[1] != "btc":
 		for comment in comments:
+			#check if it has already been anaalyzed
+			if "compound" in comment:
+				continue
 			query = {
 				"_id" : comment["_id"]
 			}
@@ -69,6 +72,9 @@ for subreddit in subreddits_regex:
 		query = {
 			"_id" : submission["_id"]
 		}
+		#check if it has already been analyzed
+		if "compound_title" in submission:
+			continue
 		vs = analyzer.polarity_scores(submission["title"])
 		vs_doc = {}
 		vs_doc["compound_title"] = vs["compound"]

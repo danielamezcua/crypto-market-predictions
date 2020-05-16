@@ -258,3 +258,15 @@ deleted_posts = ["#ETHFINANCE deleted daily discussions:",
 "gdsczp",
 "geek8d",
 "gf136k"]
+
+missing_discussions = ["fss9ua",
+"fxlh7s",
+"fzppdx",
+"g1kmre",
+"g27prk",
+"g2umcf",
+"fxljdi",
+"fzpsf2",
+"g1kp4s",
+"g27rtw",
+"g2uphe"]

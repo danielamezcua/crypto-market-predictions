@@ -380,3 +380,27 @@ Done. 10 submissions and 325 comments from ethfinance where obtained. @ 03-05-20
 Collecting deleted posts from ethfinance @ 08-05-2020 17:02:56
 Collecting deleted posts from ethfinance @ 08-05-2020 17:05:06
 Done. 0 submissions and 2308 where obtained from deleted posts. @ 08-05-2020 17:05:57
+root@2020-05-14 17:49:08,471 - Collecting missing posts
+root@2020-05-14 17:51:19,644 - Collecting missing posts
+root@2020-05-14 17:51:19,813 - Done. 0 submissions and 0 where obtained from missing posts
+root@2020-05-14 17:52:49,770 - Collecting missing posts
+root@2020-05-14 17:52:49,955 - Done. 0 submissions and 0 where obtained from missing posts
+root@2020-05-14 17:53:12,078 - Collecting missing posts
+root@2020-05-14 17:54:27,897 - Collecting missing posts
+root@2020-05-14 17:54:44,042 - Collecting missing posts
+root@2020-05-14 17:54:44,851 - Unexpected error on submissionfss9uafxlh7s: <class 'prawcore.exceptions.NotFound'>
+root@2020-05-14 17:54:50,666 - Done. 0 submissions and 264 where obtained from missing posts
+root@2020-05-14 17:55:44,251 - Collecting missing posts
+root@2020-05-14 17:55:46,159 - Done. 2 submissions and 64 comments where obtained from missing posts
+root@2020-05-16 18:39:45,450 - Collecting missing posts
+root@2020-05-16 18:42:49,144 - Collecting missing posts
+root@2020-05-16 18:43:04,090 - Collecting missing posts
+root@2020-05-16 18:43:20,869 - Collecting missing posts
+root@2020-05-16 18:44:52,520 - Collecting missing posts
+root@2020-05-16 18:45:35,106 - Collecting missing posts
+root@2020-05-16 18:45:52,346 - Collecting missing posts
+root@2020-05-16 18:49:09,330 - Done. 490 submissions and 2122 comments where obtained from missing posts
+root@2020-05-16 18:50:23,048 - Collecting missing posts
+root@2020-05-16 18:52:21,802 - Done. 490 submissions and 2122 comments where obtained from missing posts
+root@2020-05-16 19:03:24,757 - Collecting missing posts
+root@2020-05-16 19:03:32,655 - Done. 6 submissions and 284 comments where obtained from missing posts

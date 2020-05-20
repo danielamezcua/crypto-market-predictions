@@ -1,4 +1,3 @@
-Just using Reddit dataset:
 time,neg_ns,pos_ns,neutral_ns,comp_ns,neg_s,pos_s,neu_s,comp_s,coin,open,close,high,low,submissions,label
 
 time: the date in epoch time
@@ -17,44 +16,749 @@ high: the highest value of the price of the related cryptocurrency on the specif
 low: the highest value of the price of the related cryptocurrency on the specified time
 submissions: the number of submissions made on the subreddits related to the cryptocurrency
 label: 1 if on the next time period the closing price got up compared to this closing price, otherwise -1
+no_news = the number of news on that day
+avg_news_compound = sentiment compound of the news on that day
 
-Sample count:
-									Majority Predictor
-	BTC:							
-		1: 118						0.487
-		-1: 124						0.512
-	XRP:
-		1: 122						0.504
-		-1: 120						0.495
-	LTC:
-		1: 118						0.487
-		-1: 124						0.512
-	ETH:
-		1: 123						0.508
-		-1:119						0.491
 
-These are the following of making predictions with Random Forests 
+Just using Reddit dataset:
+	
+	Sample count:
+										Majority Predictor
+		BTC:							
+			1: 118						0.487
+			-1: 124						0.512
+		XRP:
+			1: 122						0.504
+			-1: 120						0.495
+		LTC:
+			1: 118						0.487
+			-1: 124						0.512
+		ETH:
+			1: 123						0.508
+			-1:119						0.491
 
-Using just the number of comments as features
-	Best accuracy obtained: 
-		Ripple: 0.61
-	Didn't find any significant difference by changing number of estimators
-	BITCOIN:
-		Without comment scores:
-			[[ 9 18]
-			 [12 10]]
+	These are the following of making predictions with Random Forests 
+
+	Using just the number of comments as features
+		Best accuracy obtained: 
+			Ripple: 0.61
+		Didn't find any significant difference by changing number of estimators
+		BITCOIN:
+			Without comment scores:
+				[[ 9 18]
+				 [12 10]]
+				              precision    recall  f1-score   support
+
+				          -1       0.43      0.33      0.38        27
+				           1       0.36      0.45      0.40        22
+
+				    accuracy                           0.39        49
+				   macro avg       0.39      0.39      0.39        49
+				weighted avg       0.40      0.39      0.39        49
+
+				0.3877551020408163
+
+			With comment scores:
+				[[12 15]
+				 [12 10]]
+				              precision    recall  f1-score   support
+
+				          -1       0.50      0.44      0.47        27
+				           1       0.40      0.45      0.43        22
+
+				    accuracy                           0.45        49
+				   macro avg       0.45      0.45      0.45        49
+				weighted avg       0.46      0.45      0.45        49
+
+				0.4489795918367347
+		RIPPLE:
+			Without comment scores:
+				[[14  9]
+				 [10 16]]
+				              precision    recall  f1-score   support
+
+				          -1       0.58      0.61      0.60        23
+				           1       0.64      0.62      0.63        26
+
+				    accuracy                           0.61        49
+				   macro avg       0.61      0.61      0.61        49
+				weighted avg       0.61      0.61      0.61        49
+
+				0.6122448979591837
+
+			With comment scores:
+				[[14  9]
+				 [15 11]]
+				              precision    recall  f1-score   support
+
+				          -1       0.48      0.61      0.54        23
+				           1       0.55      0.42      0.48        26
+
+				    accuracy                           0.51        49
+				   macro avg       0.52      0.52      0.51        49
+				weighted avg       0.52      0.51      0.51        49
+
+				0.5102040816326531
+		LITECOIN:
+			Without comment scores:
+				[[11 13]
+				 [17  8]]
+				              precision    recall  f1-score   support
+
+				          -1       0.39      0.46      0.42        24
+				           1       0.38      0.32      0.35        25
+
+				    accuracy                           0.39        49
+				   macro avg       0.39      0.39      0.39        49
+				weighted avg       0.39      0.39      0.38        49
+
+				0.3877551020408163
+
+			With comment scores:
+				[[12 12]
+				 [15 10]]
+				              precision    recall  f1-score   support
+
+				          -1       0.44      0.50      0.47        24
+				           1       0.45      0.40      0.43        25
+
+				    accuracy                           0.45        49
+				   macro avg       0.45      0.45      0.45        49
+				weighted avg       0.45      0.45      0.45        49
+
+				0.4489795918367347
+		ETHEREUM:
+			Without comment scores:
+				[[12  9]
+				 [16 12]]
+				              precision    recall  f1-score   support
+
+				          -1       0.43      0.57      0.49        21
+				           1       0.57      0.43      0.49        28
+
+				    accuracy                           0.49        49
+				   macro avg       0.50      0.50      0.49        49
+				weighted avg       0.51      0.49      0.49        49
+
+				0.4897959183673469
+
+			With comment scores:
+				[[ 9 12]
+				 [10 18]]
+				              precision    recall  f1-score   support
+
+				          -1       0.47      0.43      0.45        21
+				           1       0.60      0.64      0.62        28
+
+				    accuracy                           0.55        49
+				   macro avg       0.54      0.54      0.54        49
+				weighted avg       0.55      0.55      0.55        49
+
+				0.5510204081632653
+
+	Using average compound score as the only feature
+		BITCOIN:
+			Without scores:
+				Mean avg compound 0.12032203403126894
+				Variance avg compound 0.00035983065832480353
+				Std avg compound 0.01896920289112865
+				[[11 16]
+				 [16  6]]
+				              precision    recall  f1-score   support
+
+				          -1       0.41      0.41      0.41        27
+				           1       0.27      0.27      0.27        22
+
+				    accuracy                           0.35        49
+				   macro avg       0.34      0.34      0.34        49
+				weighted avg       0.35      0.35      0.35        49
+
+				0.3469387755102041
+
+			With scores:
+				Mean avg compound 0.11733286649130498
+				Variance avg compound 0.0010376770709103844
+				Std avg compound 0.03221299537314691
+				[[15 12]
+				 [11 11]]
+				              precision    recall  f1-score   support
+
+				          -1       0.58      0.56      0.57        27
+				           1       0.48      0.50      0.49        22
+
+				    accuracy                           0.53        49
+				   macro avg       0.53      0.53      0.53        49
+				weighted avg       0.53      0.53      0.53        49
+
+				0.5306122448979592
+		RIPPLE:
+			Not using the score in the comments
+				Mean avg compound 0.1564528617057006
+				Variance avg compound 0.004600069722376851
+				Std avg compound 0.06782381382948655
+				[[11 12]
+				 [14 12]]
+				              precision    recall  f1-score   support
+
+				          -1       0.44      0.48      0.46        23
+				           1       0.50      0.46      0.48        26
+
+				    accuracy                           0.47        49
+				   macro avg       0.47      0.47      0.47        49
+				weighted avg       0.47      0.47      0.47        49
+
+				0.46938775510204084
+			Using the score of the comments
+				Mean avg compound 0.1639192073864075
+				Variance avg compound 0.008907049163986323
+				Std avg compound 0.09437716442014098
+				[[14  9]
+				 [16 10]]
+				              precision    recall  f1-score   support
+
+				          -1       0.47      0.61      0.53        23
+				           1       0.53      0.38      0.44        26
+
+				    accuracy                           0.49        49
+				   macro avg       0.50      0.50      0.49        49
+				weighted avg       0.50      0.49      0.48        49
+
+				0.4897959183673469
+		LITECOIN:
+			Not using the score in the comments
+				Mean avg compound 0.12949644686866263
+				Variance avg compound 0.0054494723322437225
+				Std avg compound 0.0738205413976606
+				[[16  8]
+				 [14 11]]
+				              precision    recall  f1-score   support
+
+				          -1       0.53      0.67      0.59        24
+				           1       0.58      0.44      0.50        25
+
+				    accuracy                           0.55        49
+				   macro avg       0.56      0.55      0.55        49
+				weighted avg       0.56      0.55      0.55        49
+
+				0.5510204081632653
+			Using the score of the comments
+				Mean avg compound 0.13540108083074487
+				Variance avg compound 0.007634094769789422
+				Std avg compound 0.08737330696379428
+				[[10 14]
+				 [14 11]]
+				              precision    recall  f1-score   support
+
+				          -1       0.42      0.42      0.42        24
+				           1       0.44      0.44      0.44        25
+
+				    accuracy                           0.43        49
+				   macro avg       0.43      0.43      0.43        49
+				weighted avg       0.43      0.43      0.43        49
+
+				0.42857142857142855
+		ETHEREUM:
+			Not using the score in the comments
+				Mean avg compound 0.16754811387766097
+				Variance avg compound 0.0018523818879713847
+				Std avg compound 0.04303930631378002
+				[[ 7 14]
+				 [16 12]]
+				              precision    recall  f1-score   support
+
+				          -1       0.30      0.33      0.32        21
+				           1       0.46      0.43      0.44        28
+
+				    accuracy                           0.39        49
+				   macro avg       0.38      0.38      0.38        49
+				weighted avg       0.39      0.39      0.39        49
+
+				0.3877551020408163
+			Using the score of the comments
+				Mean avg compound 0.18560113088265645
+				Variance avg compound 0.0029285160383301164
+				Std avg compound 0.05411576515517559
+				[[12  9]
+				 [11 17]]
+				              precision    recall  f1-score   support
+
+				          -1       0.52      0.57      0.55        21
+				           1       0.65      0.61      0.63        28
+
+				    accuracy                           0.59        49
+				   macro avg       0.59      0.59      0.59        49
+				weighted avg       0.60      0.59      0.59        49
+
+				0.5918367346938775
+
+	Using average compound score and number of comments:
+		BITCOIN
+			Not using the score in the comments
+				Mean avg compound 0.12032203403126894
+				Variance avg compound 0.00035983065832480353
+				Std avg compound 0.01896920289112865
+				[[11 16]
+				 [13  9]]
+				              precision    recall  f1-score   support
+
+				          -1       0.46      0.41      0.43        27
+				           1       0.36      0.41      0.38        22
+
+				    accuracy                           0.41        49
+				   macro avg       0.41      0.41      0.41        49
+				weighted avg       0.41      0.41      0.41        49
+
+				0.40816326530612246
+			Using the score of the comments
+				Mean avg compound 0.11733286649130498
+				Variance avg compound 0.0010376770709103844
+				Std avg compound 0.03221299537314691
+				[[13 14]
+				 [13  9]]
+				              precision    recall  f1-score   support
+
+				          -1       0.50      0.48      0.49        27
+				           1       0.39      0.41      0.40        22
+
+				    accuracy                           0.45        49
+				   macro avg       0.45      0.45      0.45        49
+				weighted avg       0.45      0.45      0.45        49
+
+				0.4489795918367347
+
+		RIPPLE
+			Not using the score in the comments
+				Mean avg compound 0.1564528617057006
+				Variance avg compound 0.004600069722376851
+				Std avg compound 0.06782381382948655
+				[[13 10]
+				 [14 12]]
+				              precision    recall  f1-score   support
+
+				          -1       0.48      0.57      0.52        23
+				           1       0.55      0.46      0.50        26
+
+				    accuracy                           0.51        49
+				   macro avg       0.51      0.51      0.51        49
+				weighted avg       0.52      0.51      0.51        49
+
+				0.5102040816326531
+			Using the score of the comments
+				Mean avg compound 0.1639192073864075
+				Variance avg compound 0.008907049163986323
+				Std avg compound 0.09437716442014098
+				[[14  9]
+				 [14 12]]
+				              precision    recall  f1-score   support
+
+				          -1       0.50      0.61      0.55        23
+				           1       0.57      0.46      0.51        26
+
+				    accuracy                           0.53        49
+				   macro avg       0.54      0.54      0.53        49
+				weighted avg       0.54      0.53      0.53        49
+
+				0.5306122448979592
+		LITECOIN
+			Using the average compound score and number of comments as the only feature:
+				Not using the score in the comments
+				Mean avg compound 0.12949644686866263
+				Variance avg compound 0.0054494723322437225
+				Std avg compound 0.0738205413976606
+				[[13 11]
+				 [15 10]]
+				              precision    recall  f1-score   support
+
+				          -1       0.46      0.54      0.50        24
+				           1       0.48      0.40      0.43        25
+
+				    accuracy                           0.47        49
+				   macro avg       0.47      0.47      0.47        49
+				weighted avg       0.47      0.47      0.47        49
+
+				0.46938775510204084
+			Using the score of the comments
+				Mean avg compound 0.13540108083074487
+				Variance avg compound 0.007634094769789422
+				Std avg compound 0.08737330696379428
+				[[ 8 16]
+				 [10 15]]
+				              precision    recall  f1-score   support
+
+				          -1       0.44      0.33      0.38        24
+				           1       0.48      0.60      0.54        25
+
+				    accuracy                           0.47        49
+				   macro avg       0.46      0.47      0.46        49
+				weighted avg       0.46      0.47      0.46        49
+
+				0.46938775510204084
+		ETHEREUM
+			Not using the score in the comments
+				Mean avg compound 0.16754811387766097
+				Variance avg compound 0.0018523818879713847
+				Std avg compound 0.04303930631378002
+				[[13  8]
+				 [16 12]]
+				              precision    recall  f1-score   support
+
+				          -1       0.45      0.62      0.52        21
+				           1       0.60      0.43      0.50        28
+
+				    accuracy                           0.51        49
+				   macro avg       0.52      0.52      0.51        49
+				weighted avg       0.53      0.51      0.51        49
+
+				0.5102040816326531
+			Using the score of the comments
+				Mean avg compound 0.18560113088265645
+				Variance avg compound 0.0029285160383301164
+				Std avg compound 0.05411576515517559
+				[[11 10]
+				 [12 16]]
+				              precision    recall  f1-score   support
+
+				          -1       0.48      0.52      0.50        21
+				           1       0.62      0.57      0.59        28
+
+				    accuracy                           0.55        49
+				   macro avg       0.55      0.55      0.55        49
+				weighted avg       0.56      0.55      0.55        49
+
+				0.5510204081632653
+
+	Using the status and the squared average compound:
+		BITCOIN
+			Using the ratio of negative and positive comments:
+				[[ 9 18]
+				 [17  5]]
+				              precision    recall  f1-score   support
+
+				          -1       0.35      0.33      0.34        27
+				           1       0.22      0.23      0.22        22
+
+				    accuracy                           0.29        49
+				   macro avg       0.28      0.28      0.28        49
+				weighted avg       0.29      0.29      0.29        49
+
+				0.2857142857142857
+			
+			Using the score of the comments
+				[[16 11]
+				 [13  9]]
+				              precision    recall  f1-score   support
+
+				          -1       0.55      0.59      0.57        27
+				           1       0.45      0.41      0.43        22
+
+				    accuracy                           0.51        49
+				   macro avg       0.50      0.50      0.50        49
+				weighted avg       0.51      0.51      0.51        49
+
+				0.5102040816326531
+
+		RIPPLE
+			Using the ratio of negative and positive comments:
+				[[16  7]
+				 [14 12]]
+				              precision    recall  f1-score   support
+
+				          -1       0.53      0.70      0.60        23
+				           1       0.63      0.46      0.53        26
+
+				    accuracy                           0.57        49
+				   macro avg       0.58      0.58      0.57        49
+				weighted avg       0.59      0.57      0.57        49
+
+				0.5714285714285714
+			Using the score of the comments
+				[[12 11]
+				 [15 11]]
+				              precision    recall  f1-score   support
+
+				          -1       0.44      0.52      0.48        23
+				           1       0.50      0.42      0.46        26
+
+				    accuracy                           0.47        49
+				   macro avg       0.47      0.47      0.47        49
+				weighted avg       0.47      0.47      0.47        49
+
+				0.46938775510204084
+		LITECOIN
+			Without using the score of the comments
+				[[16  8]
+				 [ 8 17]]
+				              precision    recall  f1-score   support
+
+				          -1       0.67      0.67      0.67        24
+				           1       0.68      0.68      0.68        25
+
+				    accuracy                           0.67        49
+				   macro avg       0.67      0.67      0.67        49
+				weighted avg       0.67      0.67      0.67        49
+
+				0.673469387755102
+			Using the score of the comments
+				[[12 12]
+				 [15 10]]
+				              precision    recall  f1-score   support
+
+				          -1       0.44      0.50      0.47        24
+				           1       0.45      0.40      0.43        25
+
+				    accuracy                           0.45        49
+				   macro avg       0.45      0.45      0.45        49
+				weighted avg       0.45      0.45      0.45        49
+
+				0.4489795918367347
+		ETHEREUM
+			Without using the score of the comments
+				[[10 11]
+				 [16 12]]
+				              precision    recall  f1-score   support
+
+				          -1       0.38      0.48      0.43        21
+				           1       0.52      0.43      0.47        28
+
+				    accuracy                           0.45        49
+				   macro avg       0.45      0.45      0.45        49
+				weighted avg       0.46      0.45      0.45        49
+
+				0.4489795918367347
+			Using the score of the comments
+				[[13  8]
+				 [14 14]]
+				              precision    recall  f1-score   support
+
+				          -1       0.48      0.62      0.54        21
+				           1       0.64      0.50      0.56        28
+
+				    accuracy                           0.55        49
+				   macro avg       0.56      0.56      0.55        49
+				weighted avg       0.57      0.55      0.55        49
+
+				0.5510204081632653
+
+Using just the News Dataset:
+	Using the average sentiment as the only feature
+		BITCOIN
+			Accuracies mean: 0.4465306122448979
+			Accuracies var: 0.004200583090379009
+			Accuracies std: 0.06481190546789231
+			Sample
+			[[12 15]
+			 [ 8 14]]
 			              precision    recall  f1-score   support
 
-			          -1       0.43      0.33      0.38        27
-			           1       0.36      0.45      0.40        22
+			          -1       0.60      0.44      0.51        27
+			           1       0.48      0.64      0.55        22
+
+			    accuracy                           0.53        49
+			   macro avg       0.54      0.54      0.53        49
+			weighted avg       0.55      0.53      0.53        49
+
+			0.5306122448979592
+		RIPPLE
+			Accuracies mean: 0.5520408163265307
+			Accuracies var: 0.0023937942523948354
+			Accuracies std: 0.04892641671321164
+			Sample
+			[[17  6]
+			 [20  6]]
+			              precision    recall  f1-score   support
+
+			          -1       0.46      0.74      0.57        23
+			           1       0.50      0.23      0.32        26
+
+			    accuracy                           0.47        49
+			   macro avg       0.48      0.48      0.44        49
+			weighted avg       0.48      0.47      0.43        49
+
+			0.46938775510204084
+		LITECOIN
+			Accuracies mean: 0.4855102040816327
+			Accuracies var: 0.003134485630987088
+			Accuracies std: 0.0559864772153695
+			Sample
+			[[17  7]
+			 [18  7]]
+			              precision    recall  f1-score   support
+
+			          -1       0.49      0.71      0.58        24
+			           1       0.50      0.28      0.36        25
+
+			    accuracy                           0.49        49
+			   macro avg       0.49      0.49      0.47        49
+			weighted avg       0.49      0.49      0.47        49
+
+			0.4897959183673469
+		ETHEREUM
+			Accuracies mean: 0.4767346938775511
+			Accuracies var: 0.002903123698458975
+			Accuracies std: 0.053880643077630165
+			Sample
+			[[ 6 15]
+			 [15 13]]
+			              precision    recall  f1-score   support
+
+			          -1       0.29      0.29      0.29        21
+			           1       0.46      0.46      0.46        28
 
 			    accuracy                           0.39        49
-			   macro avg       0.39      0.39      0.39        49
-			weighted avg       0.40      0.39      0.39        49
+			   macro avg       0.38      0.38      0.38        49
+			weighted avg       0.39      0.39      0.39        49
 
 			0.3877551020408163
 
-		With comment scores:
+	Using the average sentiment as the only feature (only on those days that have news)
+		BITCOIN
+			Accuracies mean: 0.4667391304347826
+			Accuracies var: 0.003860633270321362
+			Accuracies std: 0.06213399448225876
+			Sample
+			[[11 13]
+			 [10 12]]
+			              precision    recall  f1-score   support
+
+			          -1       0.52      0.46      0.49        24
+			           1       0.48      0.55      0.51        22
+
+			    accuracy                           0.50        46
+			   macro avg       0.50      0.50      0.50        46
+			weighted avg       0.50      0.50      0.50        46
+
+			0.5
+		RIPPLE
+			Accuracies mean: 0.6322580645161292
+			Accuracies var: 0.006368366285119665
+			Accuracies std: 0.07980204436679342
+			Sample
+			[[ 9  4]
+			 [ 6 12]]
+			              precision    recall  f1-score   support
+
+			          -1       0.60      0.69      0.64        13
+			           1       0.75      0.67      0.71        18
+
+			    accuracy                           0.68        31
+			   macro avg       0.68      0.68      0.67        31
+			weighted avg       0.69      0.68      0.68        31
+
+			0.6774193548387096
+		LITECOIN
+			Accuracies mean: 0.5219047619047619
+			Accuracies var: 0.008794557823129254
+			Accuracies std: 0.09377930381021846
+			Sample
+			[[7 6]
+			 [5 3]]
+			              precision    recall  f1-score   support
+
+			          -1       0.58      0.54      0.56        13
+			           1       0.33      0.38      0.35         8
+
+			    accuracy                           0.48        21
+			   macro avg       0.46      0.46      0.46        21
+			weighted avg       0.49      0.48      0.48        21
+
+			0.47619047619047616
+		ETHEREUM
+			Accuracies mean: 0.47650000000000015
+			Accuracies var: 0.0033227499999999997
+			Accuracies std: 0.05764329969736292
+			Sample
+			[[10 16]
+			 [ 6  8]]
+			              precision    recall  f1-score   support
+
+			          -1       0.62      0.38      0.48        26
+			           1       0.33      0.57      0.42        14
+
+			    accuracy                           0.45        40
+			   macro avg       0.48      0.48      0.45        40
+			weighted avg       0.52      0.45      0.46        40
+
+			0.45
+
+Using News Dataset and Market Data:
+	Using the average sentiment, high, low, open, close as features (only on those days that have news)
+		BITCOIN
+			Accuracies mean: 0.5393478260869565
+			Accuracies var: 0.0038156427221172034
+			Accuracies std: 0.06177088895359369
+			Sample
+			[[13 11]
+			 [13  9]]
+			              precision    recall  f1-score   support
+
+			          -1       0.50      0.54      0.52        24
+			           1       0.45      0.41      0.43        22
+
+			    accuracy                           0.48        46
+			   macro avg       0.47      0.48      0.47        46
+			weighted avg       0.48      0.48      0.48        46
+
+			0.4782608695652174
+		RIPPLE
+			Accuracies mean: 0.5816129032258065
+			Accuracies var: 0.0057118626430801255
+			Accuracies std: 0.07557686579291394
+			Sample
+			[[ 6  7]
+			 [10  8]]
+			              precision    recall  f1-score   support
+
+			          -1       0.38      0.46      0.41        13
+			           1       0.53      0.44      0.48        18
+
+			    accuracy                           0.45        31
+			   macro avg       0.45      0.45      0.45        31
+			weighted avg       0.47      0.45      0.46        31
+
+			0.45161290322580644
+		LITECOIN
+			Accuracies mean: 0.48714285714285716
+			Accuracies var: 0.009245124716553288
+			Accuracies std: 0.09615157157609691
+			Sample
+			[[9 4]
+			 [4 4]]
+			              precision    recall  f1-score   support
+
+			          -1       0.69      0.69      0.69        13
+			           1       0.50      0.50      0.50         8
+
+			    accuracy                           0.62        21
+			   macro avg       0.60      0.60      0.60        21
+			weighted avg       0.62      0.62      0.62        21
+
+			0.6190476190476191
+		ETHEREUM
+			Accuracies mean: 0.51125
+			Accuracies var: 0.006829687499999998
+			Accuracies std: 0.08264192338032797
+			Sample
+			[[14 12]
+			 [ 6  8]]
+			              precision    recall  f1-score   support
+
+			          -1       0.70      0.54      0.61        26
+			           1       0.40      0.57      0.47        14
+
+			    accuracy                           0.55        40
+			   macro avg       0.55      0.55      0.54        40
+			weighted avg       0.59      0.55      0.56        40
+
+			0.55
+
+Using News Dataset and Reddit Dataset:
+	Using average compound from news and reddit
+		BITCOIN
+			Without comment scores
+			Accuracies mean: 0.5357142857142858
+			Accuracies var: 0.0033683881715951686
+			Accuracies std: 0.058037816736979074
+			Sample
 			[[12 15]
 			 [12 10]]
 			              precision    recall  f1-score   support
@@ -67,470 +771,407 @@ Using just the number of comments as features
 			weighted avg       0.46      0.45      0.45        49
 
 			0.4489795918367347
-	RIPPLE:
-		Without comment scores:
-			[[14  9]
-			 [10 16]]
-			              precision    recall  f1-score   support
-
-			          -1       0.58      0.61      0.60        23
-			           1       0.64      0.62      0.63        26
-
-			    accuracy                           0.61        49
-			   macro avg       0.61      0.61      0.61        49
-			weighted avg       0.61      0.61      0.61        49
-
-			0.6122448979591837
-
-		With comment scores:
-			[[14  9]
-			 [15 11]]
-			              precision    recall  f1-score   support
-
-			          -1       0.48      0.61      0.54        23
-			           1       0.55      0.42      0.48        26
-
-			    accuracy                           0.51        49
-			   macro avg       0.52      0.52      0.51        49
-			weighted avg       0.52      0.51      0.51        49
-
-			0.5102040816326531
-	LITECOIN:
-		Without comment scores:
-			[[11 13]
-			 [17  8]]
-			              precision    recall  f1-score   support
-
-			          -1       0.39      0.46      0.42        24
-			           1       0.38      0.32      0.35        25
-
-			    accuracy                           0.39        49
-			   macro avg       0.39      0.39      0.39        49
-			weighted avg       0.39      0.39      0.38        49
-
-			0.3877551020408163
-
-		With comment scores:
-			[[12 12]
-			 [15 10]]
-			              precision    recall  f1-score   support
-
-			          -1       0.44      0.50      0.47        24
-			           1       0.45      0.40      0.43        25
-
-			    accuracy                           0.45        49
-			   macro avg       0.45      0.45      0.45        49
-			weighted avg       0.45      0.45      0.45        49
-
-			0.4489795918367347
-	ETHEREUM:
-		Without comment scores:
-			[[12  9]
-			 [16 12]]
-			              precision    recall  f1-score   support
-
-			          -1       0.43      0.57      0.49        21
-			           1       0.57      0.43      0.49        28
-
-			    accuracy                           0.49        49
-			   macro avg       0.50      0.50      0.49        49
-			weighted avg       0.51      0.49      0.49        49
-
-			0.4897959183673469
-
-		With comment scores:
-			[[ 9 12]
-			 [10 18]]
-			              precision    recall  f1-score   support
-
-			          -1       0.47      0.43      0.45        21
-			           1       0.60      0.64      0.62        28
-
-			    accuracy                           0.55        49
-			   macro avg       0.54      0.54      0.54        49
-			weighted avg       0.55      0.55      0.55        49
-
-			0.5510204081632653
-
-Using average compound score as the only feature
-	BITCOIN:
-		Without scores:
-			Mean avg compound 0.12032203403126894
-			Variance avg compound 0.00035983065832480353
-			Std avg compound 0.01896920289112865
-			[[11 16]
-			 [16  6]]
-			              precision    recall  f1-score   support
-
-			          -1       0.41      0.41      0.41        27
-			           1       0.27      0.27      0.27        22
-
-			    accuracy                           0.35        49
-			   macro avg       0.34      0.34      0.34        49
-			weighted avg       0.35      0.35      0.35        49
-
-			0.3469387755102041
-
-		With scores:
-			Mean avg compound 0.11733286649130498
-			Variance avg compound 0.0010376770709103844
-			Std avg compound 0.03221299537314691
+			Using the score of the comments
+			Accuracies mean: 0.47510204081632645
+			Accuracies var: 0.004165597667638483
+			Accuracies std: 0.06454144147474924
+			Sample
 			[[15 12]
-			 [11 11]]
+			 [12 10]]
 			              precision    recall  f1-score   support
 
-			          -1       0.58      0.56      0.57        27
-			           1       0.48      0.50      0.49        22
-
-			    accuracy                           0.53        49
-			   macro avg       0.53      0.53      0.53        49
-			weighted avg       0.53      0.53      0.53        49
-
-			0.5306122448979592
-	RIPPLE:
-		Not using the score in the comments
-			Mean avg compound 0.1564528617057006
-			Variance avg compound 0.004600069722376851
-			Std avg compound 0.06782381382948655
-			[[11 12]
-			 [14 12]]
-			              precision    recall  f1-score   support
-
-			          -1       0.44      0.48      0.46        23
-			           1       0.50      0.46      0.48        26
-
-			    accuracy                           0.47        49
-			   macro avg       0.47      0.47      0.47        49
-			weighted avg       0.47      0.47      0.47        49
-
-			0.46938775510204084
-		Using the score of the comments
-			Mean avg compound 0.1639192073864075
-			Variance avg compound 0.008907049163986323
-			Std avg compound 0.09437716442014098
-			[[14  9]
-			 [16 10]]
-			              precision    recall  f1-score   support
-
-			          -1       0.47      0.61      0.53        23
-			           1       0.53      0.38      0.44        26
-
-			    accuracy                           0.49        49
-			   macro avg       0.50      0.50      0.49        49
-			weighted avg       0.50      0.49      0.48        49
-
-			0.4897959183673469
-	LITECOIN:
-		Not using the score in the comments
-			Mean avg compound 0.12949644686866263
-			Variance avg compound 0.0054494723322437225
-			Std avg compound 0.0738205413976606
-			[[16  8]
-			 [14 11]]
-			              precision    recall  f1-score   support
-
-			          -1       0.53      0.67      0.59        24
-			           1       0.58      0.44      0.50        25
-
-			    accuracy                           0.55        49
-			   macro avg       0.56      0.55      0.55        49
-			weighted avg       0.56      0.55      0.55        49
-
-			0.5510204081632653
-		Using the score of the comments
-			Mean avg compound 0.13540108083074487
-			Variance avg compound 0.007634094769789422
-			Std avg compound 0.08737330696379428
-			[[10 14]
-			 [14 11]]
-			              precision    recall  f1-score   support
-
-			          -1       0.42      0.42      0.42        24
-			           1       0.44      0.44      0.44        25
-
-			    accuracy                           0.43        49
-			   macro avg       0.43      0.43      0.43        49
-			weighted avg       0.43      0.43      0.43        49
-
-			0.42857142857142855
-	ETHEREUM:
-		Not using the score in the comments
-			Mean avg compound 0.16754811387766097
-			Variance avg compound 0.0018523818879713847
-			Std avg compound 0.04303930631378002
-			[[ 7 14]
-			 [16 12]]
-			              precision    recall  f1-score   support
-
-			          -1       0.30      0.33      0.32        21
-			           1       0.46      0.43      0.44        28
-
-			    accuracy                           0.39        49
-			   macro avg       0.38      0.38      0.38        49
-			weighted avg       0.39      0.39      0.39        49
-
-			0.3877551020408163
-		Using the score of the comments
-			Mean avg compound 0.18560113088265645
-			Variance avg compound 0.0029285160383301164
-			Std avg compound 0.05411576515517559
-			[[12  9]
-			 [11 17]]
-			              precision    recall  f1-score   support
-
-			          -1       0.52      0.57      0.55        21
-			           1       0.65      0.61      0.63        28
-
-			    accuracy                           0.59        49
-			   macro avg       0.59      0.59      0.59        49
-			weighted avg       0.60      0.59      0.59        49
-
-			0.5918367346938775
-
-Using average compound score and number of comments:
-	BITCOIN
-		Not using the score in the comments
-			Mean avg compound 0.12032203403126894
-			Variance avg compound 0.00035983065832480353
-			Std avg compound 0.01896920289112865
-			[[11 16]
-			 [13  9]]
-			              precision    recall  f1-score   support
-
-			          -1       0.46      0.41      0.43        27
-			           1       0.36      0.41      0.38        22
-
-			    accuracy                           0.41        49
-			   macro avg       0.41      0.41      0.41        49
-			weighted avg       0.41      0.41      0.41        49
-
-			0.40816326530612246
-		Using the score of the comments
-			Mean avg compound 0.11733286649130498
-			Variance avg compound 0.0010376770709103844
-			Std avg compound 0.03221299537314691
-			[[13 14]
-			 [13  9]]
-			              precision    recall  f1-score   support
-
-			          -1       0.50      0.48      0.49        27
-			           1       0.39      0.41      0.40        22
-
-			    accuracy                           0.45        49
-			   macro avg       0.45      0.45      0.45        49
-			weighted avg       0.45      0.45      0.45        49
-
-			0.4489795918367347
-
-	RIPPLE
-		Not using the score in the comments
-			Mean avg compound 0.1564528617057006
-			Variance avg compound 0.004600069722376851
-			Std avg compound 0.06782381382948655
-			[[13 10]
-			 [14 12]]
-			              precision    recall  f1-score   support
-
-			          -1       0.48      0.57      0.52        23
-			           1       0.55      0.46      0.50        26
+			          -1       0.56      0.56      0.56        27
+			           1       0.45      0.45      0.45        22
 
 			    accuracy                           0.51        49
 			   macro avg       0.51      0.51      0.51        49
-			weighted avg       0.52      0.51      0.51        49
-
-			0.5102040816326531
-		Using the score of the comments
-			Mean avg compound 0.1639192073864075
-			Variance avg compound 0.008907049163986323
-			Std avg compound 0.09437716442014098
-			[[14  9]
-			 [14 12]]
-			              precision    recall  f1-score   support
-
-			          -1       0.50      0.61      0.55        23
-			           1       0.57      0.46      0.51        26
-
-			    accuracy                           0.53        49
-			   macro avg       0.54      0.54      0.53        49
-			weighted avg       0.54      0.53      0.53        49
-
-			0.5306122448979592
-	LITECOIN
-		Using the average compound score and number of comments as the only feature:
-			Not using the score in the comments
-			Mean avg compound 0.12949644686866263
-			Variance avg compound 0.0054494723322437225
-			Std avg compound 0.0738205413976606
-			[[13 11]
-			 [15 10]]
-			              precision    recall  f1-score   support
-
-			          -1       0.46      0.54      0.50        24
-			           1       0.48      0.40      0.43        25
-
-			    accuracy                           0.47        49
-			   macro avg       0.47      0.47      0.47        49
-			weighted avg       0.47      0.47      0.47        49
-
-			0.46938775510204084
-		Using the score of the comments
-			Mean avg compound 0.13540108083074487
-			Variance avg compound 0.007634094769789422
-			Std avg compound 0.08737330696379428
-			[[ 8 16]
-			 [10 15]]
-			              precision    recall  f1-score   support
-
-			          -1       0.44      0.33      0.38        24
-			           1       0.48      0.60      0.54        25
-
-			    accuracy                           0.47        49
-			   macro avg       0.46      0.47      0.46        49
-			weighted avg       0.46      0.47      0.46        49
-
-			0.46938775510204084
-	ETHEREUM
-		Not using the score in the comments
-			Mean avg compound 0.16754811387766097
-			Variance avg compound 0.0018523818879713847
-			Std avg compound 0.04303930631378002
-			[[13  8]
-			 [16 12]]
-			              precision    recall  f1-score   support
-
-			          -1       0.45      0.62      0.52        21
-			           1       0.60      0.43      0.50        28
-
-			    accuracy                           0.51        49
-			   macro avg       0.52      0.52      0.51        49
-			weighted avg       0.53      0.51      0.51        49
-
-			0.5102040816326531
-		Using the score of the comments
-			Mean avg compound 0.18560113088265645
-			Variance avg compound 0.0029285160383301164
-			Std avg compound 0.05411576515517559
-			[[11 10]
-			 [12 16]]
-			              precision    recall  f1-score   support
-
-			          -1       0.48      0.52      0.50        21
-			           1       0.62      0.57      0.59        28
-
-			    accuracy                           0.55        49
-			   macro avg       0.55      0.55      0.55        49
-			weighted avg       0.56      0.55      0.55        49
-
-			0.5510204081632653
-
-Using the status and the squared average compound:
-	BITCOIN
-		Using the ratio of negative and positive comments:
-			[[ 9 18]
-			 [17  5]]
-			              precision    recall  f1-score   support
-
-			          -1       0.35      0.33      0.34        27
-			           1       0.22      0.23      0.22        22
-
-			    accuracy                           0.29        49
-			   macro avg       0.28      0.28      0.28        49
-			weighted avg       0.29      0.29      0.29        49
-
-			0.2857142857142857
-		
-		Using the score of the comments
-			[[16 11]
-			 [13  9]]
-			              precision    recall  f1-score   support
-
-			          -1       0.55      0.59      0.57        27
-			           1       0.45      0.41      0.43        22
-
-			    accuracy                           0.51        49
-			   macro avg       0.50      0.50      0.50        49
 			weighted avg       0.51      0.51      0.51        49
 
 			0.5102040816326531
+		RIPPLE
+			Without comment scores
+				Accuracies mean: 0.5299999999999999
+				Accuracies var: 0.004243690129112869
+				Accuracies std: 0.06514361157560171
+				Sample
+				[[10 13]
+				 [13 13]]
+				              precision    recall  f1-score   support
 
-	RIPPLE
-		Using the ratio of negative and positive comments:
-			[[16  7]
-			 [14 12]]
-			              precision    recall  f1-score   support
+				          -1       0.43      0.43      0.43        23
+				           1       0.50      0.50      0.50        26
 
-			          -1       0.53      0.70      0.60        23
-			           1       0.63      0.46      0.53        26
+				    accuracy                           0.47        49
+				   macro avg       0.47      0.47      0.47        49
+				weighted avg       0.47      0.47      0.47        49
 
-			    accuracy                           0.57        49
-			   macro avg       0.58      0.58      0.57        49
-			weighted avg       0.59      0.57      0.57        49
+				0.46938775510204084
+			Using the score of the comments
+				Accuracies mean: 0.526734693877551
+				Accuracies var: 0.004537234485630986
+				Accuracies std: 0.06735899706521012
+				Sample
+				[[12 11]
+				 [11 15]]
+				              precision    recall  f1-score   support
 
-			0.5714285714285714
-		Using the score of the comments
-			[[12 11]
-			 [15 11]]
-			              precision    recall  f1-score   support
+				          -1       0.52      0.52      0.52        23
+				           1       0.58      0.58      0.58        26
 
-			          -1       0.44      0.52      0.48        23
-			           1       0.50      0.42      0.46        26
+				    accuracy                           0.55        49
+				   macro avg       0.55      0.55      0.55        49
+				weighted avg       0.55      0.55      0.55        49
 
-			    accuracy                           0.47        49
-			   macro avg       0.47      0.47      0.47        49
-			weighted avg       0.47      0.47      0.47        49
+				0.5510204081632653
+		LITECOIN
+			Without comment scores
+				Accuracies mean: 0.5220408163265307
+				Accuracies var: 0.0037749271137026237
+				Accuracies std: 0.0614404354940834
+				Sample
+				[[14 10]
+				 [11 14]]
+				              precision    recall  f1-score   support
 
-			0.46938775510204084
-	LITECOIN
-		Without using the score of the comments
-			[[16  8]
-			 [ 8 17]]
-			              precision    recall  f1-score   support
+				          -1       0.56      0.58      0.57        24
+				           1       0.58      0.56      0.57        25
 
-			          -1       0.67      0.67      0.67        24
-			           1       0.68      0.68      0.68        25
+				    accuracy                           0.57        49
+				   macro avg       0.57      0.57      0.57        49
+				weighted avg       0.57      0.57      0.57        49
 
-			    accuracy                           0.67        49
-			   macro avg       0.67      0.67      0.67        49
-			weighted avg       0.67      0.67      0.67        49
+				0.5714285714285714
+			Using the score of the comments
+				Accuracies mean: 0.4975510204081632
+				Accuracies var: 0.003804914618908788
+				Accuracies std: 0.06168398997234848
+				Sample
+				[[10 14]
+				 [16  9]]
+				              precision    recall  f1-score   support
 
-			0.673469387755102
-		Using the score of the comments
-			[[12 12]
-			 [15 10]]
-			              precision    recall  f1-score   support
+				          -1       0.38      0.42      0.40        24
+				           1       0.39      0.36      0.37        25
 
-			          -1       0.44      0.50      0.47        24
-			           1       0.45      0.40      0.43        25
+				    accuracy                           0.39        49
+				   macro avg       0.39      0.39      0.39        49
+				weighted avg       0.39      0.39      0.39        49
 
-			    accuracy                           0.45        49
-			   macro avg       0.45      0.45      0.45        49
-			weighted avg       0.45      0.45      0.45        49
+				0.3877551020408163
+		ETHEREUM
+			Without comment scores
+				Accuracies mean: 0.42836734693877554
+				Accuracies var: 0.003777551020408163
+				Accuracies std: 0.06146178504085415
+				Sample
+				[[ 6 15]
+				 [16 12]]
+				              precision    recall  f1-score   support
 
-			0.4489795918367347
-	ETHEREUM
-		Without using the score of the comments
-			[[10 11]
-			 [16 12]]
-			              precision    recall  f1-score   support
+				          -1       0.27      0.29      0.28        21
+				           1       0.44      0.43      0.44        28
 
-			          -1       0.38      0.48      0.43        21
-			           1       0.52      0.43      0.47        28
+				    accuracy                           0.37        49
+				   macro avg       0.36      0.36      0.36        49
+				weighted avg       0.37      0.37      0.37        49
 
-			    accuracy                           0.45        49
-			   macro avg       0.45      0.45      0.45        49
-			weighted avg       0.46      0.45      0.45        49
+				0.3673469387755102
+			Using the score of the comments
+				Accuracies mean: 0.4526530612244899
+				Accuracies var: 0.004159766763848397
+				Accuracies std: 0.06449625387453443
+				Sample
+				[[ 8 13]
+				 [14 14]]
+				              precision    recall  f1-score   support
 
-			0.4489795918367347
-		Using the score of the comments
-			[[13  8]
-			 [14 14]]
-			              precision    recall  f1-score   support
+				          -1       0.36      0.38      0.37        21
+				           1       0.52      0.50      0.51        28
 
-			          -1       0.48      0.62      0.54        21
-			           1       0.64      0.50      0.56        28
+				    accuracy                           0.45        49
+				   macro avg       0.44      0.44      0.44        49
+				weighted avg       0.45      0.45      0.45        49
 
-			    accuracy                           0.55        49
-			   macro avg       0.56      0.56      0.55        49
-			weighted avg       0.57      0.55      0.55        49
+				0.448979591836734
+	Using average compound from news and reddit(only those days with news):
+		BITCOIN
+			Without comment scores
+				Accuracies mean: 0.5373913043478261
+				Accuracies var: 0.004443100189035918
+				Accuracies std: 0.06665658398864975
+				Sample
+				[[14 10]
+				 [14  8]]
+				              precision    recall  f1-score   support
 
-			0.5510204081632653
+				          -1       0.50      0.58      0.54        24
+				           1       0.44      0.36      0.40        22
+
+				    accuracy                           0.48        46
+				   macro avg       0.47      0.47      0.47        46
+				weighted avg       0.47      0.48      0.47        46
+
+				0.4782608695652174
+			Using the score of the comments
+				Accuracies mean: 0.48913043478260876
+				Accuracies var: 0.003388468809073725
+				Accuracies std: 0.058210555821721244
+				Sample
+				[[17  7]
+				 [13  9]]
+				              precision    recall  f1-score   support
+
+				          -1       0.57      0.71      0.63        24
+				           1       0.56      0.41      0.47        22
+
+				    accuracy                           0.57        46
+				   macro avg       0.56      0.56      0.55        46
+				weighted avg       0.56      0.57      0.56        46
+
+				0.5652173913043478
+		RIPPLE
+			Without comment scores
+				Accuracies mean: 0.5561290322580645
+				Accuracies var: 0.006745473465140479
+				Accuracies std: 0.08213083139199602
+				Sample
+				[[ 8  5]
+				 [13  5]]
+				              precision    recall  f1-score   support
+
+				          -1       0.38      0.62      0.47        13
+				           1       0.50      0.28      0.36        18
+
+				    accuracy                           0.42        31
+				   macro avg       0.44      0.45      0.41        31
+				weighted avg       0.45      0.42      0.40        31
+
+				0.41935483870967744
+			Using the score of the comments
+				Accuracies mean: 0.5141935483870967
+				Accuracies var: 0.0060316337148803335
+				Accuracies std: 0.07766359323956325
+				Sample
+				[[ 6  7]
+				 [11  7]]
+				              precision    recall  f1-score   support
+
+				          -1       0.35      0.46      0.40        13
+				           1       0.50      0.39      0.44        18
+
+				    accuracy                           0.42        31
+				   macro avg       0.43      0.43      0.42        31
+				weighted avg       0.44      0.42      0.42        31
+
+				0.41935483870967744
+		LITECOIN
+			Without comment scores:
+				Accuracies mean: 0.5
+				Accuracies var: 0.01090702947845805
+				Accuracies std: 0.10443672475933956
+				Sample
+				[[5 8]
+				 [5 3]]
+				              precision    recall  f1-score   support
+
+				          -1       0.50      0.38      0.43        13
+				           1       0.27      0.38      0.32         8
+
+				    accuracy                           0.38        21
+				   macro avg       0.39      0.38      0.38        21
+				weighted avg       0.41      0.38      0.39        21
+
+				0.38095238095238093
+			Using the score of the comments
+				Accuracies mean: 0.5742857142857143
+				Accuracies var: 0.008200453514739229
+				Accuracies std: 0.09055635546298905
+				Sample
+				[[7 6]
+				 [4 4]]
+				              precision    recall  f1-score   support
+
+				          -1       0.64      0.54      0.58        13
+				           1       0.40      0.50      0.44         8
+
+				    accuracy                           0.52        21
+				   macro avg       0.52      0.52      0.51        21
+				weighted avg       0.55      0.52      0.53        21
+		ETHEREUM:
+			Without comment scores
+				Accuracies mean: 0.41474999999999995
+				Accuracies var: 0.003826187499999999
+				Accuracies std: 0.061856184007744924
+				Sample
+				[[11 15]
+				 [ 8  6]]
+				              precision    recall  f1-score   support
+
+				          -1       0.58      0.42      0.49        26
+				           1       0.29      0.43      0.34        14
+
+				    accuracy                           0.42        40
+				   macro avg       0.43      0.43      0.42        40
+				weighted avg       0.48      0.42      0.44        40
+
+				0.425
+			Using the score of the comments
+				Accuracies mean: 0.45350000000000007
+				Accuracies var: 0.005387750000000001
+				Accuracies std: 0.07340129426651823
+				Sample
+				[[14 12]
+				 [ 5  9]]
+				              precision    recall  f1-score   support
+
+				          -1       0.74      0.54      0.62        26
+				           1       0.43      0.64      0.51        14
+
+				    accuracy                           0.57        40
+				   macro avg       0.58      0.59      0.57        40
+				weighted avg       0.63      0.57      0.58        40
+
+				0.575
+	Using the number of comments, the average compound of news and the average compound of reddit:
+		BITCOIN
+			Without comment scores
+				Accuracies mean: 0.5415217391304349
+				Accuracies var: 0.004367627599243857
+				Accuracies std: 0.06608802916749641
+				Sample
+				[[20  4]
+				 [14  8]]
+				              precision    recall  f1-score   support
+
+				          -1       0.59      0.83      0.69        24
+				           1       0.67      0.36      0.47        22
+
+				    accuracy                           0.61        46
+				   macro avg       0.63      0.60      0.58        46
+				weighted avg       0.63      0.61      0.58        46
+
+				0.6086956521739131	
+			Using the score of the comments
+				Accuracies mean: 0.5006521739130435
+				Accuracies var: 0.004106379962192818
+				Accuracies std: 0.06408104214346719
+				Sample
+				[[13 11]
+				 [14  8]]
+				              precision    recall  f1-score   support
+
+				          -1       0.48      0.54      0.51        24
+				           1       0.42      0.36      0.39        22
+
+				    accuracy                           0.46        46
+				   macro avg       0.45      0.45      0.45        46
+				weighted avg       0.45      0.46      0.45        46
+
+				0.45652173913043476
+		RIPPLE
+			Without comment scores
+				Accuracies mean: 0.5308163265306123
+				Accuracies var: 0.003927488546438983
+				Accuracies std: 0.06266967804639643
+				Sample
+				[[14  9]
+				 [15 11]]
+				              precision    recall  f1-score   support
+
+				          -1       0.48      0.61      0.54        23
+				           1       0.55      0.42      0.48        26
+
+				    accuracy                           0.51        49
+				   macro avg       0.52      0.52      0.51        49
+				weighted avg       0.52      0.51      0.51        49
+
+				0.5102040816326531
+			Using the score of the comments
+				Accuracies mean: 0.5173469387755103
+				Accuracies var: 0.004626197417742608
+				Accuracies std: 0.0680161555642673
+				Sample
+				[[15  8]
+				 [16 10]]
+				              precision    recall  f1-score   support
+
+				          -1       0.48      0.65      0.56        23
+				           1       0.56      0.38      0.45        26
+
+				    accuracy                           0.51        49
+				   macro avg       0.52      0.52      0.51        49
+				weighted avg       0.52      0.51      0.50        49
+
+				0.5102040816326531
+
+		LITECOIN
+			Without using comment scores
+				Accuracies mean: 0.4814285714285714
+				Accuracies var: 0.0036659308621407745
+				Accuracies std: 0.06054693107120108
+				Sample
+				[[13 11]
+				 [13 12]]
+				              precision    recall  f1-score   support
+
+				          -1       0.50      0.54      0.52        24
+				           1       0.52      0.48      0.50        25
+
+				    accuracy                           0.51        49
+				   macro avg       0.51      0.51      0.51        49
+				weighted avg       0.51      0.51      0.51        49
+
+				0.5102040816326531
+			Using the score of the comments
+				Accuracies mean: 0.513061224489796
+				Accuracies var: 0.0046232403165347765
+				Accuracies std: 0.06799441386271945
+				Sample
+				[[13 11]
+				 [11 14]]
+				              precision    recall  f1-score   support
+
+				          -1       0.54      0.54      0.54        24
+				           1       0.56      0.56      0.56        25
+
+				    accuracy                           0.55        49
+				   macro avg       0.55      0.55      0.55        49
+				weighted avg       0.55      0.55      0.55        49
+
+				0.5510204081632653
+
+		ETHEREUM
+			Without comment scores
+				Accuracies mean: 0.46326530612244904
+				Accuracies var: 0.004044148271553519
+				Accuracies std: 0.06359361816686891
+				Sample
+				[[13  8]
+				 [14 14]]
+				              precision    recall  f1-score   support
+
+				          -1       0.48      0.62      0.54        21
+				           1       0.64      0.50      0.56        28
+
+				    accuracy                           0.55        49
+				   macro avg       0.56      0.56      0.55        49
+				weighted avg       0.57      0.55      0.55        49
+
+				0.5510204081632653
+			Using the score of the comments
+				Accuracies mean: 0.49081632653061225
+				Accuracies var: 0.0038348604748021653
+				Accuracies std: 0.06192625028856636
+				Sample
+				[[ 9 12]
+				 [13 15]]
+				              precision    recall  f1-score   support
+
+				          -1       0.41      0.43      0.42        21
+				           1       0.56      0.54      0.55        28
+
+				    accuracy                           0.49        49
+				   macro avg       0.48      0.48      0.48        49
+				weighted avg       0.49      0.49      0.49        49
+
+				0.489795918367346

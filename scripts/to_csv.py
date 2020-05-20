@@ -30,9 +30,12 @@ import numpy as np
 
 SUBMISSIONS_COLLECTION = "submissions"
 COMMENTS_COLLECTION = "comments"
+NEWS_COLLECTION = "coin_telegraph_news"
 PRICES_COLLECTION = "prices"
+
 DATABASE_REDDIT_NAME = "reddit_data"
 DATABASE_MARKET_NAME = "market_data"
+DATABASE_NEWS_NAME = "news_data"
 
 LOG_FILE = "./logs.txt"
 MONGO_SERVICE = "mongodb://localhost:27017/"
@@ -47,7 +50,8 @@ market_db = myclient[DATABASE_MARKET_NAME]
 submissions_db = reddit_db[SUBMISSIONS_COLLECTION]
 comments_db = reddit_db[COMMENTS_COLLECTION]
 prices_db = market_db[PRICES_COLLECTION]
-
+news_db = myclient[DATABASE_NEWS_NAME]
+news_collection = news_db[NEWS_COLLECTION]
 
 crypto_subreddits = {
 	"BTC":["r\/btc","r\/bitcoin"],
@@ -171,5 +175,38 @@ def add_labels():
 		filename = "./datasets/" + crypto + ".csv"
 		subset.to_csv(filename, index=False)
 
+#add the data from news to the respective csv of each cryptocoin
+def add_news_data():
+	for coin in crypto_subreddits.keys():
+		coin = coin.lower()
+		df = pandas.read_csv('./datasets/' + coin + '.csv')
+		number_news = []
+		avg_compound_news = []
+		n = len(df)
+		for i in range(n):
+			time = df.iloc[i]['time']
+			news = news_collection.find({
+				coin : True,
+				"datetime": {
+					"$gte": datetime.fromtimestamp(time, tz=timezone.utc),
+					"$lt": datetime.fromtimestamp(time+86400, tz=timezone.utc)
+				}
+			})
+			compounds = []
+			for new in news:
+				if new["analysis"] == True and "sent_comp_"+coin in new:
+					compounds.append(new["sent_comp_"+coin])
+				elif "sent_comp" in new:
+					compounds.append(new["sent_comp"])
 
-add_labels()
+			number_news.append(len(compounds))
+			if compounds:
+				avg_compound_news.append(sum(compounds)/len(compounds))
+			else:
+				avg_compound_news.append(0)
+		df["n_news"] = number_news
+		df["avg_news_compound"] = avg_compound_news
+		filename = "./datasets/" + coin + "_news.csv"
+		df.to_csv(filename, index=False)
+
+add_news_data()

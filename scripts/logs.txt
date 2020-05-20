@@ -476,3 +476,9 @@ root@2020-05-16 19:08:24,541 - Adding sentiment data to comments of ethfinance
 root@2020-05-16 19:08:28,982 - Done. 269 comments from ethfinance where analyzed.
 root@2020-05-16 19:08:29,013 - Adding sentiment data to submissions of ethfinance
 root@2020-05-16 19:08:39,561 - Done. 5650 submissions from ethfinance where analyzed.
+root@2020-05-08 20:00:53,124 - Done. 5650 submissions from ethfinance where analyzed.root@2020-05-18 19:56:42,752 - Adding sentiment data to news of Coin Telegraph
+root@2020-05-18 19:56:44,055 - Done. 88 news where analysed. 7 news couldn't be analysed
+root@2020-05-18 19:57:12,318 - Adding sentiment data to news of Coin Telegraph
+root@2020-05-18 19:57:46,722 - Done. 2227 news where analysed. 7 news couldn't be analysed
+root@2020-05-18 20:00:58,936 - Adding sentiment data to news of Coin Telegraph
+root@2020-05-18 20:01:34,398 - Done. 2227 news where analysed. 7 news couldn't be analysed

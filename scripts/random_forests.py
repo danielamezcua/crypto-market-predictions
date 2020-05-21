@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 import numpy as np
 
-dataset_btc = pd.read_csv("./datasets/eth_news.csv")
+dataset_btc = pd.read_csv("./datasets/btc_news.csv")
 n = len(dataset_btc)
 x = []
 for i in range(0,n):
@@ -25,7 +25,7 @@ dataset_btc['avg_compound_ns'] = (dataset_btc['comp_ns']/dataset_btc['number_com
 dataset_btc['avg_pos_ns'] = (dataset_btc['sum_pos_ns']/dataset_btc['pos_ns']).replace((np.nan,np.inf, -np.inf), (0,0,0))
 dataset_btc['avg_neg_ns'] = (dataset_btc['sum_neg_ns']/dataset_btc['neg_ns']).replace((np.nan, np.inf, -np.inf), (0, 0, 0))
 
-x = dataset_btc.loc[:, ["avg_news_compound", "avg_pos_ns","open","low","high", "close"]].values
+x = dataset_btc.loc[:, ["number_comments_ns"]].values
 y = dataset_btc.loc[:, "label"].values
 
 
@@ -73,7 +73,7 @@ dataset_btc['avg_neg_s'] = (dataset_btc['sum_neg_s']/dataset_btc['neg_s']).repla
 # print(dataset_btc['avg_compound_s'])
 # print("mean of the aveage compound_s", dataset_btc['avg_compound_s'].mean())
 # print("Variance of the average compound_s", dataset_btc['avg_compound_s'].var())
-x = dataset_btc.loc[:, ["avg_pos_s", "avg_news_compound","open","low","high", "close"]].values
+x = dataset_btc.loc[:, ["number_comments_s"]].values
 y = dataset_btc.loc[:, "label"].values
 
 print("With comment scores")

@@ -67,7 +67,7 @@ def write_from_db():
 	query_end_date =datetime(2020,5,1).replace(tzinfo=timezone.utc).timestamp()
 	file = open('dataset.csv', 'w', newline='')
 	writer = csv.writer(file)
-	writer.writerow(["time", "neg_ns", "pos_ns", "neutral_ns", "comp_ns","neg_s", "pos_s", "neu_s","comp_s","coin","open", "close", "high", "low"])
+	writer.writerow(["time", "neg_ns", "pos_ns", "neutral_ns", "sum_pos_ns", "sum_neg_ns","comp_ns","neg_s", "pos_s", "neu_s", "sum_pos_s", "sum_neg_s","comp_s","coin","open", "close", "high", "low"])
 	#iterate every cryptocoin over every day in timespan
 	for crypto in crypto_subreddits.keys():
 		for start_time in range(int(query_start_date), int(query_end_date), 86400):
@@ -79,6 +79,10 @@ def write_from_db():
 			positive_comments_s = 0
 			neutral_comments_s = 0
 			sum_compound_s = 0
+			sum_pos_ns = 0
+			sum_neg_ns = 0
+			sum_pos_s = 0
+			sum_neg_s = 0
 
 			for subreddit_regex in crypto_subreddits[crypto]:
 				#query for all the comments
@@ -94,8 +98,10 @@ def write_from_db():
 					compound = comment["compound"]
 					sum_compound_ns += compound
 					if compound >= 0.05:
+						sum_pos_ns += compound
 						positive_comments_ns += 1
 					elif compound <= -0.05:
+						sum_neg_ns += compound
 						negative_comments_ns += 1
 					else:
 						neutral_comments_ns += 1
@@ -106,16 +112,20 @@ def write_from_db():
 						if score > 0:
 							if compound >= 0.05:
 								positive_comments_s += score
+								sum_pos_s += compound*score
 							elif compound <= -0.05:
 								negative_comments_s += score
+								sum_neg_s += compound*score
 							else:
 								neutral_comments_s += score
 							sum_compound_s += compound * score
 
 						if compound >= 0.05:
 							positive_comments_s += 1
+							sum_pos_s += compound
 						elif compound <= -0.05:
 							negative_comments_s += 1
+							sum_neg_s += compound
 						else:
 							neutral_comments_s += 1
 						sum_compound_s += compound
@@ -130,8 +140,7 @@ def write_from_db():
 			close = market_data["close"]
 			high = market_data["high"]
 			low = market_data["low"]
-			
-			writer.writerow([start_time, negative_comments_ns, positive_comments_ns, neutral_comments_ns, sum_compound_ns, negative_comments_s, positive_comments_s, neutral_comments_s, sum_compound_s, crypto,op,close,high,low,number_of_submissions])
+			writer.writerow([start_time, negative_comments_ns, positive_comments_ns, neutral_comments_ns, sum_pos_ns, sum_neg_ns, sum_compound_ns, negative_comments_s, positive_comments_s, neutral_comments_s, sum_pos_s, sum_neg_s,sum_compound_s, crypto,op,close,high,low])
 	file.close()
 
 def add_number_of_submissions():
@@ -158,7 +167,7 @@ def add_number_of_submissions():
 	print(df)
 
 def add_labels():
-	df = pandas.read_csv('./datasets/dataset_s.csv')
+	df = pandas.read_csv('./datasets/dataset.csv')
 	for crypto in crypto_subreddits.keys():
 		subset = df[df['coin'] == crypto]
 		subset.sort_values(by=['time'], inplace=True)

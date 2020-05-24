@@ -1,0 +1,111 @@
+Results for Support Vector Classifier applied to all reddit data, news data and market data
+The models are cross validated using Time Series Split
+RIPPLE
+	FEATURES: number_comments_s
+		Accuracies through iterations: 0.562,0.479,0.574,0.702,0.511
+		fit_time: 0.00 (+/- 0.00)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.57 (+/- 0.15)
+		test_f1_macro: 0.53 (+/- 0.22)
+		test_precision_macro: 0.62 (+/- 0.20)
+		test_recall_macro: 0.57 (+/- 0.15)
+
+	FEATURES: avg_compound_s
+		Accuracies through iterations: 0.667,0.604,0.489,0.617,0.596
+		fit_time: 0.00 (+/- 0.00)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.59 (+/- 0.12)
+		test_f1_macro: 0.59 (+/- 0.13)
+		test_precision_macro: 0.60 (+/- 0.12)
+		test_recall_macro: 0.59 (+/- 0.12)
+
+	FEATURES: avg_compound_s,number_comments_s
+		Accuracies through iterations: 0.542,0.625,0.489,0.681,0.596
+		fit_time: 0.00 (+/- 0.00)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.59 (+/- 0.13)
+		test_f1_macro: 0.58 (+/- 0.15)
+		test_precision_macro: 0.59 (+/- 0.14)
+		test_recall_macro: 0.59 (+/- 0.13)
+
+	FEATURES: avg_pos_s
+		Accuracies through iterations: 0.417,0.500,0.426,0.553,0.426
+		fit_time: 0.00 (+/- 0.00)
+		score_time: 0.00 (+/- 0.00)
+		test_accuracy: 0.46 (+/- 0.11)
+		test_f1_macro: 0.40 (+/- 0.06)
+		test_precision_macro: 0.47 (+/- 0.18)
+		test_recall_macro: 0.46 (+/- 0.10)
+
+	FEATURES: ratio_pos_s,ratio_neg_s
+		Accuracies through iterations: 0.521,0.479,0.468,0.660,0.596
+		fit_time: 0.00 (+/- 0.00)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.54 (+/- 0.15)
+		test_f1_macro: 0.54 (+/- 0.14)
+		test_precision_macro: 0.55 (+/- 0.15)
+		test_recall_macro: 0.55 (+/- 0.15)
+
+	FEATURES: avg_news_compound
+		Accuracies through iterations: 0.562,0.542,0.681,0.489,0.553
+		fit_time: 0.00 (+/- 0.00)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.57 (+/- 0.13)
+		test_f1_macro: 0.53 (+/- 0.13)
+		test_precision_macro: 0.59 (+/- 0.16)
+		test_recall_macro: 0.57 (+/- 0.12)
+
+	FEATURES: avg_news_compound,avg_compound_s
+		Accuracies through iterations: 0.521,0.583,0.489,0.489,0.489
+		fit_time: 0.00 (+/- 0.00)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.51 (+/- 0.07)
+		test_f1_macro: 0.50 (+/- 0.08)
+		test_precision_macro: 0.51 (+/- 0.08)
+		test_recall_macro: 0.51 (+/- 0.08)
+
+	FEATURES: number_comments_s,avg_news_compound,avg_compound_s
+		Accuracies through iterations: 0.604,0.625,0.553,0.511,0.532
+		fit_time: 0.00 (+/- 0.00)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.56 (+/- 0.09)
+		test_f1_macro: 0.55 (+/- 0.11)
+		test_precision_macro: 0.57 (+/- 0.09)
+		test_recall_macro: 0.56 (+/- 0.09)
+
+	FEATURES: avg_pos_s,avg_news_compound
+		Accuracies through iterations: 0.458,0.562,0.638,0.489,0.553
+		fit_time: 0.00 (+/- 0.00)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.54 (+/- 0.13)
+		test_f1_macro: 0.53 (+/- 0.14)
+		test_precision_macro: 0.54 (+/- 0.13)
+		test_recall_macro: 0.54 (+/- 0.13)
+
+	FEATURES: ratio_pos_s,ratio_neg_s,avg_news_compound
+		Accuracies through iterations: 0.458,0.562,0.532,0.489,0.553
+		fit_time: 0.00 (+/- 0.00)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.52 (+/- 0.08)
+		test_f1_macro: 0.51 (+/- 0.08)
+		test_precision_macro: 0.52 (+/- 0.09)
+		test_recall_macro: 0.52 (+/- 0.08)
+
+	FEATURES: avg_news_compound,avg_compound_s,open,close,high,low
+		Accuracies through iterations: 0.479,0.479,0.404,0.511,0.511
+		fit_time: 0.00 (+/- 0.00)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.48 (+/- 0.08)
+		test_f1_macro: 0.41 (+/- 0.14)
+		test_precision_macro: 0.42 (+/- 0.22)
+		test_recall_macro: 0.48 (+/- 0.09)
+
+	FEATURES: avg_news_compound,avg_pos_s,open,close,high,low
+		Accuracies through iterations: 0.542,0.625,0.511,0.447,0.511
+		fit_time: 0.00 (+/- 0.00)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.53 (+/- 0.12)
+		test_f1_macro: 0.51 (+/- 0.12)
+		test_precision_macro: 0.53 (+/- 0.12)
+		test_recall_macro: 0.53 (+/- 0.12)
+

@@ -1,0 +1,120 @@
+Results for Support Vector Classifier applied to all reddit data, news data and market data
+The models are cross validated using Time Series Split
+LITECOIN
+	FEATURES: number_comments_ns
+		Accuracies through iterations: 0.562,0.511,0.489,0.511,0.511
+		fit_time: 0.12 (+/- 0.03)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.52 (+/- 0.05)
+		test_f1_macro: 0.36 (+/- 0.10)
+		test_precision_macro: 0.33 (+/- 0.32)
+		test_recall_macro: 0.50 (+/- 0.04)
+
+	FEATURES: avg_compound_ns
+		Accuracies through iterations: 0.521,0.511,0.489,0.511,0.426
+		fit_time: 0.15 (+/- 0.05)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.49 (+/- 0.07)
+		test_f1_macro: 0.35 (+/- 0.04)
+		test_precision_macro: 0.28 (+/- 0.11)
+		test_recall_macro: 0.48 (+/- 0.06)
+
+	FEATURES: avg_compound_ns,number_comments_ns
+		Accuracies through iterations: 0.438,0.489,0.511,0.383,0.617
+		fit_time: 0.13 (+/- 0.03)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.49 (+/- 0.16)
+		test_f1_macro: 0.48 (+/- 0.16)
+		test_precision_macro: 0.49 (+/- 0.16)
+		test_recall_macro: 0.49 (+/- 0.16)
+
+	FEATURES: avg_pos_ns
+		Accuracies through iterations: 0.521,0.511,0.489,0.511,0.489
+		fit_time: 0.12 (+/- 0.04)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.50 (+/- 0.03)
+		test_f1_macro: 0.34 (+/- 0.01)
+		test_precision_macro: 0.25 (+/- 0.01)
+		test_recall_macro: 0.49 (+/- 0.02)
+
+	FEATURES: ratio_pos_ns,ratio_neg_ns
+		Accuracies through iterations: 0.521,0.489,0.447,0.574,0.596
+		fit_time: 0.13 (+/- 0.04)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.53 (+/- 0.11)
+		test_f1_macro: 0.52 (+/- 0.11)
+		test_precision_macro: 0.53 (+/- 0.11)
+		test_recall_macro: 0.53 (+/- 0.11)
+
+	FEATURES: avg_news_compound
+		Accuracies through iterations: 0.521,0.511,0.511,0.511,0.511
+		fit_time: 0.16 (+/- 0.07)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.51 (+/- 0.01)
+		test_f1_macro: 0.34 (+/- 0.00)
+		test_precision_macro: 0.26 (+/- 0.00)
+		test_recall_macro: 0.50 (+/- 0.00)
+
+	FEATURES: avg_news_compound,avg_compound_ns
+		Accuracies through iterations: 0.500,0.468,0.447,0.532,0.638
+		fit_time: 0.13 (+/- 0.03)
+		score_time: 0.00 (+/- 0.00)
+		test_accuracy: 0.52 (+/- 0.13)
+		test_f1_macro: 0.51 (+/- 0.14)
+		test_precision_macro: 0.52 (+/- 0.13)
+		test_recall_macro: 0.52 (+/- 0.13)
+
+	FEATURES: number_comments_ns,avg_news_compound,avg_compound_ns
+		Accuracies through iterations: 0.521,0.532,0.447,0.489,0.489
+		fit_time: 0.15 (+/- 0.01)
+		score_time: 0.00 (+/- 0.00)
+		test_accuracy: 0.50 (+/- 0.06)
+		test_f1_macro: 0.39 (+/- 0.07)
+		test_precision_macro: 0.44 (+/- 0.24)
+		test_recall_macro: 0.49 (+/- 0.06)
+
+	FEATURES: avg_pos_ns,avg_news_compound
+		Accuracies through iterations: 0.521,0.511,0.596,0.511,0.511
+		fit_time: 0.12 (+/- 0.03)
+		score_time: 0.00 (+/- 0.00)
+		test_accuracy: 0.53 (+/- 0.07)
+		test_f1_macro: 0.52 (+/- 0.07)
+		test_precision_macro: 0.53 (+/- 0.07)
+		test_recall_macro: 0.53 (+/- 0.06)
+
+	FEATURES: ratio_pos_ns,ratio_neg_ns,avg_news_compound
+		Accuracies through iterations: 0.396,0.596,0.511,0.468,0.574
+		fit_time: 0.20 (+/- 0.06)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.51 (+/- 0.15)
+		test_f1_macro: 0.44 (+/- 0.15)
+		test_precision_macro: 0.52 (+/- 0.26)
+		test_recall_macro: 0.50 (+/- 0.15)
+
+	FEATURES: avg_news_compound,avg_compound_ns,open,close,high,low
+		Accuracies through iterations: 0.562,0.617,0.426,0.511,0.511
+		fit_time: 0.18 (+/- 0.04)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.53 (+/- 0.13)
+		test_f1_macro: 0.47 (+/- 0.22)
+		test_precision_macro: 0.56 (+/- 0.28)
+		test_recall_macro: 0.53 (+/- 0.12)
+
+	FEATURES: avg_news_compound,avg_pos_ns,open,close,high,low
+		Accuracies through iterations: 0.542,0.617,0.383,0.511,0.511
+		fit_time: 0.19 (+/- 0.04)
+		score_time: 0.00 (+/- 0.00)
+		test_accuracy: 0.51 (+/- 0.15)
+		test_f1_macro: 0.46 (+/- 0.24)
+		test_precision_macro: 0.53 (+/- 0.36)
+		test_recall_macro: 0.52 (+/- 0.15)
+
+	FEATURES: avg_pos_ns,avg_neg_ns,high,low,close,open
+		Accuracies through iterations: 0.688,0.532,0.468,0.617,0.511
+		fit_time: 0.23 (+/- 0.11)
+		score_time: 0.01 (+/- 0.00)
+		test_accuracy: 0.56 (+/- 0.16)
+		test_f1_macro: 0.51 (+/- 0.24)
+		test_precision_macro: 0.61 (+/- 0.21)
+		test_recall_macro: 0.57 (+/- 0.15)
+

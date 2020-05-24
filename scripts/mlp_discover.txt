@@ -1,0 +1,39 @@
+FEATURES['number_comments_ns']
+Best parameters found:
+{'activation': 'tanh', 'alpha': 0.0002, 'hidden_layer_sizes': (10,), 'learning_rate': 'adaptive', 'momentum': 0.1, 'solver': 'adam'}
+FEATURES['avg_compound_ns']
+Best parameters found:
+{'activation': 'tanh', 'alpha': 0.0002, 'hidden_layer_sizes': (30,), 'learning_rate': 'adaptive', 'momentum': 0.9, 'solver': 'sgd'}
+FEATURES['avg_compound_ns', 'number_comments_ns']
+Best parameters found:
+{'activation': 'tanh', 'alpha': 0.0003, 'hidden_layer_sizes': (5,), 'learning_rate': 'adaptive', 'momentum': 0.9, 'solver': 'sgd'}
+FEATURES['avg_pos_ns']
+Best parameters found:
+{'activation': 'tanh', 'alpha': 0.0002, 'hidden_layer_sizes': (10,), 'learning_rate': 'adaptive', 'momentum': 0.1, 'solver': 'sgd'}
+FEATURES['ratio_pos_ns', 'ratio_neg_ns']
+Best parameters found:
+{'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (20,), 'learning_rate': 'adaptive', 'momentum': 0.9, 'solver': 'sgd'}
+FEATURES['avg_news_compound']
+Best parameters found:
+{'activation': 'tanh', 'alpha': 0.0003, 'hidden_layer_sizes': (20,), 'learning_rate': 'adaptive', 'momentum': 0.1, 'solver': 'adam'}
+FEATURES['avg_news_compound', 'avg_compound_ns']
+Best parameters found:
+{'activation': 'tanh', 'alpha': 0.0003, 'hidden_layer_sizes': (100,), 'learning_rate': 'constant', 'momentum': 0.5, 'solver': 'adam'}
+FEATURES['number_comments_ns', 'avg_news_compound', 'avg_compound_ns']
+Best parameters found:
+{'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'learning_rate': 'adaptive', 'momentum': 0.9, 'solver': 'adam'}
+FEATURES['avg_pos_ns', 'avg_news_compound']
+Best parameters found:
+{'activation': 'tanh', 'alpha': 0.0002, 'hidden_layer_sizes': (10,), 'learning_rate': 'constant', 'momentum': 0.5, 'solver': 'sgd'}
+FEATURES['ratio_pos_ns', 'ratio_neg_ns', 'avg_news_compound']
+Best parameters found:
+{'activation': 'tanh', 'alpha': 0.0002, 'hidden_layer_sizes': (20,), 'learning_rate': 'adaptive', 'momentum': 0.9, 'solver': 'adam'}
+FEATURES['avg_news_compound', 'avg_compound_ns', 'open', 'close', 'high', 'low']
+Best parameters found:
+{'activation': 'tanh', 'alpha': 0.0003, 'hidden_layer_sizes': (5,), 'learning_rate': 'constant', 'momentum': 0.5, 'solver': 'sgd'}
+FEATURES['avg_news_compound', 'avg_pos_ns', 'open', 'close', 'high', 'low']
+Best parameters found:
+{'activation': 'tanh', 'alpha': 0.0003, 'hidden_layer_sizes': (20,), 'learning_rate': 'constant', 'momentum': 0.1, 'solver': 'sgd'}
+FEATURES['avg_pos_ns', 'avg_neg_ns', 'high', 'low', 'close', 'open']
+Best parameters found:
+{'activation': 'tanh', 'alpha': 0.0003, 'hidden_layer_sizes': (10,), 'learning_rate': 'adaptive', 'momentum': 0.1, 'solver': 'sgd'}

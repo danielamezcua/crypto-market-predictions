@@ -1,9 +1,9 @@
-Results for Support Vector Classifier applied to all reddit data, news data and market data
+Results for mlpapplied filtered reddit data, news data and market data
 The models are cross validated using Time Series Split
 ETHEREUM
 	FEATURES: number_comments_ns
 		Accuracies through iterations: 0.531,0.458,0.479,0.542,0.333
-		fit_time: 0.15 (+/- 0.03)
+		fit_time: 0.15 (+/- 0.08)
 		score_time: 0.01 (+/- 0.00)
 		test_accuracy: 0.47 (+/- 0.15)
 		test_f1_macro: 0.40 (+/- 0.18)
@@ -12,7 +12,7 @@ ETHEREUM
 
 	FEATURES: avg_compound_ns
 		Accuracies through iterations: 0.551,0.562,0.479,0.333,0.562
-		fit_time: 0.16 (+/- 0.05)
+		fit_time: 0.20 (+/- 0.13)
 		score_time: 0.01 (+/- 0.01)
 		test_accuracy: 0.50 (+/- 0.18)
 		test_f1_macro: 0.45 (+/- 0.21)
@@ -20,17 +20,17 @@ ETHEREUM
 		test_recall_macro: 0.50 (+/- 0.18)
 
 	FEATURES: avg_compound_ns,number_comments_ns
-		Accuracies through iterations: 0.449,0.438,0.333,0.500,0.417
-		fit_time: 0.20 (+/- 0.03)
+		Accuracies through iterations: 0.449,0.438,0.333,0.479,0.417
+		fit_time: 0.13 (+/- 0.13)
 		score_time: 0.01 (+/- 0.00)
-		test_accuracy: 0.43 (+/- 0.11)
-		test_f1_macro: 0.39 (+/- 0.14)
-		test_precision_macro: 0.39 (+/- 0.14)
-		test_recall_macro: 0.43 (+/- 0.10)
+		test_accuracy: 0.42 (+/- 0.10)
+		test_f1_macro: 0.38 (+/- 0.12)
+		test_precision_macro: 0.39 (+/- 0.12)
+		test_recall_macro: 0.42 (+/- 0.09)
 
 	FEATURES: avg_pos_ns
 		Accuracies through iterations: 0.571,0.354,0.604,0.417,0.583
-		fit_time: 0.15 (+/- 0.04)
+		fit_time: 0.12 (+/- 0.02)
 		score_time: 0.00 (+/- 0.00)
 		test_accuracy: 0.51 (+/- 0.20)
 		test_f1_macro: 0.48 (+/- 0.21)
@@ -39,8 +39,8 @@ ETHEREUM
 
 	FEATURES: ratio_pos_ns,ratio_neg_ns
 		Accuracies through iterations: 0.612,0.417,0.438,0.438,0.521
-		fit_time: 0.13 (+/- 0.03)
-		score_time: 0.01 (+/- 0.00)
+		fit_time: 0.13 (+/- 0.04)
+		score_time: 0.01 (+/- 0.04)
 		test_accuracy: 0.48 (+/- 0.15)
 		test_f1_macro: 0.44 (+/- 0.18)
 		test_precision_macro: 0.47 (+/- 0.21)
@@ -48,7 +48,7 @@ ETHEREUM
 
 	FEATURES: avg_news_compound
 		Accuracies through iterations: 0.490,0.479,0.479,0.458,0.375
-		fit_time: 0.15 (+/- 0.01)
+		fit_time: 0.20 (+/- 0.08)
 		score_time: 0.01 (+/- 0.00)
 		test_accuracy: 0.46 (+/- 0.08)
 		test_f1_macro: 0.36 (+/- 0.10)
@@ -57,8 +57,8 @@ ETHEREUM
 
 	FEATURES: avg_news_compound,avg_compound_ns
 		Accuracies through iterations: 0.510,0.500,0.479,0.458,0.354
-		fit_time: 0.13 (+/- 0.03)
-		score_time: 0.00 (+/- 0.00)
+		fit_time: 0.16 (+/- 0.07)
+		score_time: 0.01 (+/- 0.00)
 		test_accuracy: 0.46 (+/- 0.11)
 		test_f1_macro: 0.45 (+/- 0.10)
 		test_precision_macro: 0.46 (+/- 0.11)
@@ -66,7 +66,7 @@ ETHEREUM
 
 	FEATURES: number_comments_ns,avg_news_compound,avg_compound_ns
 		Accuracies through iterations: 0.490,0.500,0.438,0.417,0.479
-		fit_time: 0.18 (+/- 0.04)
+		fit_time: 0.21 (+/- 0.11)
 		score_time: 0.01 (+/- 0.00)
 		test_accuracy: 0.46 (+/- 0.06)
 		test_f1_macro: 0.38 (+/- 0.10)
@@ -75,8 +75,8 @@ ETHEREUM
 
 	FEATURES: avg_pos_ns,avg_news_compound
 		Accuracies through iterations: 0.531,0.562,0.458,0.521,0.396
-		fit_time: 0.15 (+/- 0.03)
-		score_time: 0.00 (+/- 0.00)
+		fit_time: 0.20 (+/- 0.16)
+		score_time: 0.01 (+/- 0.00)
 		test_accuracy: 0.49 (+/- 0.12)
 		test_f1_macro: 0.46 (+/- 0.12)
 		test_precision_macro: 0.49 (+/- 0.14)
@@ -93,8 +93,8 @@ ETHEREUM
 
 	FEATURES: avg_news_compound,avg_compound_ns,open,close,high,low
 		Accuracies through iterations: 0.531,0.458,0.479,0.312,0.479
-		fit_time: 0.16 (+/- 0.01)
-		score_time: 0.01 (+/- 0.00)
+		fit_time: 0.17 (+/- 0.02)
+		score_time: 0.00 (+/- 0.00)
 		test_accuracy: 0.45 (+/- 0.15)
 		test_f1_macro: 0.34 (+/- 0.11)
 		test_precision_macro: 0.37 (+/- 0.27)
@@ -102,7 +102,7 @@ ETHEREUM
 
 	FEATURES: avg_news_compound,avg_pos_ns,open,close,high,low
 		Accuracies through iterations: 0.510,0.500,0.479,0.375,0.479
-		fit_time: 0.18 (+/- 0.02)
+		fit_time: 0.18 (+/- 0.05)
 		score_time: 0.01 (+/- 0.00)
 		test_accuracy: 0.47 (+/- 0.10)
 		test_f1_macro: 0.35 (+/- 0.05)
@@ -111,8 +111,8 @@ ETHEREUM
 
 	FEATURES: avg_pos_ns,avg_neg_ns,high,low,close,open
 		Accuracies through iterations: 0.531,0.521,0.521,0.375,0.500
-		fit_time: 0.17 (+/- 0.01)
-		score_time: 0.01 (+/- 0.00)
+		fit_time: 0.16 (+/- 0.01)
+		score_time: 0.00 (+/- 0.00)
 		test_accuracy: 0.49 (+/- 0.12)
 		test_f1_macro: 0.38 (+/- 0.07)
 		test_precision_macro: 0.48 (+/- 0.34)

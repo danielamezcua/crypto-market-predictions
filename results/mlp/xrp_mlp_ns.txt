@@ -1,10 +1,10 @@
-Results for Support Vector Classifier applied to all reddit data, news data and market data
+Results for mlpapplied filtered reddit data, news data and market data
 The models are cross validated using Time Series Split
 RIPPLE
 	FEATURES: number_comments_ns
 		Accuracies through iterations: 0.500,0.500,0.489,0.489,0.511
-		fit_time: 0.14 (+/- 0.03)
-		score_time: 0.00 (+/- 0.00)
+		fit_time: 0.15 (+/- 0.02)
+		score_time: 0.01 (+/- 0.00)
 		test_accuracy: 0.50 (+/- 0.02)
 		test_f1_macro: 0.33 (+/- 0.01)
 		test_precision_macro: 0.25 (+/- 0.01)
@@ -12,8 +12,8 @@ RIPPLE
 
 	FEATURES: avg_compound_ns
 		Accuracies through iterations: 0.500,0.500,0.489,0.468,0.532
-		fit_time: 0.14 (+/- 0.03)
-		score_time: 0.01 (+/- 0.00)
+		fit_time: 0.13 (+/- 0.03)
+		score_time: 0.00 (+/- 0.00)
 		test_accuracy: 0.50 (+/- 0.04)
 		test_f1_macro: 0.36 (+/- 0.07)
 		test_precision_macro: 0.39 (+/- 0.40)
@@ -22,7 +22,7 @@ RIPPLE
 	FEATURES: avg_compound_ns,number_comments_ns
 		Accuracies through iterations: 0.438,0.542,0.468,0.553,0.532
 		fit_time: 0.13 (+/- 0.03)
-		score_time: 0.01 (+/- 0.00)
+		score_time: 0.00 (+/- 0.00)
 		test_accuracy: 0.51 (+/- 0.09)
 		test_f1_macro: 0.50 (+/- 0.09)
 		test_precision_macro: 0.51 (+/- 0.10)
@@ -30,7 +30,7 @@ RIPPLE
 
 	FEATURES: avg_pos_ns
 		Accuracies through iterations: 0.438,0.500,0.511,0.447,0.574
-		fit_time: 0.12 (+/- 0.03)
+		fit_time: 0.12 (+/- 0.01)
 		score_time: 0.00 (+/- 0.00)
 		test_accuracy: 0.49 (+/- 0.10)
 		test_f1_macro: 0.43 (+/- 0.15)
@@ -39,8 +39,8 @@ RIPPLE
 
 	FEATURES: ratio_pos_ns,ratio_neg_ns
 		Accuracies through iterations: 0.542,0.479,0.319,0.489,0.511
-		fit_time: 0.28 (+/- 0.25)
-		score_time: 0.01 (+/- 0.01)
+		fit_time: 0.12 (+/- 0.03)
+		score_time: 0.00 (+/- 0.00)
 		test_accuracy: 0.47 (+/- 0.15)
 		test_f1_macro: 0.45 (+/- 0.16)
 		test_precision_macro: 0.46 (+/- 0.16)
@@ -48,8 +48,8 @@ RIPPLE
 
 	FEATURES: avg_news_compound
 		Accuracies through iterations: 0.500,0.500,0.489,0.489,0.426
-		fit_time: 0.46 (+/- 0.20)
-		score_time: 0.01 (+/- 0.01)
+		fit_time: 0.14 (+/- 0.03)
+		score_time: 0.01 (+/- 0.00)
 		test_accuracy: 0.48 (+/- 0.06)
 		test_f1_macro: 0.34 (+/- 0.03)
 		test_precision_macro: 0.27 (+/- 0.11)
@@ -57,25 +57,25 @@ RIPPLE
 
 	FEATURES: avg_news_compound,avg_compound_ns
 		Accuracies through iterations: 0.521,0.604,0.489,0.447,0.489
-		fit_time: 0.19 (+/- 0.14)
-		score_time: 0.01 (+/- 0.00)
+		fit_time: 0.12 (+/- 0.02)
+		score_time: 0.00 (+/- 0.00)
 		test_accuracy: 0.51 (+/- 0.11)
 		test_f1_macro: 0.50 (+/- 0.11)
 		test_precision_macro: 0.51 (+/- 0.12)
 		test_recall_macro: 0.51 (+/- 0.11)
 
 	FEATURES: number_comments_ns,avg_news_compound,avg_compound_ns
-		Accuracies through iterations: 0.479,0.521,0.383,0.489,0.489
-		fit_time: 0.17 (+/- 0.04)
+		Accuracies through iterations: 0.479,0.521,0.383,0.532,0.489
+		fit_time: 0.14 (+/- 0.04)
 		score_time: 0.00 (+/- 0.00)
-		test_accuracy: 0.47 (+/- 0.09)
-		test_f1_macro: 0.38 (+/- 0.09)
-		test_precision_macro: 0.45 (+/- 0.13)
-		test_recall_macro: 0.47 (+/- 0.09)
+		test_accuracy: 0.48 (+/- 0.11)
+		test_f1_macro: 0.39 (+/- 0.09)
+		test_precision_macro: 0.50 (+/- 0.28)
+		test_recall_macro: 0.48 (+/- 0.11)
 
 	FEATURES: avg_pos_ns,avg_news_compound
 		Accuracies through iterations: 0.417,0.521,0.553,0.511,0.617
-		fit_time: 0.13 (+/- 0.04)
+		fit_time: 0.15 (+/- 0.03)
 		score_time: 0.01 (+/- 0.00)
 		test_accuracy: 0.52 (+/- 0.13)
 		test_f1_macro: 0.51 (+/- 0.14)
@@ -84,7 +84,7 @@ RIPPLE
 
 	FEATURES: ratio_pos_ns,ratio_neg_ns,avg_news_compound
 		Accuracies through iterations: 0.458,0.500,0.511,0.511,0.511
-		fit_time: 0.18 (+/- 0.02)
+		fit_time: 0.16 (+/- 0.01)
 		score_time: 0.01 (+/- 0.00)
 		test_accuracy: 0.50 (+/- 0.04)
 		test_f1_macro: 0.44 (+/- 0.10)
@@ -93,7 +93,7 @@ RIPPLE
 
 	FEATURES: avg_news_compound,avg_compound_ns,open,close,high,low
 		Accuracies through iterations: 0.521,0.583,0.468,0.468,0.489
-		fit_time: 0.19 (+/- 0.04)
+		fit_time: 0.16 (+/- 0.01)
 		score_time: 0.01 (+/- 0.00)
 		test_accuracy: 0.51 (+/- 0.09)
 		test_f1_macro: 0.43 (+/- 0.20)
@@ -102,8 +102,8 @@ RIPPLE
 
 	FEATURES: avg_news_compound,avg_pos_ns,open,close,high,low
 		Accuracies through iterations: 0.542,0.625,0.489,0.468,0.489
-		fit_time: 0.19 (+/- 0.05)
-		score_time: 0.01 (+/- 0.00)
+		fit_time: 0.16 (+/- 0.02)
+		score_time: 0.00 (+/- 0.00)
 		test_accuracy: 0.52 (+/- 0.11)
 		test_f1_macro: 0.44 (+/- 0.22)
 		test_precision_macro: 0.43 (+/- 0.32)
@@ -111,8 +111,8 @@ RIPPLE
 
 	FEATURES: avg_pos_ns,avg_neg_ns,high,low,close,open
 		Accuracies through iterations: 0.562,0.438,0.489,0.511,0.511
-		fit_time: 0.16 (+/- 0.03)
-		score_time: 0.01 (+/- 0.00)
+		fit_time: 0.20 (+/- 0.10)
+		score_time: 0.01 (+/- 0.01)
 		test_accuracy: 0.50 (+/- 0.08)
 		test_f1_macro: 0.43 (+/- 0.16)
 		test_precision_macro: 0.50 (+/- 0.33)

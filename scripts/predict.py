@@ -38,6 +38,17 @@ def get_estimator(selection):
 	elif selection == MULTILAYER_PERCEPTRON:
 		return MLPClassifier(hidden_layer_sizes=(10,), learning_rate="adaptive", alpha=0.002,activation = 'tanh',solver='sgd',random_state=1)
 
+def input_estimator():
+	print("Selecciona un algoritmo para desarrollar los modelos: ")
+	print("1. RANDOM FOREST")
+	print("2. SUPPORT VECTOR MACHINE")
+	print("3. MULTILAYER PERCEPTRON")
+	selected = input().strip()
+	while selected.strip() != "1" and selected != "2" and selected != "3":
+		print("Opción inválida. Selecciona 1, 2 ó 3")
+		selected = input().strip()
+	return int(selected)
+
 cryptos = {
 	"btc": "BITCOIN",
 	"xrp": "RIPPLE",
@@ -45,9 +56,14 @@ cryptos = {
 	"eth": "ETHEREUM"
 }
 
+estimator_names = {
+	MULTILAYER_PERCEPTRON:  "mlp",
+	RANDOM_FOREST: "rf",
+	SUPPORT_VECTOR_CLASSIFIER: "svm"
+}
+
 scoring = ['accuracy','f1_macro','precision_macro','recall_macro']
 label = "label"
-suffix_result_filenames = "_mlp_ns.txt"
 sc = StandardScaler()
 
 # with comment scores
@@ -64,18 +80,23 @@ features_selection = [["number_comments_ns"],["avg_compound_ns"],["avg_compound_
 ["ratio_pos_ns","ratio_neg_ns","avg_news_compound"], ["avg_news_compound","avg_compound_ns","open","close","high","low"],
 ["avg_news_compound","avg_pos_ns","open","close","high","low"], ["avg_pos_ns","avg_neg_ns","high","low","close","open"]]
 
-selected_estimator = MULTILAYER_PERCEPTRON
+selected_estimator = input_estimator()
+estimator_name = estimator_names[selected_estimator]
+
 for crypto in cryptos.keys():
+	#desired filename example: eth_mlp_ns.txt
+	suffix_result_filename = "_"+estimator_name+"_ns.txt"
 	filename_dataset = crypto+"_news.csv"
-	filename_result = crypto+suffix_result_filenames
+	filename_result = crypto+suffix_result_filename
+
 	#open result file
-	f = open("../results/mlp/"+filename_result,"w")
-	f.write("Results for Support Vector Classifier applied to all reddit data, news data and market data\n")
+	f = open("../results/"+estimator_name+"/"+filename_result,"w")
+	f.write("Results for " + estimator_name +  "applied filtered reddit data, news data and market data\n")
 	f.write("The models are cross validated using Time Series Split\n")
 	f.write(cryptos[crypto] + "\n")
 
 	#load dataset and add extra features
-	dataset = pd.read_csv("./datasets/" + crypto + "_news.csv")
+	dataset = pd.read_csv("../datasets/" + crypto + "_news.csv")
 	add_extra_features(dataset)
 
 	#for each selection of features, train and validate the model

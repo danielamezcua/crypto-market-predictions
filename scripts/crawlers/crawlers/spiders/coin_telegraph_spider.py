@@ -146,7 +146,7 @@ class CoinTelegraphSpider(scrapy.Spider):
 
 class CoinTelegraphSpiderBulk(scrapy.Spider):
     name = "coin_telegraph_bulk"
-    pages = {'bitcoin':0,'ethereum': 10, 'ripple': 4,'litecoin': 5}
+    pages = {'bitcoin':277,'ethereum': 106, 'ripple': 38,'litecoin': 36}
 
     def get_headers(self):
         headers = {
@@ -164,8 +164,10 @@ class CoinTelegraphSpiderBulk(scrapy.Spider):
     #request for the api for a query
     def parse_search_api_response(self, response):
         json_response = json.loads(response.body_as_unicode())
+        print(len(json_response["posts"]))
         for new in json_response["posts"]:
-            yield response.follow(new["url"], headers=self.get_headers(), callback=self.parse_new)
+            if new: 
+                yield response.follow(new["url"], headers=self.get_headers(), callback=self.parse_new)
 
     def parse_new(self,response):
         if response.status != 200:
@@ -183,8 +185,7 @@ class CoinTelegraphSpiderBulk(scrapy.Spider):
                     (@class, "post__article")]/@id').get().split('-')[1])
                 author = post.css('div.post-page__article article.post__article div.post-meta\
                     div.post-meta__author a.post-meta__author-link div::text').get().strip()
-                datetime = post.css('div.post-page__article article.post__article div.post-meta \
-                    div.post-meta__publish-date::text').get().strip()              
+                datetime = post.css('div.post-page__article article.post__article div.post-meta div.post-meta__publish-date time::text').get().strip()              
                 datetime = dt.strptime(datetime, DATETIME_FORMAT_INPUT)
                 title = post.css('div.post-page__article article.post__article h1.post__title::text').get().strip()
                 description = post.css('div.post-page__article article.post__article p.post__lead::text').get().strip()

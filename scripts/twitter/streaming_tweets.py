@@ -1,4 +1,4 @@
-from TwitterAPI import TwitterAPI
+from TwitterAPI import TwitterAPI, TwitterRequestError, TwitterConnectionError
 from twitter_mongo import MongoConnectionTweets
 from datetime import datetime
 import re
@@ -27,7 +27,7 @@ def parse_retweet(item):
     tweet["location"] = item["user"]["location"]
     tweet["retweeted"] = True
     tweet["lang"] = item["lang"]
-    
+
     tweet["retweet_id"] = item["retweeted_status"]["id"]
 
     #look if id of the original tweets is already in the database
@@ -41,6 +41,8 @@ def parse_retweet(item):
 def parse_tweet(item):
     tweet = {}
     tweet["_id"] = item["id"]
+
+    #check if this tweet isn't 
     if 'extended_tweet' not in item:
         tweet["content"] = item["text"]
     else:
@@ -58,7 +60,7 @@ def parse_tweet(item):
     return tweet
 
 def insert_tweet(item):
-    MongoConnectionTweets.insert_tweet(item)
+	MongoConnectionTweets.insert_tweet(item)
 
 def process_tweet(item):
     #add related curreny to tweet item

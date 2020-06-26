@@ -91,8 +91,7 @@ class CoinTelegraphSpider(scrapy.Spider):
                     (@class, "post__article")]/@id').get().split('-')[1])
                 author = post.css('div.post-page__article article.post__article div.post-meta\
                     div.post-meta__author a.post-meta__author-link div::text').get().strip()
-                datetime = post.css('div.post-page__article article.post__article div.post-meta \
-                    div.post-meta__publish-date::text').get().strip()              
+                datetime = post.css('div.post-page__article article.post__article div.post-meta div.post-meta__publish-date time::text').get().strip()              
                 datetime = dt.strptime(datetime, DATETIME_FORMAT_INPUT)
                 title = post.css('div.post-page__article article.post__article h1.post__title::text').get().strip()
                 description = post.css('div.post-page__article article.post__article p.post__lead::text').get().strip()

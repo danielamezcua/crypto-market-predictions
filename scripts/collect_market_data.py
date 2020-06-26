@@ -6,7 +6,7 @@ import pymongo
 
 DATABASE_NAME = "market_data"
 PRICES_COLLECTION = "prices"
-URL_CRYPTOCOMPARE_DAILY_PRICE = "https://min-api.cryptocompare.com/data/v2/histoday?&tsym=USD&limit=253&api_key="+secret.api_key_cryptocompare
+URL_CRYPTOCOMPARE_DAILY_PRICE = "https://min-api.cryptocompare.com/data/v2/histoday?&tsym=USD&limit=730&api_key="+secret.api_key_cryptocompare
 CRYPTO_COINS = ['ETH', 'BTC', 'XRP', 'LTC']
 MONGO_SERVICE = "mongodb://localhost:27017/"
 
@@ -16,7 +16,6 @@ mydb = myclient[DATABASE_NAME]
 prices_db = mydb[PRICES_COLLECTION]
 
 prices_info = []
-x = True
 for coin in CRYPTO_COINS:
 	url = URL_CRYPTOCOMPARE_DAILY_PRICE + "&fsym="+ coin
 	response = get(url=url)

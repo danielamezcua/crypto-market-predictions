@@ -1,8 +1,8 @@
-from .. import secret
 import praw
 import pprint
 import pymongo
 import requests
+import json
 import sys,os
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import secret
@@ -14,10 +14,6 @@ COMMENTS_COLLECTION = "comments"
 DATABASE_NAME = "reddit_data"
 LOG_FILE = "./logs.txt"
 MONGO_SERVICE = "mongodb://localhost:27017/"
-
-#specify which between which dates we want to retrieve info
-START_DATE_QUERY = date(2019,9,1)
-END_DATE_QUERY = date.today()
 
 def is_daily_discussion(id_subreddit, title):
 	""" 
@@ -54,12 +50,12 @@ def write_log(msg):
 
 def generate_dates(start,end):
 	""" 
-	Generator that yields range of dates from the starting date to the end date in epoch format
+	Generator that yields pairs of dates corresponding to a period of time of one day. 
 	Parameters: 
 	    start (date): The start date
 	    end (date): The end date
 	Returns: 
-	    int, int: the start date and end date in epoch
+	    int, int: the start date and end date as timestamp
 	"""
 	n_days = (end-start).days
 	for i in range(0,n_days):
@@ -68,6 +64,131 @@ def generate_dates(start,end):
 		end_epoch = int(datetime(day.year,day.month,day.day,23,59,59).timestamp())
 		yield start_epoch, end_epoch
 
+def daily_collect():
+	""" 
+	Triggers the fecthing of the data posted on the day that this
+	function is called. 
+	Parameters: 
+	   
+	Returns: 
+	    void
+	"""
+
+	day = date.today()
+	start_date = int(datetime(day.year,day.month,day.day,0,0,0).timestamp())
+	end_date = int(datetime(day.year,day.month,day.day,23,59,59).timestamp())
+	fetch_data(start_date,end_date)
+
+def bulk_collect():
+	""" 
+	Collects all data posted between two dates
+	Parameters: 
+	    
+	Returns: 
+	    void
+	"""
+	start_date_query = date(2019,1,13)
+	end_date_query = date(2019,9,1)
+	for start_date, end_date in generate_dates(start_date_query,end_date_query):
+		print(date.fromtimestamp(start_date))
+		fetch_data(start_date,end_date)
+
+def fetch_data(start_date,end_date):
+	""" 
+	Fetches data between two dates from the reddit api and saves it to the database. 
+	Parameters: 
+	    start (date): The start date
+	    end (date): The end date
+	Returns: 
+	    void
+	"""
+	for subreddit in subreddits:
+		write_log("Collecting submissions and comments from " + subreddit + "...")
+		total_submissions = 0
+		total_comments = 0
+		#make request to the pushshift API
+		
+		params = {
+					"sort": "desc", 
+					"sort_type": "created_utc", 
+					"subreddit": subreddit, 
+					"size": 1000,
+					"after": start_date, 
+					"before": end_date
+				}
+		while True:
+			response = requests.get(url=URL_PUSHSHIFT,params=params)
+			try:
+				data = response.json()
+				break
+			except json.decoder.JSONDecodeError:
+				print(response.status_code)
+				
+
+		#now that we have the data of the submissions of a day, 
+		#obtain the comments of each one
+		total_submissions += len(data["data"])
+		for sub in data["data"]:
+				try:
+					submission = reddit.submission(id = sub["id"])
+					if submissions_db.count_documents({"_id" : sub["id"]}) == 0:
+						submission_obj = {}
+						submission_obj["category"] = submission.category
+						submission_obj["created"] = submission.created
+						submission_obj["created_utc"] = submission.created_utc
+						dt_object = datetime.fromtimestamp(submission.created_utc)
+						date_aux = dt_object.strftime("%d/%m/%Y")
+						submission_obj["date"] = date_aux
+						submission_obj["downs"] = submission.downs
+						submission_obj["_id"] = submission.id
+						submission_obj["num_comments"] = submission.num_comments
+						submission_obj["score"] = submission.score
+						submission_obj["selftext"] = submission.selftext
+						submission_obj["subrreddit_id"] = submission.subreddit_id
+						submission_obj["subreddit_name_prefixed"] = submission.subreddit_name_prefixed
+						submission_obj["title"] = submission.title
+						submission_obj["ups"] = submission.ups
+						submission_obj["url"] = submission.url
+						submission_obj["daily_discussion"] = is_daily_discussion(submission.subreddit_id, submission.title)
+
+						#save submission object
+						submissions_db.insert_one(submission_obj)
+
+					#obtain and construct comment objects
+					submission.comments.replace_more(limit=None)
+					list_comments = submission.comments.list()
+					total_submissions+=1
+					if len(list_comments) > 0:
+						total_comments+= len(list_comments)
+						comments_operations_list = []
+						for comment in list_comments:
+							comment_obj = {}
+							comment_obj["body"] = comment.body
+							comment_obj["created"] = comment.created
+							comment_obj["created_utc"] = comment.created_utc
+							dt_object = datetime.fromtimestamp(comment.created_utc)
+							date_aux = dt_object.strftime("%d/%m/%Y")
+							comment_obj["date"] = date_aux
+							comment_obj["depth"] = comment.depth
+							comment_obj["downs"] = comment.downs
+							comment_obj["link_id"] = comment.link_id
+							comment_obj["name"] = comment.name
+							comment_obj["parent_id"] = comment.parent_id
+							comment_obj["subreddit_id"] = comment.subreddit_id
+							comment_obj["subreddit_name_prefixed"] = comment.subreddit_name_prefixed
+							comment_obj["score"] = comment.score
+							comment_obj["ups"] = comment.ups
+
+							comment_obj["_id"] = comment.id
+							comments_operations_list.append(pymongo.UpdateOne({"_id": comment.id}, {"$set": comment_obj}, upsert=True))
+
+						#save comments object
+						comments_db.bulk_write(comments_operations_list)
+				except NotFound:
+					write_log("Unexpected error on subrredit " + subreddit + " and submission "+ sub["id"] + ": " + str(sys.exc_info()[0]))
+					continue
+
+		write_log("Done. " + str(total_submissions) + " submissions and " + str(total_comments) + " comments from " + subreddit + " where obtained.")
 
 #connect to reddit API
 reddit = praw.Reddit(client_id=secret.client_id,
@@ -82,86 +203,5 @@ mydb = myclient[DATABASE_NAME]
 submissions_db = mydb[SUBMISSIONS_COLLECTION]
 comments_db = mydb[COMMENTS_COLLECTION]
 
-write_log("Starting the collection of data from the start date to today")
-for subreddit in subreddits:
-	write_log("Collecting submissions and comments from " + subreddit + "...")
-	total_submissions = 0
-	total_comments = 0
-	#make request to the pushshift API
-	for start_date, end_date in generate_dates(START_DATE_QUERY, END_DATE_QUERY):
-		params = {
-					"sort": "desc", 
-					"sort_type": "created_utc", 
-					"subreddit": subreddit, 
-					"size": 1000,
-					"after": start_date, 
-					"before": end_date
-				}
-		response = requests.get(url=URL_PUSHSHIFT,params=params)
-		print(date.fromtimestamp(start_date))
-		data = response.json()
-
-		#now that we have the data of the submissions of a day, 
-		#obtain the comments of each one
-		total_submissions += len(data["data"])
-		for sub in data["data"]:
-			if submissions_db.count_documents({"_id" : sub["id"]}) == 0:
-				try:
-					submission = reddit.submission(id = sub["id"])
-					submission_obj = {}
-					submission_obj["category"] = submission.category
-					submission_obj["created"] = submission.created
-					submission_obj["created_utc"] = submission.created_utc
-					dt_object = datetime.fromtimestamp(submission.created_utc)
-					date_aux = dt_object.strftime("%d/%m/%Y")
-					submission_obj["date"] = date_aux
-					submission_obj["downs"] = submission.downs
-					submission_obj["_id"] = submission.id
-					submission_obj["num_comments"] = submission.num_comments
-					submission_obj["score"] = submission.score
-					submission_obj["selftext"] = submission.selftext
-					submission_obj["subrreddit_id"] = submission.subreddit_id
-					submission_obj["subreddit_name_prefixed"] = submission.subreddit_name_prefixed
-					submission_obj["title"] = submission.title
-					submission_obj["ups"] = submission.ups
-					submission_obj["url"] = submission.url
-					submission_obj["daily_discussion"] = is_daily_discussion(submission.subreddit_id, submission.title)
-
-					#save submission object
-					submissions_db.insert_one(submission_obj)
-
-					#obtain and construct comment objects
-					submission.comments.replace_more(limit=None)
-					list_comments = submission.comments.list()
-					if len(list_comments) > 0:
-						total_comments+= len(list_comments)
-						comments_objects_list = []
-						for comment in list_comments:
-							comment_obj = {}
-							comment_obj["body"] = comment.body
-							comment_obj["created"] = comment.created
-							comment_obj["created_utc"] = comment.created_utc
-							dt_object = datetime.fromtimestamp(comment.created_utc)
-							date_aux = dt_object.strftime("%d/%m/%Y")
-							comment_obj["date"] = date_aux
-							comment_obj["depth"] = comment.depth
-							comment_obj["downs"] = comment.downs
-							comment_obj["_id"] = comment.id
-							comment_obj["link_id"] = comment.link_id
-							comment_obj["name"] = comment.name
-							comment_obj["parent_id"] = comment.parent_id
-							comment_obj["subreddit_id"] = comment.subreddit_id
-							comment_obj["subreddit_name_prefixed"] = comment.subreddit_name_prefixed
-							comment_obj["score"] = comment.score
-							comment_obj["ups"] = comment.ups
-
-							comments_objects_list.append(comment_obj)
-
-						#save comments object
-						comments_db.insert_many(comments_objects_list)
-				except NotFound:
-					write_log("Unexpected error on subrredit " + subreddit + " and submission "+ sub["id"] + ": " + str(sys.exc_info()[0]))
-					continue
-
-	write_log("Done. " + str(total_submissions) + " submissions and " + str(total_comments) + " comments from " + subreddit + " where obtained.")
-	myclient.close()
+bulk_collect()
+#daily_dollect()

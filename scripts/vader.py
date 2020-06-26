@@ -43,10 +43,10 @@ def add_sentiment_reddit():
 
 		#add sentiment values to the comments
 		comments = comments_db.find({
-			"created_utc" : {
-								"$gt" : query_start_date,
-								"$lt": query_end_date
-							},
+		#	"created_utc" : {
+		#						"$gt" : query_start_date,
+		#						"$lt": query_end_date
+		#					},
 			"subreddit_name_prefixed": regx
 		})
 
@@ -54,8 +54,8 @@ def add_sentiment_reddit():
 		if subreddit.split('/')[1] != "btc":
 			for comment in comments:
 				#check if it has already been anaalyzed
-				if "compound" in comment:
-					continue
+				# if "compound" in comment:
+				# 	continue
 				query = {
 					"_id" : comment["_id"]
 				}
@@ -69,10 +69,10 @@ def add_sentiment_reddit():
 		logging.info("Adding sentiment data to submissions of %s", subreddit.split('/')[1])
 		no_submissions = 0
 		submissions = submissions_db.find({
-			"created_utc" : {
-								"$gt" : query_start_date,
-								"$lt": query_end_date
-							},
+			#"created_utc" : {
+			#					"$gt" : query_start_date,
+			#					"$lt": query_end_date
+			#				},
 			"subreddit_name_prefixed": regx
 		})
 
@@ -81,8 +81,8 @@ def add_sentiment_reddit():
 				"_id" : submission["_id"]
 			}
 			#check if it has already been analyzed
-			if "compound_title" in submission:
-				continue
+			#if "compound_title" in submission:
+			#	continue
 			vs = analyzer.polarity_scores(submission["title"])
 			vs_doc = {}
 			vs_doc["compound_title"] = vs["compound"]
@@ -166,5 +166,5 @@ def add_lm_lexicon():
 	print(positives)
 	print(negatives)
 
-add_sentiment_news()
+add_sentiment_reddit()
 

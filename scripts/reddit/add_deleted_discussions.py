@@ -7,6 +7,7 @@ from prawcore.exceptions import NotFound
 from datetime import datetime,timedelta,date
 from missing_posts import deleted_posts, missing_discussions
 import logging
+
 SUBMISSIONS_COLLECTION = "submissions"
 COMMENTS_COLLECTION = "comments"
 DATABASE_NAME = "reddit_data"
@@ -34,10 +35,9 @@ def add_missing_posts(id_posts):
 	#obtain the comments of each one
 	id_posts = [x for x in id_posts if "#" not in x]
 	for id in id_posts:
-		if submissions_db.count_documents({"_id" : id}) == 0:
-			print(id)
-			try:
-				submission = reddit.submission(id = id)
+		try:
+			submission = reddit.submission(id = id)
+			if submissions_db.count_documents({"_id" : id}) == 0:
 				submission_obj = {}
 				submission_obj["category"] = submission.category
 				submission_obj["created"] = submission.created
@@ -60,41 +60,41 @@ def add_missing_posts(id_posts):
 				#save submission object
 				submissions_db.insert_one(submission_obj)
 
-				#obtain and construct comment objects
-				submission.comments.replace_more(limit=None)
-				list_comments = submission.comments.list()
-				total_submissions+=1
-				if len(list_comments) > 0:
-					total_comments+= len(list_comments)
-					comments_objects_list = []
-					for comment in list_comments:
-						comment_obj = {}
-						comment_obj["body"] = comment.body
-						comment_obj["created"] = comment.created
-						comment_obj["created_utc"] = comment.created_utc
-						dt_object = datetime.fromtimestamp(comment.created_utc)
-						date_aux = dt_object.strftime("%d/%m/%Y")
-						comment_obj["date"] = date_aux
-						comment_obj["depth"] = comment.depth
-						comment_obj["downs"] = comment.downs
-						comment_obj["_id"] = comment.id
-						comment_obj["link_id"] = comment.link_id
-						comment_obj["name"] = comment.name
-						comment_obj["parent_id"] = comment.parent_id
-						comment_obj["subreddit_id"] = comment.subreddit_id
-						comment_obj["subreddit_name_prefixed"] = comment.subreddit_name_prefixed
-						comment_obj["score"] = comment.score
-						comment_obj["ups"] = comment.ups
+			#obtain and construct comment objects
+			submission.comments.replace_more(limit=None)
+			list_comments = submission.comments.list()
+			total_submissions+=1
+			if len(list_comments) > 0:
+				total_comments+= len(list_comments)
+				comments_operations_list = []
+				for comment in list_comments:
+					comment_obj = {}
+					comment_obj["body"] = comment.body
+					comment_obj["created"] = comment.created
+					comment_obj["created_utc"] = comment.created_utc
+					dt_object = datetime.fromtimestamp(comment.created_utc)
+					date_aux = dt_object.strftime("%d/%m/%Y")
+					comment_obj["date"] = date_aux
+					comment_obj["depth"] = comment.depth
+					comment_obj["downs"] = comment.downs
+					comment_obj["link_id"] = comment.link_id
+					comment_obj["name"] = comment.name
+					comment_obj["parent_id"] = comment.parent_id
+					comment_obj["subreddit_id"] = comment.subreddit_id
+					comment_obj["subreddit_name_prefixed"] = comment.subreddit_name_prefixed
+					comment_obj["score"] = comment.score
+					comment_obj["ups"] = comment.ups
 
-						comments_objects_list.append(comment_obj)
+					comment_obj["_id"] = comment.id
+					comments_operations_list.append(pymongo.UpdateOne({"_id": comment.id}, {"$set": comment_obj}, upsert=True))
 
-					#save comments object
-					comments_db.insert_many(comments_objects_list)
-			except NotFound:
-				logging.info("Unexpected error on submission" + id + ": " + str(sys.exc_info()[0]))
-				continue
+				#save comments object
+				comments_db.bulk_write(comments_operations_list)
+		except NotFound:
+			logging.info("Unexpected error on submission" + id + ": " + str(sys.exc_info()[0]))
+			continue
 
 	logging.info("Done. " + str(total_submissions) + " submissions and " + str(total_comments) + " comments where obtained from missing posts")
 
-add_missing_posts(missing_discussions)
+add_missing_posts(deleted_posts)
 myclient.close()

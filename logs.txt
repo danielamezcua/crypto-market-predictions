@@ -453,3 +453,19 @@ Executing bash shell to collect data from reddit @ Thu Jun 11 23:45:01 CDT 2020
 Done collecting data from reddit @ Thu Jun 11 23:45:17 CDT 2020
 Executing bash shell to collect data from Coin Telegraph @ Thu Jun 11 23:45:17 CDT 2020
 Done collecting data from coin telegraph @ Thu Jun 11 23:45:17 CDT 2020
+Executing bash shell to collect data from reddit @ Mon Jun 22 23:45:00 CDT 2020
+Done collecting data from reddit @ Mon Jun 22 23:45:12 CDT 2020
+Executing bash shell to collect data from Coin Telegraph @ Mon Jun 22 23:45:12 CDT 2020
+Done collecting data from coin telegraph @ Mon Jun 22 23:45:12 CDT 2020
+Executing bash shell to collect data from reddit @ Tue Jun 23 23:45:00 CDT 2020
+Done collecting data from reddit @ Tue Jun 23 23:45:39 CDT 2020
+Executing bash shell to collect data from Coin Telegraph @ Tue Jun 23 23:45:39 CDT 2020
+Done collecting data from coin telegraph @ Tue Jun 23 23:45:39 CDT 2020
+Executing bash shell to collect data from reddit @ Wed Jun 24 23:45:00 CDT 2020
+Done collecting data from reddit @ Wed Jun 24 23:45:35 CDT 2020
+Executing bash shell to collect data from Coin Telegraph @ Wed Jun 24 23:45:35 CDT 2020
+Done collecting data from coin telegraph @ Wed Jun 24 23:45:35 CDT 2020
+Executing bash shell to collect data from reddit @ Thu Jun 25 23:45:02 CDT 2020
+Done collecting data from reddit @ Thu Jun 25 23:49:55 CDT 2020
+Executing bash shell to collect data from Coin Telegraph @ Thu Jun 25 23:49:55 CDT 2020
+Done collecting data from coin telegraph @ Thu Jun 25 23:52:03 CDT 2020

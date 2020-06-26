@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+import pymongo
 import threading
 
 class MongoConnectionTweets():
@@ -30,7 +31,10 @@ class MongoConnectionTweets():
 	@classmethod
 	def insert_tweet(cls, tweet):
 		tweets = MongoConnectionTweets.get_collection()
-		tweets.insert_one(tweet)
+		try:
+			tweets.insert_one(tweet)
+		except pymongo.errors.DuplicateKeyError:
+			pass
 
 
 

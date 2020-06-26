@@ -12,6 +12,7 @@ from sklearn import metrics
 RANDOM_FOREST = 1
 SUPPORT_VECTOR_CLASSIFIER = 2
 MULTILAYER_PERCEPTRON = 3
+DATASETS_PATH = "../datasets/"
 
 def add_extra_features(dataset):
 	dataset['number_comments_ns'] = dataset['neg_ns'] + dataset['pos_ns'] + dataset['neutral_ns']
@@ -96,7 +97,8 @@ for crypto in cryptos.keys():
 	f.write(cryptos[crypto] + "\n")
 
 	#load dataset and add extra features
-	dataset = pd.read_csv("../datasets/" + crypto + "_news.csv")
+	dataset = pd.read_csv(DATASETS_PATH + crypto + "_news.csv")
+	print(dataset.columns.tolist())
 	add_extra_features(dataset)
 
 	#for each selection of features, train and validate the model

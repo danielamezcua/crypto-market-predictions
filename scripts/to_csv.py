@@ -70,6 +70,7 @@ regex_daily_discussions = {
 	"r\/ethfinance": "^Daily General Discussion -(.*)"
 }
 
+#deprecated
 def parse_date(title,subreddit):
 	if subreddit == "r\/bitcoin":
 		#format: Daily Discussion, March 13, 2020
@@ -93,6 +94,24 @@ def parse_date(title,subreddit):
 		parse_format = "%B %d, %Y"
 
 	return datetime.strptime(str_time,parse_format).replace(tzinfo=timezone.utc).timestamp()
+#deprecated
+def obtain_ids_discussions(subreddit, crypto):
+	query_start_date = datetime(2019,1,1).replace(tzinfo=timezone.utc).timestamp()
+	query_end_date =datetime(2020,6,20).replace(tzinfo=timezone.utc).timestamp()
+	s = []
+	regx_title = re.compile(subreddit, re.IGNORECASE)
+	regx_discussion = re.compile(regex_daily_discussions[subreddit])
+	results = submissions_db.find({
+		"subreddit_name_prefixed": regx_title,
+		"title": regx_discussion,
+		"created_utc": {
+			"$gte": query_start_date,
+			"$lte": query_end_date
+		}
+	}).sort([("created_utc",1)])
+	for result in results:
+		s.append((result["title"], "t3_"+result["_id"]))
+	return s
 
 def init_data(data,time,coin):
 	""" 
@@ -139,27 +158,47 @@ def init_data(data,time,coin):
 		"low": low
 	}
 
-def obtain_ids_discussions(subreddit, crypto):
-	query_start_date = datetime(2019,1,1).replace(tzinfo=timezone.utc).timestamp()
-	query_end_date =datetime(2020,6,20).replace(tzinfo=timezone.utc).timestamp()
-	s = []
-	regx_title = re.compile(subreddit, re.IGNORECASE)
-	regx_discussion = re.compile(regex_daily_discussions[subreddit])
-	results = submissions_db.find({
-		"subreddit_name_prefixed": regx_title,
-		"title": regx_discussion,
+def obtain_comments_discussions(subreddit, start_date, end_date):
+	""" 
+	Looks for all the comments that where posted on daily discussion threads in the specified
+	range of time, on the specified subreddit
+
+	Parameters: 
+	   subreddit (string) : the name of the desired subreddit for which comments will be extracted  
+	   		e.g. "bitcoin"
+	   start_date (int) : the start of the period of time for which comments will be extracted
+	   end_date (int) : the end of the period of time for which comments will be extracted
+
+	Returns: 
+	    (mongodb cursor) : the cursor pointing to the first of the comment objects returned by the query
+	"""
+	subreddit_pattern = "r\/" + subreddit
+
+	comments = comments_db.find({
+		"subreddit_name_prefixed": subreddit_regex,
+		"from_daily_disc":True,
 		"created_utc": {
-			"$gte": query_start_date,
-			"$lte": query_end_date
-		}
-	}).sort([("created_utc",1)])
-	for result in results:
-		s.append((result["title"], "t3_"+result["_id"]))
-	return s
+			"$gte": start_date,
+			"$lte": end_date
+		},
+	})
+	return comments
 
-def obtain_comments_discussions(subreddit, crypto,start_date, end_date):
-	
+def obtain_time(time):
+	""" 
+	Returns the start of the day of the given timestamp
 
+	Parameters: 
+	   time (int) : the timestamp for which is desired to obtain the start of the day
+	   
+
+	Returns: 
+	    (int) : the start of the day in seconds since the epoch
+	"""
+
+	aux_datetime = datetime.fromtimestamp(time, tz=timezone.utc)
+	start_timestamp = datetime(aux_datetime.year, aux_datetime.month, aux_datetime.day, tzinfo=timezone.utc).timestamp()
+	return start_timestamp
 
 #TODO: add flexible query dates
 def write_from_db():
@@ -185,63 +224,54 @@ def write_from_db():
 	for crypto in crypto_subreddits.keys():
 		data = {}
 		for subreddit in crypto_subreddits[crypto]:
-			#find all comments from dailly discussions daily discussions
-			comments = obtain_comments_discussions(subreddit,crypto,query_start_date, query_end_date)
-			submissions = obtain_ids_discussions(subreddit, crypto)
-			for submission in submissions:
-				title = submission[0]
-				id = submission[1]
-				#parse the datetime of the submission's title
-				time = parse_date(title, subreddit)
+			#find all comments from dailly discussions 
+			comments = obtain_comments_discussions(subreddit,query_start_date, query_end_date)
+			for comment in comments:
+				#obtain the date to which this comment belongs to
+				time = obtain_time(comment["created_utc"])
 
-				#obtain the comments and add them to the data of this day
-				comments = comments_db.find({
-					"link_id": id
-				})
-
-
+				#check if the entry for this time exists
 				if time not in data:
 					init_data(data,time,crypto)
 
 				data_row = data[time]
 
-				for comment in comments:
-					if "compound" not in comment:
+				if "compound" not in comment:
 						continue
-					compound = comment["compound"]
-					data_row["comp_ns"] += compound
+				compound = comment["compound"]
+				data_row["comp_ns"] += compound
+				if compound >= 0.05:
+					data_row["pos_ns"] += 1
+					data_row["sum_pos_ns"] += compound
+				elif compound <= -0.05:
+					data_row["neg_ns"] += 1
+					data_row["sum_neg_ns"] += compound
+				else:
+					data_row["neutral_ns"] += 1
+
+				#considering the score of the comment:
+				score = comment["score"]
+				if score >= -10:
+					if score > 0:
+						if compound >= 0.05:
+							data_row["pos_s"] += score
+							data_row["sum_pos_s"] += compound*score
+						elif compound <= -0.05:
+							data_row["neg_s"] += score
+							data_row["sum_neg_s"] += compound*score
+						else:
+							data_row["neu_s"] += score
+						data_row["comp_s"] += compound * score
+
 					if compound >= 0.05:
-						data_row["pos_ns"] += 1
-						data_row["sum_pos_ns"] += compound
+						data_row["pos_s"] += 1
+						data_row["sum_pos_s"] += compound
 					elif compound <= -0.05:
-						data_row["neg_ns"] += 1
+						data_row["neg_s"] += 1
 						data_row["sum_neg_ns"] += compound
 					else:
-						data_row["neutral_ns"] += 1
-
-					#considering the score of the comment:
-					score = comment["score"]
-					if score >= -10:
-						if score > 0:
-							if compound >= 0.05:
-								data_row["pos_s"] += score
-								data_row["sum_pos_s"] += compound*score
-							elif compound <= -0.05:
-								data_row["neg_s"] += score
-								data_row["sum_neg_s"] += compound*score
-							else:
-								data_row["neu_s"] += score
-							data_row["comp_s"] += compound * score
-
-						if compound >= 0.05:
-							data_row["pos_s"] += 1
-							data_row["sum_pos_s"] += compound
-						elif compound <= -0.05:
-							data_row["neg_s"] += 1
-							data_row["sum_neg_ns"] += compound
-						else:
-							data_row["neu_s"] += 1
-						data_row["comp_s"] += compound
+						data_row["neu_s"] += 1
+					data_row["comp_s"] += compound
 
 		#write rows to csv file
 		for key in data.keys():
@@ -343,4 +373,4 @@ def write_datasets():
 	add_labels()
 	add_news_data()
 
-update_csv()
+write_datasets()

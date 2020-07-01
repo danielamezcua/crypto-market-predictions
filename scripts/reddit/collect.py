@@ -200,6 +200,15 @@ def fetch_data(start_date,end_date):
 		write_log("Done. " + str(total_submissions) + " submissions and " + str(total_comments) + " comments from " + subreddit + " where obtained.")
 
 def add_discussion_comments():
+	""" 
+	Function used to add an attribute to the comment objects from the comments collection
+	to indicate whether the comment belongs to a daily discussion. This function is no longer
+	needed because this information is now added to the object when retrieving it from reddit api.
+	Parameters: 
+	    
+	Returns: 
+	    void
+	"""
 	subreddits_with_discussions = ["xrp", "ripple", "bitcoin", "litecoinmarkets", "ethfinance"]
 	regex_daily_discussions = {
 		"bitcoin": "^Daily Discussion,(.*)", #r/Bitcoin
@@ -248,5 +257,5 @@ submissions_db = mydb[SUBMISSIONS_COLLECTION]
 comments_db = mydb[COMMENTS_COLLECTION]
 
 #bulk_collect()
-#daily_collect()
-add_discussion_comments()
+daily_collect()
+#add_discussion_comments()

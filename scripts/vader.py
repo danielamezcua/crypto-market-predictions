@@ -25,16 +25,16 @@ submissions_db = mydb[SUBMISSIONS_COLLECTION]
 comments_db = mydb[COMMENTS_COLLECTION]
 submissions_db = mydb[SUBMISSIONS_COLLECTION]
 
-query_start_date = datetime(2019,9,1).replace(tzinfo=timezone.utc).timestamp()
-query_end_date =datetime(2020,5,1).replace(tzinfo=timezone.utc).timestamp()
+query_start_date = datetime(2020,4,1).replace(tzinfo=timezone.utc).timestamp()
+query_end_date =datetime(2020,6,1).replace(tzinfo=timezone.utc).timestamp()
 
 subreddits_regex = ["r\/btc", "r\/ripple", "r\/xrp", "r\/bitcoin", "r\/litecoin",
  "r\/litecoinmarkets", "r\/ethtrader",
 "r\/ethfinance"]
 
 analyzer = SentimentIntensityAnalyzer()
-analyzer.lexicon.update(lm_positive)
-analyzer.lexicon.update(lm_negative)
+# analyzer.lexicon.update(lm_positive)
+# analyzer.lexicon.update(lm_negative)
 
 def add_sentiment_reddit():
 	for subreddit in subreddits_regex:
@@ -43,10 +43,10 @@ def add_sentiment_reddit():
 
 		#add sentiment values to the comments
 		comments = comments_db.find({
-		#	"created_utc" : {
-		#						"$gt" : query_start_date,
-		#						"$lt": query_end_date
-		#					},
+			"created_utc" : {
+								"$gt" : query_start_date,
+								"$lt": query_end_date
+							},
 			"subreddit_name_prefixed": regx
 		})
 
@@ -69,10 +69,10 @@ def add_sentiment_reddit():
 		logging.info("Adding sentiment data to submissions of %s", subreddit.split('/')[1])
 		no_submissions = 0
 		submissions = submissions_db.find({
-			#"created_utc" : {
-			#					"$gt" : query_start_date,
-			#					"$lt": query_end_date
-			#				},
+			"created_utc" : {
+								"$gt" : query_start_date,
+								"$lt": query_end_date
+							},
 			"subreddit_name_prefixed": regx
 		})
 
@@ -141,7 +141,10 @@ def add_sentiment_news():
 				comp = analyzer.polarity_scores(paragraph)["compound"]
 				if comp != 0.0:
 					compounds.append(comp)
-			data["sent_comp"] = sum(compounds)/len(compounds)
+			if len(compounds) != 0:
+				data["sent_comp"] = sum(compounds)/len(compounds)
+			else:
+				data["sent_comp"] = 0
 		query = {
 					"id_new" : new["id_new"]
 				}

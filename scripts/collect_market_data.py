@@ -1,4 +1,4 @@
-#script to collect the market data
+	#script to collect the market data
 import secret
 from requests import get
 from datetime import datetime,date

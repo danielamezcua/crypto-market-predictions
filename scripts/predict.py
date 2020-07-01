@@ -50,6 +50,7 @@ def input_estimator():
 		selected = input().strip()
 	return int(selected)
 
+
 cryptos = {
 	"btc": "BITCOIN",
 	"xrp": "RIPPLE",
@@ -98,7 +99,8 @@ for crypto in cryptos.keys():
 
 	#load dataset and add extra features
 	dataset = pd.read_csv(DATASETS_PATH + crypto + "_news.csv")
-	print(dataset.columns.tolist())
+	print(crypto)
+	print(len(dataset[dataset["label"] == 1]))
 	add_extra_features(dataset)
 
 	#for each selection of features, train and validate the model
@@ -114,7 +116,7 @@ for crypto in cryptos.keys():
 		tscv = TimeSeriesSplit(n_splits=5)
 		
 		estimator = get_estimator(selected_estimator)
-		scores = cross_validate(estimator, x, y, scoring=scoring,cv=5,return_estimator=True)
+		scores = cross_validate(estimator, x, y, scoring=scoring,cv=tscv,return_estimator=True)
 		f.write("\t\tAccuracies through iterations: " + ",".join("%0.3f" % acc for acc in scores['test_accuracy']) + "\n")
 		for met in scores.keys():
 			if met != "estimator":

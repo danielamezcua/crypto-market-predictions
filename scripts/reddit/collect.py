@@ -6,6 +6,8 @@ import json
 import sys,os
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import secret
+import pytz
+import re
 from prawcore.exceptions import NotFound
 from datetime import datetime,timedelta,date
 URL_PUSHSHIFT = "https://api.pushshift.io/reddit/search/submission/"
@@ -24,14 +26,19 @@ def is_daily_discussion(id_subreddit, title):
 	Returns: 
 	    bool: True indicating it is a daily discussion; False indicating it is not.
 	"""
-	id_to_name = {"t5_v7civ" : "Daily General Discussion", #r/
-				"t5_2r9sg" : "Daily Ripple/XRP Discussion", #r/Ripple
-				"t5_2ruj5" : "Daily XRP Discussion Thread", #r/xrp
-				"t5_2s3qj" : "Daily Discussion", #r/Bitcoin
-				"t5_2yx36": "[Daily Discussion]"} #r/LitecoinMarkets 
+
+	regex_daily_discussions = {
+		"t5_2s3qj": "^Daily Discussion,(.*)", #r/Bitcoin
+		"t5_2yx36": "^\\[Daily Discussion\\](.*)", #r/LitecoinMarkets
+		"t5_2r9sg": "^Daily Ripple/XRP Discussion Thread(.*)", #r/Ripple
+		"t5_2ruj5": "^Daily XRP Discussion Thread(.*)", #r/xrp
+		"t5_v7civ": "^Daily General Discussion -(.*)" #r/ethfinance
+	}
+
 	if id_subreddit not in id_to_name:
 		return False
-	if id_to_name[id_subreddit] in title:
+
+	if re.match(regex_daily_discussions[id_subreddit], title):
 		return True
 	return False
 
@@ -87,8 +94,8 @@ def bulk_collect():
 	Returns: 
 	    void
 	"""
-	start_date_query = date(2019,1,13)
-	end_date_query = date(2019,9,1)
+	start_date_query = date(2020,4,1)
+	end_date_query = date(2020,6,1)
 	for start_date, end_date in generate_dates(start_date_query,end_date_query):
 		print(date.fromtimestamp(start_date))
 		fetch_data(start_date,end_date)
@@ -131,6 +138,7 @@ def fetch_data(start_date,end_date):
 		for sub in data["data"]:
 				try:
 					submission = reddit.submission(id = sub["id"])
+					daily_discussion = is_daily_discussion(submission.subreddit_id, submission.title)
 					if submissions_db.count_documents({"_id" : sub["id"]}) == 0:
 						submission_obj = {}
 						submission_obj["category"] = submission.category
@@ -149,7 +157,7 @@ def fetch_data(start_date,end_date):
 						submission_obj["title"] = submission.title
 						submission_obj["ups"] = submission.ups
 						submission_obj["url"] = submission.url
-						submission_obj["daily_discussion"] = is_daily_discussion(submission.subreddit_id, submission.title)
+						submission_obj["daily_discussion"] = daily_discussion
 
 						#save submission object
 						submissions_db.insert_one(submission_obj)
@@ -180,6 +188,7 @@ def fetch_data(start_date,end_date):
 							comment_obj["ups"] = comment.ups
 
 							comment_obj["_id"] = comment.id
+							comment_obj["from_daily_disc"] = daily_discussion
 							comments_operations_list.append(pymongo.UpdateOne({"_id": comment.id}, {"$set": comment_obj}, upsert=True))
 
 						#save comments object
@@ -190,6 +199,41 @@ def fetch_data(start_date,end_date):
 
 		write_log("Done. " + str(total_submissions) + " submissions and " + str(total_comments) + " comments from " + subreddit + " where obtained.")
 
+def add_discussion_comments():
+	subreddits_with_discussions = ["xrp", "ripple", "bitcoin", "litecoinmarkets", "ethfinance"]
+	regex_daily_discussions = {
+		"bitcoin": "^Daily Discussion,(.*)", #r/Bitcoin
+		"litecoinmarkets": "^\\[Daily Discussion\\](.*)", #r/LitecoinMarkets
+		"ripple": "^Daily Ripple/XRP Discussion Thread(.*)", #r/Ripple
+		"xrp": "^Daily XRP Discussion Thread(.*)", #r/xrp
+		"ethfinance": "^Daily General Discussion -(.*)" #r/ethfinance
+	}
+	for subreddit in subreddits:
+		print("Processing " + subreddit + " comments")
+		if subreddit in subreddits_with_discussions:
+			subreddit_pattern = "r\/" + subreddit
+			regex_subreddit = re.compile(subreddit_pattern, re.IGNORECASE)
+			regex_daily_discussion = re.compile(regex_daily_discussions[subreddit])
+			submissions = submissions_db.find(
+				{
+					"subreddit_name_prefixed": regex_subreddit,
+					"title": regex_daily_discussion
+				}
+			)
+			for submission in submissions:
+				comments_db.update(
+					{
+						"link_id": "t3_" + submission["_id"]					
+					},
+					{ 
+						"$set": {
+							"from_daily_disc" : True
+						}
+					}, 
+					multi=True
+				)
+		print("Done")
+			
 #connect to reddit API
 reddit = praw.Reddit(client_id=secret.client_id,
  					client_secret=secret.client_secret,
@@ -203,5 +247,6 @@ mydb = myclient[DATABASE_NAME]
 submissions_db = mydb[SUBMISSIONS_COLLECTION]
 comments_db = mydb[COMMENTS_COLLECTION]
 
-bulk_collect()
-#daily_dollect()
+#bulk_collect()
+#daily_collect()
+add_discussion_comments()

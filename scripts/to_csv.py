@@ -41,6 +41,7 @@ MONGO_SERVICE = "mongodb://localhost:27017/"
 
 DATASETS_PATH = "../datasets/"
 
+SECONDS_ONE_DAY = 86400
 #set  logger
 logging.basicConfig(filename='./logs.txt', level=logging.INFO, format='%(name)s@%(asctime)s - %(message)s')
 #connect to database
@@ -139,16 +140,26 @@ def init_data(data,time,coin):
 	}
 
 def obtain_ids_discussions(subreddit, crypto):
+	query_start_date = datetime(2019,1,1).replace(tzinfo=timezone.utc).timestamp()
+	query_end_date =datetime(2020,6,20).replace(tzinfo=timezone.utc).timestamp()
 	s = []
 	regx_title = re.compile(subreddit, re.IGNORECASE)
 	regx_discussion = re.compile(regex_daily_discussions[subreddit])
 	results = submissions_db.find({
 		"subreddit_name_prefixed": regx_title,
-		"title": regx_discussion
+		"title": regx_discussion,
+		"created_utc": {
+			"$gte": query_start_date,
+			"$lte": query_end_date
+		}
 	}).sort([("created_utc",1)])
 	for result in results:
 		s.append((result["title"], "t3_"+result["_id"]))
 	return s
+
+def obtain_comments_discussions(subreddit, crypto,start_date, end_date):
+	
+
 
 #TODO: add flexible query dates
 def write_from_db():
@@ -162,8 +173,8 @@ def write_from_db():
 	    void
 	"""
 
-	query_start_date = datetime(2019,9,1).replace(tzinfo=timezone.utc).timestamp()
-	query_end_date =datetime(2020,5,1).replace(tzinfo=timezone.utc).timestamp()
+	query_start_date = datetime(2019,1,1).replace(tzinfo=timezone.utc).timestamp()
+	query_end_date =datetime(2020,6,10).replace(tzinfo=timezone.utc).timestamp()
 	file = open(DATASETS_PATH + 'dataset.csv', 'w', newline='')
 	field_names = ["time", "neg_ns", "pos_ns", "neutral_ns","sum_pos_ns","sum_neg_ns",
 	"sum_pos_s","sum_neg_s","comp_ns","neg_s", "pos_s", "neu_s","comp_s","coin","open",
@@ -174,7 +185,8 @@ def write_from_db():
 	for crypto in crypto_subreddits.keys():
 		data = {}
 		for subreddit in crypto_subreddits[crypto]:
-			#find all daily discussions
+			#find all comments from dailly discussions daily discussions
+			comments = obtain_comments_discussions(subreddit,crypto,query_start_date, query_end_date)
 			submissions = obtain_ids_discussions(subreddit, crypto)
 			for submission in submissions:
 				title = submission[0]
@@ -235,6 +247,25 @@ def write_from_db():
 		for key in data.keys():
 			writer.writerow(data[key])
 	file.close()
+
+def update_csv():
+	""" 
+	Updates the csv file containing all the syntethized data
+	"""
+	for crypto in crypto_subreddits.keys():
+		#obtain last row of the current file
+		df = pandas.read_csv(DATASETS_PATH + "/" + crypto + "_news.csv")
+		first_row = df.iloc[0]
+		last_row = df.iloc[-1]
+		print(crypto)
+		
+		last_timestamp = last_row["time"]
+		date_to_update = datetime.date(datetime.today() - timedelta(2)) #the day before yesterday
+		timestamp_to_update = date_to_update.
+
+		for date in range(last_date + SECONDS_ONE_DAY, date_to_update + SECONDS_ONE_DAY, SECONDS_ONE_DAY):
+
+		#define the dates that are missing on the dataset
 
 def add_labels():
 	""" 
@@ -308,7 +339,8 @@ def add_news_data():
 		df.to_csv(filename, index=False)
 
 def write_datasets():
+	write_from_db()
 	add_labels()
 	add_news_data()
 
-write_datasets()
+update_csv()

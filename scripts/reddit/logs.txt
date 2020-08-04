@@ -5382,3 +5382,1216 @@ Collecting submissions and comments from ethtrader... @ 29-06-2020 01:39:27
 Done. 206 submissions and 121 comments from ethtrader where obtained. @ 29-06-2020 01:41:02
 Collecting submissions and comments from ethfinance... @ 29-06-2020 01:41:02
 Done. 32 submissions and 476 comments from ethfinance where obtained. @ 29-06-2020 01:41:15
+Collecting submissions and comments from xrp... @ 02-07-2020 13:03:25
+Collecting submissions and comments from xrp... @ 02-07-2020 13:07:02
+Done. 14 submissions and 65 comments from xrp where obtained. @ 02-07-2020 13:07:06
+Collecting submissions and comments from ripple... @ 02-07-2020 13:07:06
+Done. 18 submissions and 95 comments from ripple where obtained. @ 02-07-2020 13:07:10
+Collecting submissions and comments from bitcoin... @ 02-07-2020 13:07:10
+Unexpected error on subrredit bitcoin and submission guw0me: <class 'prawcore.exceptions.NotFound'> @ 02-07-2020 13:07:48
+Done. 557 submissions and 3368 comments from bitcoin where obtained. @ 02-07-2020 13:09:00
+Collecting submissions and comments from btc... @ 02-07-2020 13:09:00
+Done. 176 submissions and 633 comments from btc where obtained. @ 02-07-2020 13:09:33
+Collecting submissions and comments from litecoin... @ 02-07-2020 13:09:33
+Done. 22 submissions and 19 comments from litecoin where obtained. @ 02-07-2020 13:09:38
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 13:09:38
+Done. 4 submissions and 78 comments from litecoinmarkets where obtained. @ 02-07-2020 13:09:43
+Collecting submissions and comments from ethtrader... @ 02-07-2020 13:09:43
+Done. 254 submissions and 204 comments from ethtrader where obtained. @ 02-07-2020 13:11:50
+Collecting submissions and comments from ethfinance... @ 02-07-2020 13:11:50
+Done. 48 submissions and 714 comments from ethfinance where obtained. @ 02-07-2020 13:12:36
+Collecting submissions and comments from xrp... @ 02-07-2020 13:12:36
+Done. 20 submissions and 37 comments from xrp where obtained. @ 02-07-2020 13:12:40
+Collecting submissions and comments from ripple... @ 02-07-2020 13:12:40
+Done. 32 submissions and 106 comments from ripple where obtained. @ 02-07-2020 13:12:54
+Collecting submissions and comments from bitcoin... @ 02-07-2020 13:12:54
+Done. 636 submissions and 3030 comments from bitcoin where obtained. @ 02-07-2020 13:14:49
+Collecting submissions and comments from btc... @ 02-07-2020 13:14:49
+Done. 182 submissions and 829 comments from btc where obtained. @ 02-07-2020 13:15:23
+Collecting submissions and comments from litecoin... @ 02-07-2020 13:15:23
+Done. 8 submissions and 8 comments from litecoin where obtained. @ 02-07-2020 13:15:45
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 13:15:45
+Done. 8 submissions and 61 comments from litecoinmarkets where obtained. @ 02-07-2020 13:15:55
+Collecting submissions and comments from ethtrader... @ 02-07-2020 13:15:55
+Done. 214 submissions and 171 comments from ethtrader where obtained. @ 02-07-2020 13:17:51
+Collecting submissions and comments from ethfinance... @ 02-07-2020 13:17:51
+Done. 38 submissions and 804 comments from ethfinance where obtained. @ 02-07-2020 13:18:57
+Collecting submissions and comments from xrp... @ 02-07-2020 13:18:57
+Done. 32 submissions and 130 comments from xrp where obtained. @ 02-07-2020 13:19:02
+Collecting submissions and comments from ripple... @ 02-07-2020 13:19:02
+Done. 20 submissions and 86 comments from ripple where obtained. @ 02-07-2020 13:19:10
+Collecting submissions and comments from bitcoin... @ 02-07-2020 13:19:10
+Done. 536 submissions and 2532 comments from bitcoin where obtained. @ 02-07-2020 13:20:29
+Collecting submissions and comments from btc... @ 02-07-2020 13:20:29
+Done. 200 submissions and 873 comments from btc where obtained. @ 02-07-2020 13:21:05
+Collecting submissions and comments from litecoin... @ 02-07-2020 13:21:05
+Done. 26 submissions and 48 comments from litecoin where obtained. @ 02-07-2020 13:21:11
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 13:21:11
+Done. 10 submissions and 68 comments from litecoinmarkets where obtained. @ 02-07-2020 13:21:18
+Collecting submissions and comments from ethtrader... @ 02-07-2020 13:21:18
+Done. 256 submissions and 172 comments from ethtrader where obtained. @ 02-07-2020 13:23:08
+Collecting submissions and comments from ethfinance... @ 02-07-2020 13:23:08
+Done. 48 submissions and 618 comments from ethfinance where obtained. @ 02-07-2020 13:23:35
+Collecting submissions and comments from xrp... @ 02-07-2020 13:23:35
+Done. 30 submissions and 70 comments from xrp where obtained. @ 02-07-2020 13:23:43
+Collecting submissions and comments from ripple... @ 02-07-2020 13:23:43
+Done. 26 submissions and 73 comments from ripple where obtained. @ 02-07-2020 13:23:48
+Collecting submissions and comments from bitcoin... @ 02-07-2020 13:23:48
+Done. 444 submissions and 2493 comments from bitcoin where obtained. @ 02-07-2020 13:24:56
+Collecting submissions and comments from btc... @ 02-07-2020 13:24:56
+Done. 190 submissions and 906 comments from btc where obtained. @ 02-07-2020 13:25:28
+Collecting submissions and comments from litecoin... @ 02-07-2020 13:25:28
+Done. 16 submissions and 20 comments from litecoin where obtained. @ 02-07-2020 13:25:34
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 13:25:34
+Done. 8 submissions and 41 comments from litecoinmarkets where obtained. @ 02-07-2020 13:25:40
+Collecting submissions and comments from ethtrader... @ 02-07-2020 13:25:40
+Done. 316 submissions and 188 comments from ethtrader where obtained. @ 02-07-2020 13:27:41
+Collecting submissions and comments from ethfinance... @ 02-07-2020 13:27:41
+Done. 42 submissions and 511 comments from ethfinance where obtained. @ 02-07-2020 13:27:57
+Collecting submissions and comments from xrp... @ 02-07-2020 13:27:57
+Done. 6 submissions and 0 comments from xrp where obtained. @ 02-07-2020 13:28:02
+Collecting submissions and comments from ripple... @ 02-07-2020 13:28:02
+Done. 20 submissions and 41 comments from ripple where obtained. @ 02-07-2020 13:28:05
+Collecting submissions and comments from bitcoin... @ 02-07-2020 13:28:05
+Done. 518 submissions and 2356 comments from bitcoin where obtained. @ 02-07-2020 13:29:28
+Collecting submissions and comments from btc... @ 02-07-2020 13:29:28
+Done. 210 submissions and 451 comments from btc where obtained. @ 02-07-2020 13:29:55
+Collecting submissions and comments from litecoin... @ 02-07-2020 13:29:55
+Done. 16 submissions and 6 comments from litecoin where obtained. @ 02-07-2020 13:30:08
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 13:30:08
+Done. 8 submissions and 23 comments from litecoinmarkets where obtained. @ 02-07-2020 13:30:13
+Collecting submissions and comments from ethtrader... @ 02-07-2020 13:30:13
+Done. 284 submissions and 160 comments from ethtrader where obtained. @ 02-07-2020 13:32:12
+Collecting submissions and comments from ethfinance... @ 02-07-2020 13:32:12
+Done. 50 submissions and 419 comments from ethfinance where obtained. @ 02-07-2020 13:32:32
+Collecting submissions and comments from xrp... @ 02-07-2020 13:32:32
+Done. 20 submissions and 15 comments from xrp where obtained. @ 02-07-2020 13:32:43
+Collecting submissions and comments from ripple... @ 02-07-2020 13:32:43
+Done. 26 submissions and 66 comments from ripple where obtained. @ 02-07-2020 13:32:47
+Collecting submissions and comments from bitcoin... @ 02-07-2020 13:32:47
+Done. 372 submissions and 2776 comments from bitcoin where obtained. @ 02-07-2020 13:33:54
+Collecting submissions and comments from btc... @ 02-07-2020 13:33:54
+Done. 170 submissions and 726 comments from btc where obtained. @ 02-07-2020 13:34:19
+Collecting submissions and comments from litecoin... @ 02-07-2020 13:34:19
+Done. 4 submissions and 24 comments from litecoin where obtained. @ 02-07-2020 13:34:21
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 13:34:21
+Done. 4 submissions and 49 comments from litecoinmarkets where obtained. @ 02-07-2020 13:34:23
+Collecting submissions and comments from ethtrader... @ 02-07-2020 13:34:23
+Done. 220 submissions and 197 comments from ethtrader where obtained. @ 02-07-2020 13:36:15
+Collecting submissions and comments from ethfinance... @ 02-07-2020 13:36:15
+Done. 22 submissions and 405 comments from ethfinance where obtained. @ 02-07-2020 13:36:33
+Collecting submissions and comments from xrp... @ 02-07-2020 13:36:33
+Done. 8 submissions and 11 comments from xrp where obtained. @ 02-07-2020 13:36:38
+Collecting submissions and comments from ripple... @ 02-07-2020 13:36:38
+Done. 14 submissions and 113 comments from ripple where obtained. @ 02-07-2020 13:36:44
+Collecting submissions and comments from bitcoin... @ 02-07-2020 13:36:44
+Done. 450 submissions and 2298 comments from bitcoin where obtained. @ 02-07-2020 13:37:54
+Collecting submissions and comments from btc... @ 02-07-2020 13:37:54
+Done. 134 submissions and 454 comments from btc where obtained. @ 02-07-2020 13:38:18
+Collecting submissions and comments from litecoin... @ 02-07-2020 13:38:18
+Done. 8 submissions and 23 comments from litecoin where obtained. @ 02-07-2020 13:38:21
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 13:38:21
+Done. 10 submissions and 29 comments from litecoinmarkets where obtained. @ 02-07-2020 13:38:30
+Collecting submissions and comments from ethtrader... @ 02-07-2020 13:38:30
+Done. 178 submissions and 96 comments from ethtrader where obtained. @ 02-07-2020 13:40:16
+Collecting submissions and comments from ethfinance... @ 02-07-2020 13:40:16
+Done. 28 submissions and 412 comments from ethfinance where obtained. @ 02-07-2020 13:40:28
+Collecting submissions and comments from xrp... @ 02-07-2020 13:40:28
+Done. 20 submissions and 8 comments from xrp where obtained. @ 02-07-2020 13:40:33
+Collecting submissions and comments from ripple... @ 02-07-2020 13:40:33
+Done. 30 submissions and 244 comments from ripple where obtained. @ 02-07-2020 13:40:38
+Collecting submissions and comments from bitcoin... @ 02-07-2020 13:40:38
+Done. 450 submissions and 2057 comments from bitcoin where obtained. @ 02-07-2020 13:41:46
+Collecting submissions and comments from btc... @ 02-07-2020 13:41:46
+Done. 194 submissions and 859 comments from btc where obtained. @ 02-07-2020 13:42:15
+Collecting submissions and comments from litecoin... @ 02-07-2020 13:42:15
+Done. 14 submissions and 52 comments from litecoin where obtained. @ 02-07-2020 13:42:23
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 13:42:23
+Done. 8 submissions and 38 comments from litecoinmarkets where obtained. @ 02-07-2020 13:42:26
+Collecting submissions and comments from ethtrader... @ 02-07-2020 13:42:26
+Done. 244 submissions and 79 comments from ethtrader where obtained. @ 02-07-2020 13:44:15
+Collecting submissions and comments from ethfinance... @ 02-07-2020 13:44:15
+Done. 36 submissions and 466 comments from ethfinance where obtained. @ 02-07-2020 13:44:34
+Collecting submissions and comments from xrp... @ 02-07-2020 13:44:34
+Done. 20 submissions and 4 comments from xrp where obtained. @ 02-07-2020 13:44:38
+Collecting submissions and comments from ripple... @ 02-07-2020 13:44:38
+Done. 22 submissions and 147 comments from ripple where obtained. @ 02-07-2020 13:44:47
+Collecting submissions and comments from bitcoin... @ 02-07-2020 13:44:47
+Done. 492 submissions and 2268 comments from bitcoin where obtained. @ 02-07-2020 13:46:00
+Collecting submissions and comments from btc... @ 02-07-2020 13:46:00
+Done. 204 submissions and 905 comments from btc where obtained. @ 02-07-2020 13:46:30
+Collecting submissions and comments from litecoin... @ 02-07-2020 13:46:30
+Done. 16 submissions and 74 comments from litecoin where obtained. @ 02-07-2020 13:46:42
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 13:46:42
+Done. 4 submissions and 24 comments from litecoinmarkets where obtained. @ 02-07-2020 13:46:43
+Collecting submissions and comments from ethtrader... @ 02-07-2020 13:46:43
+Done. 226 submissions and 191 comments from ethtrader where obtained. @ 02-07-2020 13:48:30
+Collecting submissions and comments from ethfinance... @ 02-07-2020 13:48:30
+Done. 52 submissions and 484 comments from ethfinance where obtained. @ 02-07-2020 13:48:49
+Collecting submissions and comments from xrp... @ 02-07-2020 13:48:49
+Done. 32 submissions and 6 comments from xrp where obtained. @ 02-07-2020 13:48:52
+Collecting submissions and comments from ripple... @ 02-07-2020 13:48:52
+Done. 38 submissions and 124 comments from ripple where obtained. @ 02-07-2020 13:49:02
+Collecting submissions and comments from bitcoin... @ 02-07-2020 13:49:02
+Done. 470 submissions and 2142 comments from bitcoin where obtained. @ 02-07-2020 13:50:05
+Collecting submissions and comments from btc... @ 02-07-2020 13:50:05
+Done. 232 submissions and 734 comments from btc where obtained. @ 02-07-2020 13:50:41
+Collecting submissions and comments from litecoin... @ 02-07-2020 13:50:41
+Done. 10 submissions and 8 comments from litecoin where obtained. @ 02-07-2020 13:50:50
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 13:50:50
+Done. 4 submissions and 48 comments from litecoinmarkets where obtained. @ 02-07-2020 13:50:52
+Collecting submissions and comments from ethtrader... @ 02-07-2020 13:50:52
+Done. 248 submissions and 97 comments from ethtrader where obtained. @ 02-07-2020 13:52:38
+Collecting submissions and comments from ethfinance... @ 02-07-2020 13:52:38
+Done. 36 submissions and 804 comments from ethfinance where obtained. @ 02-07-2020 13:53:16
+Collecting submissions and comments from xrp... @ 02-07-2020 13:53:16
+Done. 18 submissions and 14 comments from xrp where obtained. @ 02-07-2020 13:53:19
+Collecting submissions and comments from ripple... @ 02-07-2020 13:53:19
+Done. 30 submissions and 76 comments from ripple where obtained. @ 02-07-2020 13:53:29
+Collecting submissions and comments from bitcoin... @ 02-07-2020 13:53:29
+Done. 508 submissions and 2758 comments from bitcoin where obtained. @ 02-07-2020 13:54:46
+Collecting submissions and comments from btc... @ 02-07-2020 13:54:46
+Done. 238 submissions and 574 comments from btc where obtained. @ 02-07-2020 13:55:13
+Collecting submissions and comments from litecoin... @ 02-07-2020 13:55:13
+Done. 20 submissions and 31 comments from litecoin where obtained. @ 02-07-2020 13:55:20
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 13:55:20
+Done. 8 submissions and 14 comments from litecoinmarkets where obtained. @ 02-07-2020 13:55:23
+Collecting submissions and comments from ethtrader... @ 02-07-2020 13:55:23
+Done. 212 submissions and 167 comments from ethtrader where obtained. @ 02-07-2020 13:57:11
+Collecting submissions and comments from ethfinance... @ 02-07-2020 13:57:11
+Done. 44 submissions and 698 comments from ethfinance where obtained. @ 02-07-2020 13:57:46
+Collecting submissions and comments from xrp... @ 02-07-2020 13:57:46
+Done. 24 submissions and 0 comments from xrp where obtained. @ 02-07-2020 13:57:50
+Collecting submissions and comments from ripple... @ 02-07-2020 13:57:50
+Done. 26 submissions and 72 comments from ripple where obtained. @ 02-07-2020 13:57:55
+Collecting submissions and comments from bitcoin... @ 02-07-2020 13:57:55
+Done. 424 submissions and 2082 comments from bitcoin where obtained. @ 02-07-2020 13:59:00
+Collecting submissions and comments from btc... @ 02-07-2020 13:59:00
+Done. 220 submissions and 599 comments from btc where obtained. @ 02-07-2020 13:59:31
+Collecting submissions and comments from litecoin... @ 02-07-2020 13:59:31
+Done. 14 submissions and 34 comments from litecoin where obtained. @ 02-07-2020 13:59:36
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 13:59:36
+Done. 6 submissions and 19 comments from litecoinmarkets where obtained. @ 02-07-2020 13:59:44
+Collecting submissions and comments from ethtrader... @ 02-07-2020 13:59:44
+Done. 206 submissions and 135 comments from ethtrader where obtained. @ 02-07-2020 14:01:28
+Collecting submissions and comments from ethfinance... @ 02-07-2020 14:01:28
+Done. 36 submissions and 415 comments from ethfinance where obtained. @ 02-07-2020 14:01:43
+Collecting submissions and comments from xrp... @ 02-07-2020 14:01:43
+Done. 14 submissions and 23 comments from xrp where obtained. @ 02-07-2020 14:01:45
+Collecting submissions and comments from ripple... @ 02-07-2020 14:01:45
+Done. 24 submissions and 22 comments from ripple where obtained. @ 02-07-2020 14:01:48
+Collecting submissions and comments from bitcoin... @ 02-07-2020 14:01:48
+Done. 394 submissions and 1446 comments from bitcoin where obtained. @ 02-07-2020 14:02:39
+Collecting submissions and comments from btc... @ 02-07-2020 14:02:39
+Done. 174 submissions and 648 comments from btc where obtained. @ 02-07-2020 14:03:03
+Collecting submissions and comments from litecoin... @ 02-07-2020 14:03:03
+Done. 10 submissions and 13 comments from litecoin where obtained. @ 02-07-2020 14:03:05
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 14:03:05
+Done. 6 submissions and 12 comments from litecoinmarkets where obtained. @ 02-07-2020 14:03:12
+Collecting submissions and comments from ethtrader... @ 02-07-2020 14:03:12
+Done. 162 submissions and 206 comments from ethtrader where obtained. @ 02-07-2020 14:04:55
+Collecting submissions and comments from ethfinance... @ 02-07-2020 14:04:55
+Done. 38 submissions and 266 comments from ethfinance where obtained. @ 02-07-2020 14:05:08
+Collecting submissions and comments from xrp... @ 02-07-2020 14:05:08
+Done. 16 submissions and 1 comments from xrp where obtained. @ 02-07-2020 14:05:11
+Collecting submissions and comments from ripple... @ 02-07-2020 14:05:11
+Done. 20 submissions and 74 comments from ripple where obtained. @ 02-07-2020 14:05:14
+Collecting submissions and comments from bitcoin... @ 02-07-2020 14:05:14
+Done. 350 submissions and 1630 comments from bitcoin where obtained. @ 02-07-2020 14:06:10
+Collecting submissions and comments from btc... @ 02-07-2020 14:06:10
+Done. 194 submissions and 868 comments from btc where obtained. @ 02-07-2020 14:06:39
+Collecting submissions and comments from litecoin... @ 02-07-2020 14:06:39
+Done. 18 submissions and 52 comments from litecoin where obtained. @ 02-07-2020 14:06:48
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 14:06:48
+Done. 4 submissions and 35 comments from litecoinmarkets where obtained. @ 02-07-2020 14:06:50
+Collecting submissions and comments from ethtrader... @ 02-07-2020 14:06:50
+Done. 156 submissions and 113 comments from ethtrader where obtained. @ 02-07-2020 14:08:28
+Collecting submissions and comments from ethfinance... @ 02-07-2020 14:08:28
+Done. 40 submissions and 468 comments from ethfinance where obtained. @ 02-07-2020 14:08:43
+Collecting submissions and comments from xrp... @ 02-07-2020 14:08:43
+Done. 30 submissions and 39 comments from xrp where obtained. @ 02-07-2020 14:08:52
+Collecting submissions and comments from ripple... @ 02-07-2020 14:08:52
+Done. 38 submissions and 108 comments from ripple where obtained. @ 02-07-2020 14:08:57
+Collecting submissions and comments from bitcoin... @ 02-07-2020 14:08:57
+Done. 472 submissions and 2768 comments from bitcoin where obtained. @ 02-07-2020 14:09:59
+Collecting submissions and comments from btc... @ 02-07-2020 14:09:59
+Done. 222 submissions and 593 comments from btc where obtained. @ 02-07-2020 14:10:24
+Collecting submissions and comments from litecoin... @ 02-07-2020 14:10:24
+Done. 20 submissions and 5 comments from litecoin where obtained. @ 02-07-2020 14:10:29
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 14:10:29
+Done. 8 submissions and 22 comments from litecoinmarkets where obtained. @ 02-07-2020 14:10:31
+Collecting submissions and comments from ethtrader... @ 02-07-2020 14:10:31
+Done. 260 submissions and 175 comments from ethtrader where obtained. @ 02-07-2020 14:12:22
+Collecting submissions and comments from ethfinance... @ 02-07-2020 14:12:22
+Done. 32 submissions and 509 comments from ethfinance where obtained. @ 02-07-2020 14:12:35
+Collecting submissions and comments from xrp... @ 02-07-2020 14:12:35
+Done. 14 submissions and 4 comments from xrp where obtained. @ 02-07-2020 14:12:36
+Collecting submissions and comments from ripple... @ 02-07-2020 14:12:36
+Done. 36 submissions and 100 comments from ripple where obtained. @ 02-07-2020 14:12:46
+Collecting submissions and comments from bitcoin... @ 02-07-2020 14:12:46
+Done. 474 submissions and 1592 comments from bitcoin where obtained. @ 02-07-2020 14:13:39
+Collecting submissions and comments from btc... @ 02-07-2020 14:13:39
+Done. 204 submissions and 808 comments from btc where obtained. @ 02-07-2020 14:14:04
+Collecting submissions and comments from litecoin... @ 02-07-2020 14:14:04
+Done. 10 submissions and 49 comments from litecoin where obtained. @ 02-07-2020 14:14:17
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 14:14:17
+Done. 4 submissions and 38 comments from litecoinmarkets where obtained. @ 02-07-2020 14:14:19
+Collecting submissions and comments from ethtrader... @ 02-07-2020 14:14:19
+Done. 298 submissions and 115 comments from ethtrader where obtained. @ 02-07-2020 14:16:09
+Collecting submissions and comments from ethfinance... @ 02-07-2020 14:16:09
+Done. 50 submissions and 591 comments from ethfinance where obtained. @ 02-07-2020 14:16:34
+Collecting submissions and comments from xrp... @ 02-07-2020 14:16:34
+Done. 26 submissions and 9 comments from xrp where obtained. @ 02-07-2020 14:16:39
+Collecting submissions and comments from ripple... @ 02-07-2020 14:16:39
+Done. 32 submissions and 61 comments from ripple where obtained. @ 02-07-2020 14:16:45
+Collecting submissions and comments from bitcoin... @ 02-07-2020 14:16:45
+Done. 480 submissions and 2229 comments from bitcoin where obtained. @ 02-07-2020 14:17:52
+Collecting submissions and comments from btc... @ 02-07-2020 14:17:52
+Done. 246 submissions and 914 comments from btc where obtained. @ 02-07-2020 14:18:26
+Collecting submissions and comments from litecoin... @ 02-07-2020 14:18:26
+Done. 16 submissions and 37 comments from litecoin where obtained. @ 02-07-2020 14:18:31
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 14:18:31
+Done. 4 submissions and 28 comments from litecoinmarkets where obtained. @ 02-07-2020 14:18:36
+Collecting submissions and comments from ethtrader... @ 02-07-2020 14:18:36
+Done. 316 submissions and 118 comments from ethtrader where obtained. @ 02-07-2020 14:20:35
+Collecting submissions and comments from ethfinance... @ 02-07-2020 14:20:35
+Done. 58 submissions and 455 comments from ethfinance where obtained. @ 02-07-2020 14:20:52
+Collecting submissions and comments from xrp... @ 02-07-2020 14:20:52
+Done. 48 submissions and 59 comments from xrp where obtained. @ 02-07-2020 14:21:02
+Collecting submissions and comments from ripple... @ 02-07-2020 14:21:02
+Done. 40 submissions and 65 comments from ripple where obtained. @ 02-07-2020 14:21:12
+Collecting submissions and comments from bitcoin... @ 02-07-2020 14:21:12
+Done. 454 submissions and 2413 comments from bitcoin where obtained. @ 02-07-2020 14:22:15
+Collecting submissions and comments from btc... @ 02-07-2020 14:22:15
+Done. 218 submissions and 772 comments from btc where obtained. @ 02-07-2020 14:22:49
+Collecting submissions and comments from litecoin... @ 02-07-2020 14:22:49
+Done. 10 submissions and 37 comments from litecoin where obtained. @ 02-07-2020 14:22:50
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 14:22:50
+Done. 6 submissions and 32 comments from litecoinmarkets where obtained. @ 02-07-2020 14:22:54
+Collecting submissions and comments from ethtrader... @ 02-07-2020 14:22:54
+Done. 312 submissions and 152 comments from ethtrader where obtained. @ 02-07-2020 14:24:48
+Collecting submissions and comments from ethfinance... @ 02-07-2020 14:24:48
+Done. 54 submissions and 538 comments from ethfinance where obtained. @ 02-07-2020 14:25:03
+Collecting submissions and comments from xrp... @ 02-07-2020 14:25:03
+Done. 14 submissions and 1 comments from xrp where obtained. @ 02-07-2020 14:25:09
+Collecting submissions and comments from ripple... @ 02-07-2020 14:25:09
+Done. 24 submissions and 30 comments from ripple where obtained. @ 02-07-2020 14:25:20
+Collecting submissions and comments from bitcoin... @ 02-07-2020 14:25:20
+Done. 452 submissions and 1831 comments from bitcoin where obtained. @ 02-07-2020 14:26:23
+Collecting submissions and comments from btc... @ 02-07-2020 14:26:23
+Done. 206 submissions and 454 comments from btc where obtained. @ 02-07-2020 14:26:45
+Collecting submissions and comments from litecoin... @ 02-07-2020 14:26:45
+Done. 12 submissions and 30 comments from litecoin where obtained. @ 02-07-2020 14:26:50
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 14:26:50
+Done. 4 submissions and 20 comments from litecoinmarkets where obtained. @ 02-07-2020 14:26:53
+Collecting submissions and comments from ethtrader... @ 02-07-2020 14:26:53
+Done. 290 submissions and 101 comments from ethtrader where obtained. @ 02-07-2020 14:28:42
+Collecting submissions and comments from ethfinance... @ 02-07-2020 14:28:42
+Done. 38 submissions and 582 comments from ethfinance where obtained. @ 02-07-2020 14:28:57
+Collecting submissions and comments from xrp... @ 02-07-2020 14:28:57
+Done. 10 submissions and 19 comments from xrp where obtained. @ 02-07-2020 14:29:00
+Collecting submissions and comments from ripple... @ 02-07-2020 14:29:00
+Done. 12 submissions and 47 comments from ripple where obtained. @ 02-07-2020 14:29:02
+Collecting submissions and comments from bitcoin... @ 02-07-2020 14:29:02
+Done. 300 submissions and 2336 comments from bitcoin where obtained. @ 02-07-2020 14:29:58
+Collecting submissions and comments from btc... @ 02-07-2020 14:29:58
+Done. 144 submissions and 1010 comments from btc where obtained. @ 02-07-2020 14:30:26
+Collecting submissions and comments from litecoin... @ 02-07-2020 14:30:26
+Done. 6 submissions and 18 comments from litecoin where obtained. @ 02-07-2020 14:30:45
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 14:30:45
+Done. 6 submissions and 19 comments from litecoinmarkets where obtained. @ 02-07-2020 14:30:52
+Collecting submissions and comments from ethtrader... @ 02-07-2020 14:30:52
+Done. 220 submissions and 469 comments from ethtrader where obtained. @ 02-07-2020 14:32:39
+Collecting submissions and comments from ethfinance... @ 02-07-2020 14:32:39
+Done. 20 submissions and 453 comments from ethfinance where obtained. @ 02-07-2020 14:32:53
+Collecting submissions and comments from xrp... @ 02-07-2020 14:32:53
+Done. 22 submissions and 30 comments from xrp where obtained. @ 02-07-2020 14:33:03
+Collecting submissions and comments from ripple... @ 02-07-2020 14:33:03
+Done. 22 submissions and 120 comments from ripple where obtained. @ 02-07-2020 14:33:07
+Collecting submissions and comments from bitcoin... @ 02-07-2020 14:33:07
+Done. 310 submissions and 1495 comments from bitcoin where obtained. @ 02-07-2020 14:33:45
+Collecting submissions and comments from btc... @ 02-07-2020 14:33:45
+Done. 130 submissions and 725 comments from btc where obtained. @ 02-07-2020 14:34:07
+Collecting submissions and comments from litecoin... @ 02-07-2020 14:34:07
+Done. 12 submissions and 17 comments from litecoin where obtained. @ 02-07-2020 14:34:14
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 14:34:14
+Done. 4 submissions and 33 comments from litecoinmarkets where obtained. @ 02-07-2020 14:34:18
+Collecting submissions and comments from ethtrader... @ 02-07-2020 14:34:18
+Done. 216 submissions and 120 comments from ethtrader where obtained. @ 02-07-2020 14:35:19
+Collecting submissions and comments from ethfinance... @ 02-07-2020 14:35:19
+Done. 34 submissions and 564 comments from ethfinance where obtained. @ 02-07-2020 14:35:38
+Collecting submissions and comments from xrp... @ 02-07-2020 14:35:38
+Done. 32 submissions and 21 comments from xrp where obtained. @ 02-07-2020 14:35:44
+Collecting submissions and comments from ripple... @ 02-07-2020 14:35:44
+Done. 18 submissions and 58 comments from ripple where obtained. @ 02-07-2020 14:35:48
+Collecting submissions and comments from bitcoin... @ 02-07-2020 14:35:48
+Done. 416 submissions and 2017 comments from bitcoin where obtained. @ 02-07-2020 14:36:42
+Collecting submissions and comments from btc... @ 02-07-2020 14:36:42
+Done. 210 submissions and 720 comments from btc where obtained. @ 02-07-2020 14:37:10
+Collecting submissions and comments from litecoin... @ 02-07-2020 14:37:10
+Done. 14 submissions and 12 comments from litecoin where obtained. @ 02-07-2020 14:37:14
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 14:37:14
+Done. 10 submissions and 24 comments from litecoinmarkets where obtained. @ 02-07-2020 14:37:16
+Collecting submissions and comments from ethtrader... @ 02-07-2020 14:37:16
+Done. 300 submissions and 211 comments from ethtrader where obtained. @ 02-07-2020 14:38:04
+Collecting submissions and comments from ethfinance... @ 02-07-2020 14:38:04
+Done. 52 submissions and 861 comments from ethfinance where obtained. @ 02-07-2020 14:38:47
+Collecting submissions and comments from xrp... @ 02-07-2020 14:38:47
+Done. 28 submissions and 64 comments from xrp where obtained. @ 02-07-2020 14:38:51
+Collecting submissions and comments from ripple... @ 02-07-2020 14:38:51
+Done. 34 submissions and 103 comments from ripple where obtained. @ 02-07-2020 14:39:02
+Collecting submissions and comments from bitcoin... @ 02-07-2020 14:39:02
+Done. 450 submissions and 2134 comments from bitcoin where obtained. @ 02-07-2020 14:40:00
+Collecting submissions and comments from btc... @ 02-07-2020 14:40:00
+Done. 174 submissions and 440 comments from btc where obtained. @ 02-07-2020 14:40:23
+Collecting submissions and comments from litecoin... @ 02-07-2020 14:40:23
+Done. 10 submissions and 42 comments from litecoin where obtained. @ 02-07-2020 14:40:25
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 14:40:25
+Done. 12 submissions and 33 comments from litecoinmarkets where obtained. @ 02-07-2020 14:40:27
+Collecting submissions and comments from ethtrader... @ 02-07-2020 14:40:27
+Done. 276 submissions and 122 comments from ethtrader where obtained. @ 02-07-2020 14:41:09
+Collecting submissions and comments from ethfinance... @ 02-07-2020 14:41:09
+Done. 58 submissions and 791 comments from ethfinance where obtained. @ 02-07-2020 14:41:55
+Collecting submissions and comments from xrp... @ 02-07-2020 14:41:55
+Done. 14 submissions and 55 comments from xrp where obtained. @ 02-07-2020 14:41:57
+Collecting submissions and comments from ripple... @ 02-07-2020 14:41:57
+Done. 26 submissions and 40 comments from ripple where obtained. @ 02-07-2020 14:42:00
+Collecting submissions and comments from bitcoin... @ 02-07-2020 14:42:00
+Done. 458 submissions and 1844 comments from bitcoin where obtained. @ 02-07-2020 14:42:59
+Collecting submissions and comments from btc... @ 02-07-2020 14:42:59
+Done. 234 submissions and 468 comments from btc where obtained. @ 02-07-2020 16:59:27
+Collecting submissions and comments from litecoin... @ 02-07-2020 16:59:27
+Done. 12 submissions and 92 comments from litecoin where obtained. @ 02-07-2020 16:59:31
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 16:59:31
+Done. 10 submissions and 34 comments from litecoinmarkets where obtained. @ 02-07-2020 16:59:37
+Collecting submissions and comments from ethtrader... @ 02-07-2020 16:59:37
+Done. 338 submissions and 152 comments from ethtrader where obtained. @ 02-07-2020 17:00:39
+Collecting submissions and comments from ethfinance... @ 02-07-2020 17:00:39
+Done. 54 submissions and 921 comments from ethfinance where obtained. @ 02-07-2020 17:01:27
+Collecting submissions and comments from xrp... @ 02-07-2020 17:01:27
+Done. 18 submissions and 44 comments from xrp where obtained. @ 02-07-2020 17:01:31
+Collecting submissions and comments from ripple... @ 02-07-2020 17:01:31
+Done. 20 submissions and 96 comments from ripple where obtained. @ 02-07-2020 17:01:35
+Collecting submissions and comments from bitcoin... @ 02-07-2020 17:01:35
+Done. 370 submissions and 1974 comments from bitcoin where obtained. @ 02-07-2020 17:02:43
+Collecting submissions and comments from btc... @ 02-07-2020 17:02:43
+Done. 242 submissions and 722 comments from btc where obtained. @ 02-07-2020 17:03:25
+Collecting submissions and comments from litecoin... @ 02-07-2020 17:03:25
+Done. 14 submissions and 2 comments from litecoin where obtained. @ 02-07-2020 17:03:29
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 17:03:29
+Done. 4 submissions and 26 comments from litecoinmarkets where obtained. @ 02-07-2020 17:03:31
+Collecting submissions and comments from ethtrader... @ 02-07-2020 17:03:31
+Done. 312 submissions and 162 comments from ethtrader where obtained. @ 02-07-2020 17:04:22
+Collecting submissions and comments from ethfinance... @ 02-07-2020 17:04:22
+Done. 44 submissions and 611 comments from ethfinance where obtained. @ 02-07-2020 17:04:46
+Collecting submissions and comments from xrp... @ 02-07-2020 17:04:46
+Done. 22 submissions and 19 comments from xrp where obtained. @ 02-07-2020 17:04:54
+Collecting submissions and comments from ripple... @ 02-07-2020 17:04:54
+Done. 24 submissions and 75 comments from ripple where obtained. @ 02-07-2020 17:05:00
+Collecting submissions and comments from bitcoin... @ 02-07-2020 17:05:00
+Done. 312 submissions and 2109 comments from bitcoin where obtained. @ 02-07-2020 17:06:00
+Collecting submissions and comments from btc... @ 02-07-2020 17:06:00
+Done. 190 submissions and 507 comments from btc where obtained. @ 02-07-2020 17:06:32
+Collecting submissions and comments from litecoin... @ 02-07-2020 17:06:32
+Done. 18 submissions and 50 comments from litecoin where obtained. @ 02-07-2020 17:06:40
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 17:06:40
+Done. 6 submissions and 26 comments from litecoinmarkets where obtained. @ 02-07-2020 17:06:42
+Collecting submissions and comments from ethtrader... @ 02-07-2020 17:06:42
+Done. 248 submissions and 119 comments from ethtrader where obtained. @ 02-07-2020 17:07:24
+Collecting submissions and comments from ethfinance... @ 02-07-2020 17:07:24
+Done. 28 submissions and 595 comments from ethfinance where obtained. @ 02-07-2020 17:07:47
+Collecting submissions and comments from xrp... @ 02-07-2020 17:07:47
+Done. 4 submissions and 6 comments from xrp where obtained. @ 02-07-2020 17:07:49
+Collecting submissions and comments from ripple... @ 02-07-2020 17:07:49
+Done. 28 submissions and 127 comments from ripple where obtained. @ 02-07-2020 17:07:59
+Collecting submissions and comments from bitcoin... @ 02-07-2020 17:07:59
+Done. 334 submissions and 2139 comments from bitcoin where obtained. @ 02-07-2020 17:08:56
+Collecting submissions and comments from btc... @ 02-07-2020 17:08:56
+Done. 160 submissions and 774 comments from btc where obtained. @ 02-07-2020 17:09:24
+Collecting submissions and comments from litecoin... @ 02-07-2020 17:09:24
+Done. 6 submissions and 37 comments from litecoin where obtained. @ 02-07-2020 17:09:26
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 17:09:26
+Done. 2 submissions and 33 comments from litecoinmarkets where obtained. @ 02-07-2020 17:09:42
+Collecting submissions and comments from ethtrader... @ 02-07-2020 17:09:42
+Done. 188 submissions and 60 comments from ethtrader where obtained. @ 02-07-2020 17:10:34
+Collecting submissions and comments from ethfinance... @ 02-07-2020 17:10:34
+Done. 18 submissions and 424 comments from ethfinance where obtained. @ 02-07-2020 17:10:47
+Collecting submissions and comments from xrp... @ 02-07-2020 17:10:47
+Done. 10 submissions and 9 comments from xrp where obtained. @ 02-07-2020 17:10:53
+Collecting submissions and comments from ripple... @ 02-07-2020 17:10:53
+Done. 10 submissions and 31 comments from ripple where obtained. @ 02-07-2020 17:10:57
+Collecting submissions and comments from bitcoin... @ 02-07-2020 17:10:57
+Done. 338 submissions and 1826 comments from bitcoin where obtained. @ 02-07-2020 17:11:54
+Collecting submissions and comments from btc... @ 02-07-2020 17:11:54
+Done. 150 submissions and 663 comments from btc where obtained. @ 02-07-2020 17:12:27
+Collecting submissions and comments from litecoin... @ 02-07-2020 17:12:27
+Done. 10 submissions and 28 comments from litecoin where obtained. @ 02-07-2020 17:12:30
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 17:12:30
+Done. 6 submissions and 17 comments from litecoinmarkets where obtained. @ 02-07-2020 17:12:33
+Collecting submissions and comments from ethtrader... @ 02-07-2020 17:12:33
+Done. 218 submissions and 121 comments from ethtrader where obtained. @ 02-07-2020 17:13:22
+Collecting submissions and comments from ethfinance... @ 02-07-2020 17:13:22
+Done. 18 submissions and 352 comments from ethfinance where obtained. @ 02-07-2020 17:13:34
+Collecting submissions and comments from xrp... @ 02-07-2020 17:13:34
+Done. 20 submissions and 8 comments from xrp where obtained. @ 02-07-2020 17:13:37
+Collecting submissions and comments from ripple... @ 02-07-2020 17:13:37
+Done. 20 submissions and 79 comments from ripple where obtained. @ 02-07-2020 17:13:40
+Collecting submissions and comments from bitcoin... @ 02-07-2020 17:13:40
+Done. 360 submissions and 1672 comments from bitcoin where obtained. @ 02-07-2020 17:14:41
+Collecting submissions and comments from btc... @ 02-07-2020 17:14:41
+Done. 224 submissions and 883 comments from btc where obtained. @ 02-07-2020 17:15:23
+Collecting submissions and comments from litecoin... @ 02-07-2020 17:15:23
+Done. 4 submissions and 15 comments from litecoin where obtained. @ 02-07-2020 17:15:40
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 17:15:40
+Done. 2 submissions and 26 comments from litecoinmarkets where obtained. @ 02-07-2020 17:15:49
+Collecting submissions and comments from ethtrader... @ 02-07-2020 17:15:49
+Done. 326 submissions and 166 comments from ethtrader where obtained. @ 02-07-2020 17:16:51
+Collecting submissions and comments from ethfinance... @ 02-07-2020 17:16:51
+Done. 48 submissions and 430 comments from ethfinance where obtained. @ 02-07-2020 17:17:08
+Collecting submissions and comments from xrp... @ 02-07-2020 18:48:11
+Done. 20 submissions and 8 comments from xrp where obtained. @ 02-07-2020 18:48:14
+Collecting submissions and comments from ripple... @ 02-07-2020 18:48:14
+Done. 20 submissions and 79 comments from ripple where obtained. @ 02-07-2020 18:48:18
+Collecting submissions and comments from bitcoin... @ 02-07-2020 18:48:18
+Done. 360 submissions and 1673 comments from bitcoin where obtained. @ 02-07-2020 18:48:58
+Collecting submissions and comments from btc... @ 02-07-2020 18:48:58
+Done. 224 submissions and 883 comments from btc where obtained. @ 02-07-2020 18:49:27
+Collecting submissions and comments from litecoin... @ 02-07-2020 18:49:27
+Done. 4 submissions and 15 comments from litecoin where obtained. @ 02-07-2020 18:49:28
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 18:49:28
+Done. 2 submissions and 26 comments from litecoinmarkets where obtained. @ 02-07-2020 18:49:29
+Collecting submissions and comments from ethtrader... @ 02-07-2020 18:49:29
+Done. 326 submissions and 166 comments from ethtrader where obtained. @ 02-07-2020 18:50:16
+Collecting submissions and comments from ethfinance... @ 02-07-2020 18:50:16
+Done. 48 submissions and 430 comments from ethfinance where obtained. @ 02-07-2020 18:50:28
+Collecting submissions and comments from xrp... @ 02-07-2020 18:50:28
+Done. 22 submissions and 47 comments from xrp where obtained. @ 02-07-2020 18:50:30
+Collecting submissions and comments from ripple... @ 02-07-2020 18:50:30
+Done. 18 submissions and 39 comments from ripple where obtained. @ 02-07-2020 18:50:35
+Collecting submissions and comments from bitcoin... @ 02-07-2020 18:50:35
+Done. 358 submissions and 1680 comments from bitcoin where obtained. @ 02-07-2020 18:51:14
+Collecting submissions and comments from btc... @ 02-07-2020 18:51:14
+Done. 184 submissions and 766 comments from btc where obtained. @ 02-07-2020 18:51:36
+Collecting submissions and comments from litecoin... @ 02-07-2020 18:51:36
+Done. 20 submissions and 54 comments from litecoin where obtained. @ 02-07-2020 18:51:38
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 18:51:38
+Done. 12 submissions and 30 comments from litecoinmarkets where obtained. @ 02-07-2020 18:51:40
+Collecting submissions and comments from ethtrader... @ 02-07-2020 18:51:40
+Done. 316 submissions and 198 comments from ethtrader where obtained. @ 02-07-2020 18:52:28
+Collecting submissions and comments from ethfinance... @ 02-07-2020 18:52:28
+Done. 44 submissions and 504 comments from ethfinance where obtained. @ 02-07-2020 18:52:44
+Collecting submissions and comments from xrp... @ 02-07-2020 18:52:44
+Done. 14 submissions and 47 comments from xrp where obtained. @ 02-07-2020 18:52:47
+Collecting submissions and comments from ripple... @ 02-07-2020 18:52:47
+Done. 20 submissions and 61 comments from ripple where obtained. @ 02-07-2020 18:52:50
+Collecting submissions and comments from bitcoin... @ 02-07-2020 18:52:50
+Done. 402 submissions and 1493 comments from bitcoin where obtained. @ 02-07-2020 18:53:32
+Collecting submissions and comments from btc... @ 02-07-2020 18:53:32
+Done. 198 submissions and 848 comments from btc where obtained. @ 02-07-2020 18:54:00
+Collecting submissions and comments from litecoin... @ 02-07-2020 18:54:00
+Done. 8 submissions and 23 comments from litecoin where obtained. @ 02-07-2020 18:54:01
+Collecting submissions and comments from litecoinmarkets... @ 02-07-2020 18:54:01
+Done. 12 submissions and 40 comments from litecoinmarkets where obtained. @ 02-07-2020 18:54:05
+Collecting submissions and comments from ethtrader... @ 02-07-2020 18:54:05
+Done. 210 submissions and 136 comments from ethtrader where obtained. @ 02-07-2020 18:54:27
+Collecting submissions and comments from ethfinance... @ 02-07-2020 18:54:27
+Done. 42 submissions and 548 comments from ethfinance where obtained. @ 02-07-2020 18:54:43
+root@2020-07-02 18:56:23,860 - Collecting missing posts
+root@2020-07-02 18:57:02,140 - Collecting missing posts
+prawcore@2020-07-02 19:04:25,209 - Retrying due to ReadTimeout(ReadTimeoutError("HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)",),) status: GET https://oauth.reddit.com/comments/gt9bca/
+root@2020-07-02 19:12:48,039 - Done. 61 submissions and 30615 comments where obtained from missing posts
+Collecting submissions and comments from xrp... @ 03-07-2020 13:45:29
+Collecting submissions and comments from xrp... @ 03-07-2020 14:06:29
+Collecting submissions and comments from xrp... @ 03-07-2020 14:07:31
+Collecting submissions and comments from xrp... @ 03-07-2020 14:07:48
+Done. 8 submissions and 0 comments from xrp where obtained. @ 03-07-2020 14:07:50
+Collecting submissions and comments from ripple... @ 03-07-2020 14:07:50
+Done. 14 submissions and 33 comments from ripple where obtained. @ 03-07-2020 14:07:53
+Collecting submissions and comments from bitcoin... @ 03-07-2020 14:07:53
+Done. 218 submissions and 813 comments from bitcoin where obtained. @ 03-07-2020 14:08:19
+Collecting submissions and comments from btc... @ 03-07-2020 14:08:19
+Done. 112 submissions and 373 comments from btc where obtained. @ 03-07-2020 14:08:33
+Collecting submissions and comments from litecoin... @ 03-07-2020 14:08:33
+Done. 8 submissions and 2 comments from litecoin where obtained. @ 03-07-2020 14:08:35
+Collecting submissions and comments from litecoinmarkets... @ 03-07-2020 14:08:35
+Done. 10 submissions and 25 comments from litecoinmarkets where obtained. @ 03-07-2020 14:08:37
+Collecting submissions and comments from ethtrader... @ 03-07-2020 14:08:37
+Done. 110 submissions and 68 comments from ethtrader where obtained. @ 03-07-2020 14:08:47
+Collecting submissions and comments from ethfinance... @ 03-07-2020 14:08:47
+Done. 22 submissions and 220 comments from ethfinance where obtained. @ 03-07-2020 14:09:00
+Collecting submissions and comments from xrp... @ 03-07-2020 20:50:55
+Done. 8 submissions and 0 comments from xrp where obtained. @ 03-07-2020 20:50:57
+Collecting submissions and comments from ripple... @ 03-07-2020 20:50:57
+Done. 14 submissions and 41 comments from ripple where obtained. @ 03-07-2020 20:51:00
+Collecting submissions and comments from bitcoin... @ 03-07-2020 20:51:00
+Done. 292 submissions and 1140 comments from bitcoin where obtained. @ 03-07-2020 20:51:39
+Collecting submissions and comments from btc... @ 03-07-2020 20:51:39
+Done. 178 submissions and 514 comments from btc where obtained. @ 03-07-2020 20:52:05
+Collecting submissions and comments from litecoin... @ 03-07-2020 20:52:05
+Done. 16 submissions and 8 comments from litecoin where obtained. @ 03-07-2020 20:52:08
+Collecting submissions and comments from litecoinmarkets... @ 03-07-2020 20:52:08
+Done. 10 submissions and 36 comments from litecoinmarkets where obtained. @ 03-07-2020 20:52:11
+Collecting submissions and comments from ethtrader... @ 03-07-2020 20:52:11
+Done. 150 submissions and 100 comments from ethtrader where obtained. @ 03-07-2020 20:52:32
+Collecting submissions and comments from ethfinance... @ 03-07-2020 20:52:32
+Done. 32 submissions and 382 comments from ethfinance where obtained. @ 03-07-2020 20:52:43
+Collecting submissions and comments from xrp... @ 04-07-2020 19:06:48
+Done. 16 submissions and 43 comments from xrp where obtained. @ 04-07-2020 19:06:51
+Collecting submissions and comments from ripple... @ 04-07-2020 19:06:51
+Done. 18 submissions and 32 comments from ripple where obtained. @ 04-07-2020 19:06:53
+Collecting submissions and comments from bitcoin... @ 04-07-2020 19:06:53
+Done. 258 submissions and 943 comments from bitcoin where obtained. @ 04-07-2020 19:07:18
+Collecting submissions and comments from btc... @ 04-07-2020 19:07:18
+Done. 114 submissions and 440 comments from btc where obtained. @ 04-07-2020 19:07:30
+Collecting submissions and comments from litecoin... @ 04-07-2020 19:07:30
+Done. 14 submissions and 43 comments from litecoin where obtained. @ 04-07-2020 19:07:32
+Collecting submissions and comments from litecoinmarkets... @ 04-07-2020 19:07:32
+Done. 2 submissions and 30 comments from litecoinmarkets where obtained. @ 04-07-2020 19:07:33
+Collecting submissions and comments from ethtrader... @ 04-07-2020 19:07:33
+Done. 104 submissions and 80 comments from ethtrader where obtained. @ 04-07-2020 19:07:49
+Collecting submissions and comments from ethfinance... @ 04-07-2020 19:07:49
+Done. 34 submissions and 169 comments from ethfinance where obtained. @ 04-07-2020 19:07:55
+Collecting submissions and comments from xrp... @ 05-07-2020 18:56:04
+Done. 4 submissions and 0 comments from xrp where obtained. @ 05-07-2020 18:56:05
+Collecting submissions and comments from ripple... @ 05-07-2020 18:56:05
+Done. 6 submissions and 20 comments from ripple where obtained. @ 05-07-2020 18:56:06
+Collecting submissions and comments from bitcoin... @ 05-07-2020 18:56:06
+Done. 234 submissions and 1133 comments from bitcoin where obtained. @ 05-07-2020 18:56:32
+Collecting submissions and comments from btc... @ 05-07-2020 18:56:32
+Done. 108 submissions and 387 comments from btc where obtained. @ 05-07-2020 18:56:43
+Collecting submissions and comments from litecoin... @ 05-07-2020 18:56:43
+Done. 4 submissions and 20 comments from litecoin where obtained. @ 05-07-2020 18:56:44
+Collecting submissions and comments from litecoinmarkets... @ 05-07-2020 18:56:44
+Done. 6 submissions and 16 comments from litecoinmarkets where obtained. @ 05-07-2020 18:56:45
+Collecting submissions and comments from ethtrader... @ 05-07-2020 18:56:45
+Done. 76 submissions and 56 comments from ethtrader where obtained. @ 05-07-2020 18:56:52
+Collecting submissions and comments from ethfinance... @ 05-07-2020 18:56:52
+Done. 18 submissions and 161 comments from ethfinance where obtained. @ 05-07-2020 18:56:57
+Collecting submissions and comments from xrp... @ 06-07-2020 19:03:42
+Done. 24 submissions and 49 comments from xrp where obtained. @ 06-07-2020 19:03:50
+Collecting submissions and comments from ripple... @ 06-07-2020 19:03:50
+Done. 20 submissions and 34 comments from ripple where obtained. @ 06-07-2020 19:03:55
+Collecting submissions and comments from bitcoin... @ 06-07-2020 19:03:55
+Done. 200 submissions and 445 comments from bitcoin where obtained. @ 06-07-2020 19:04:23
+Collecting submissions and comments from btc... @ 06-07-2020 19:04:23
+Done. 200 submissions and 361 comments from btc where obtained. @ 06-07-2020 19:04:53
+Collecting submissions and comments from litecoin... @ 06-07-2020 19:04:53
+Done. 10 submissions and 32 comments from litecoin where obtained. @ 06-07-2020 19:04:54
+Collecting submissions and comments from litecoinmarkets... @ 06-07-2020 19:04:54
+Done. 8 submissions and 44 comments from litecoinmarkets where obtained. @ 06-07-2020 19:05:01
+Collecting submissions and comments from ethtrader... @ 06-07-2020 19:05:01
+Done. 180 submissions and 117 comments from ethtrader where obtained. @ 06-07-2020 19:05:26
+Collecting submissions and comments from ethfinance... @ 06-07-2020 19:05:26
+Done. 50 submissions and 509 comments from ethfinance where obtained. @ 06-07-2020 19:05:45
+Collecting submissions and comments from xrp... @ 07-07-2020 18:52:40
+Done. 16 submissions and 0 comments from xrp where obtained. @ 07-07-2020 18:52:43
+Collecting submissions and comments from ripple... @ 07-07-2020 18:52:43
+Done. 16 submissions and 27 comments from ripple where obtained. @ 07-07-2020 18:52:47
+Collecting submissions and comments from bitcoin... @ 07-07-2020 18:52:47
+Done. 200 submissions and 419 comments from bitcoin where obtained. @ 07-07-2020 18:53:05
+Collecting submissions and comments from btc... @ 07-07-2020 18:53:05
+Done. 200 submissions and 162 comments from btc where obtained. @ 07-07-2020 18:53:23
+Collecting submissions and comments from litecoin... @ 07-07-2020 18:53:23
+Done. 12 submissions and 6 comments from litecoin where obtained. @ 07-07-2020 18:53:24
+Collecting submissions and comments from litecoinmarkets... @ 07-07-2020 18:53:24
+Done. 2 submissions and 22 comments from litecoinmarkets where obtained. @ 07-07-2020 18:53:25
+Collecting submissions and comments from ethtrader... @ 07-07-2020 18:53:25
+Done. 200 submissions and 73 comments from ethtrader where obtained. @ 07-07-2020 18:53:42
+Collecting submissions and comments from ethfinance... @ 07-07-2020 18:53:42
+Done. 40 submissions and 440 comments from ethfinance where obtained. @ 07-07-2020 18:53:53
+Collecting submissions and comments from xrp... @ 07-07-2020 19:45:25
+Done. 16 submissions and 0 comments from xrp where obtained. @ 07-07-2020 19:45:31
+Collecting submissions and comments from ripple... @ 07-07-2020 19:45:31
+Done. 16 submissions and 27 comments from ripple where obtained. @ 07-07-2020 19:45:33
+Collecting submissions and comments from bitcoin... @ 07-07-2020 19:45:33
+Done. 200 submissions and 458 comments from bitcoin where obtained. @ 07-07-2020 19:45:51
+Collecting submissions and comments from btc... @ 07-07-2020 19:45:51
+Done. 200 submissions and 172 comments from btc where obtained. @ 07-07-2020 19:46:08
+Collecting submissions and comments from litecoin... @ 07-07-2020 19:46:08
+Done. 12 submissions and 6 comments from litecoin where obtained. @ 07-07-2020 19:46:09
+Collecting submissions and comments from litecoinmarkets... @ 07-07-2020 19:46:09
+Done. 2 submissions and 22 comments from litecoinmarkets where obtained. @ 07-07-2020 19:46:11
+Collecting submissions and comments from ethtrader... @ 07-07-2020 19:46:11
+Done. 200 submissions and 74 comments from ethtrader where obtained. @ 07-07-2020 19:46:28
+Collecting submissions and comments from ethfinance... @ 07-07-2020 19:46:28
+Done. 40 submissions and 463 comments from ethfinance where obtained. @ 07-07-2020 19:46:40
+Collecting submissions and comments from xrp... @ 07-07-2020 20:09:11
+Done. 24 submissions and 52 comments from xrp where obtained. @ 07-07-2020 20:09:15
+Collecting submissions and comments from ripple... @ 07-07-2020 20:09:15
+Done. 20 submissions and 40 comments from ripple where obtained. @ 07-07-2020 20:09:20
+Collecting submissions and comments from bitcoin... @ 07-07-2020 20:09:20
+Done. 200 submissions and 734 comments from bitcoin where obtained. @ 07-07-2020 20:09:48
+Collecting submissions and comments from btc... @ 07-07-2020 20:09:48
+Done. 200 submissions and 561 comments from btc where obtained. @ 07-07-2020 20:10:15
+Collecting submissions and comments from litecoin... @ 07-07-2020 20:10:15
+Done. 10 submissions and 36 comments from litecoin where obtained. @ 07-07-2020 20:10:17
+Collecting submissions and comments from litecoinmarkets... @ 07-07-2020 20:10:17
+Done. 8 submissions and 48 comments from litecoinmarkets where obtained. @ 07-07-2020 20:10:19
+Collecting submissions and comments from ethtrader... @ 07-07-2020 20:10:19
+Done. 182 submissions and 154 comments from ethtrader where obtained. @ 07-07-2020 20:10:43
+Collecting submissions and comments from ethfinance... @ 07-07-2020 20:10:43
+Done. 50 submissions and 700 comments from ethfinance where obtained. @ 07-07-2020 20:11:12
+Collecting submissions and comments from xrp... @ 07-07-2020 20:20:51
+Done. 20 submissions and 89 comments from xrp where obtained. @ 07-07-2020 20:20:56
+Collecting submissions and comments from ripple... @ 07-07-2020 20:20:56
+Done. 12 submissions and 28 comments from ripple where obtained. @ 07-07-2020 20:20:58
+Collecting submissions and comments from bitcoin... @ 07-07-2020 20:20:58
+Done. 200 submissions and 1092 comments from bitcoin where obtained. @ 07-07-2020 20:21:29
+Collecting submissions and comments from btc... @ 07-07-2020 20:21:29
+Done. 128 submissions and 773 comments from btc where obtained. @ 07-07-2020 20:21:53
+Collecting submissions and comments from litecoin... @ 07-07-2020 20:21:53
+Done. 14 submissions and 52 comments from litecoin where obtained. @ 07-07-2020 20:21:55
+Collecting submissions and comments from litecoinmarkets... @ 07-07-2020 20:21:55
+Done. 6 submissions and 18 comments from litecoinmarkets where obtained. @ 07-07-2020 20:21:59
+Collecting submissions and comments from ethtrader... @ 07-07-2020 20:21:59
+Done. 138 submissions and 127 comments from ethtrader where obtained. @ 07-07-2020 20:22:24
+Collecting submissions and comments from ethfinance... @ 07-07-2020 20:22:24
+Done. 32 submissions and 268 comments from ethfinance where obtained. @ 07-07-2020 20:22:33
+Collecting submissions and comments from xrp... @ 07-07-2020 20:22:33
+Done. 12 submissions and 32 comments from xrp where obtained. @ 07-07-2020 20:22:35
+Collecting submissions and comments from ripple... @ 07-07-2020 20:22:35
+Done. 12 submissions and 49 comments from ripple where obtained. @ 07-07-2020 20:22:38
+Collecting submissions and comments from bitcoin... @ 07-07-2020 20:22:38
+Done. 200 submissions and 795 comments from bitcoin where obtained. @ 07-07-2020 20:23:07
+Collecting submissions and comments from btc... @ 07-07-2020 20:23:07
+Done. 154 submissions and 570 comments from btc where obtained. @ 07-07-2020 20:23:32
+Collecting submissions and comments from litecoin... @ 07-07-2020 20:23:32
+Done. 12 submissions and 32 comments from litecoin where obtained. @ 07-07-2020 20:23:35
+Collecting submissions and comments from litecoinmarkets... @ 07-07-2020 20:23:35
+Done. 6 submissions and 48 comments from litecoinmarkets where obtained. @ 07-07-2020 20:23:36
+Collecting submissions and comments from ethtrader... @ 07-07-2020 20:23:36
+Done. 68 submissions and 81 comments from ethtrader where obtained. @ 07-07-2020 20:23:45
+Collecting submissions and comments from ethfinance... @ 07-07-2020 20:23:45
+Done. 24 submissions and 272 comments from ethfinance where obtained. @ 07-07-2020 20:23:54
+Collecting submissions and comments from xrp... @ 07-07-2020 20:23:54
+Done. 18 submissions and 20 comments from xrp where obtained. @ 07-07-2020 20:24:00
+Collecting submissions and comments from ripple... @ 07-07-2020 20:24:00
+Done. 22 submissions and 19 comments from ripple where obtained. @ 07-07-2020 20:24:04
+Collecting submissions and comments from bitcoin... @ 07-07-2020 20:24:04
+Done. 200 submissions and 731 comments from bitcoin where obtained. @ 07-07-2020 20:24:32
+Collecting submissions and comments from btc... @ 07-07-2020 20:24:32
+Done. 200 submissions and 516 comments from btc where obtained. @ 07-07-2020 20:24:59
+Collecting submissions and comments from litecoin... @ 07-07-2020 20:24:59
+Done. 8 submissions and 36 comments from litecoin where obtained. @ 07-07-2020 20:25:01
+Collecting submissions and comments from litecoinmarkets... @ 07-07-2020 20:25:01
+Done. 8 submissions and 22 comments from litecoinmarkets where obtained. @ 07-07-2020 20:25:03
+Collecting submissions and comments from ethtrader... @ 07-07-2020 20:25:03
+Done. 200 submissions and 128 comments from ethtrader where obtained. @ 07-07-2020 20:25:28
+Collecting submissions and comments from ethfinance... @ 07-07-2020 20:25:28
+Done. 52 submissions and 683 comments from ethfinance where obtained. @ 07-07-2020 20:26:02
+Collecting submissions and comments from xrp... @ 07-07-2020 20:26:02
+Done. 14 submissions and 0 comments from xrp where obtained. @ 07-07-2020 20:26:07
+Collecting submissions and comments from ripple... @ 07-07-2020 20:26:07
+Done. 10 submissions and 17 comments from ripple where obtained. @ 07-07-2020 20:26:09
+Collecting submissions and comments from bitcoin... @ 07-07-2020 20:26:09
+Done. 200 submissions and 288 comments from bitcoin where obtained. @ 07-07-2020 20:26:33
+Collecting submissions and comments from btc... @ 07-07-2020 20:26:33
+Done. 200 submissions and 176 comments from btc where obtained. @ 07-07-2020 20:26:58
+Collecting submissions and comments from litecoin... @ 07-07-2020 20:26:58
+Done. 14 submissions and 8 comments from litecoin where obtained. @ 07-07-2020 20:27:00
+Collecting submissions and comments from litecoinmarkets... @ 07-07-2020 20:27:00
+Done. 4 submissions and 0 comments from litecoinmarkets where obtained. @ 07-07-2020 20:27:01
+Collecting submissions and comments from ethtrader... @ 07-07-2020 20:27:01
+Done. 180 submissions and 67 comments from ethtrader where obtained. @ 07-07-2020 20:27:25
+Collecting submissions and comments from ethfinance... @ 07-07-2020 20:27:25
+Done. 38 submissions and 484 comments from ethfinance where obtained. @ 07-07-2020 20:27:37
+root@2020-07-07 20:32:25,461 - Collecting missing posts
+root@2020-07-07 20:32:26,495 - Done. 1 submissions and 55 comments where obtained from missing posts
+Collecting submissions and comments from xrp... @ 08-07-2020 18:48:23
+Done. 16 submissions and 5 comments from xrp where obtained. @ 08-07-2020 18:48:27
+Collecting submissions and comments from ripple... @ 08-07-2020 18:48:27
+Done. 16 submissions and 48 comments from ripple where obtained. @ 08-07-2020 18:48:30
+Collecting submissions and comments from bitcoin... @ 08-07-2020 18:48:30
+Collecting submissions and comments from xrp... @ 08-07-2020 18:48:51
+Done. 12 submissions and 14 comments from xrp where obtained. @ 08-07-2020 18:48:53
+Collecting submissions and comments from ripple... @ 08-07-2020 18:48:53
+Done. 10 submissions and 95 comments from ripple where obtained. @ 08-07-2020 18:48:57
+Collecting submissions and comments from bitcoin... @ 08-07-2020 18:48:57
+Done. 200 submissions and 426 comments from bitcoin where obtained. @ 08-07-2020 18:49:26
+Collecting submissions and comments from btc... @ 08-07-2020 18:49:26
+Done. 200 submissions and 361 comments from btc where obtained. @ 08-07-2020 18:49:50
+Collecting submissions and comments from litecoin... @ 08-07-2020 18:49:50
+Done. 20 submissions and 2 comments from litecoin where obtained. @ 08-07-2020 18:49:54
+Collecting submissions and comments from litecoinmarkets... @ 08-07-2020 18:49:54
+Done. 14 submissions and 59 comments from litecoinmarkets where obtained. @ 08-07-2020 18:50:00
+Collecting submissions and comments from ethtrader... @ 08-07-2020 18:50:00
+Done. 182 submissions and 98 comments from ethtrader where obtained. @ 08-07-2020 18:50:22
+Collecting submissions and comments from ethfinance... @ 08-07-2020 18:50:22
+Done. 64 submissions and 632 comments from ethfinance where obtained. @ 08-07-2020 18:50:55
+Collecting submissions and comments from xrp... @ 27-07-2020 18:35:15
+Done. 20 submissions and 38 comments from xrp where obtained. @ 27-07-2020 18:35:20
+Collecting submissions and comments from ripple... @ 27-07-2020 18:35:20
+Done. 22 submissions and 42 comments from ripple where obtained. @ 27-07-2020 18:35:23
+Collecting submissions and comments from bitcoin... @ 27-07-2020 18:35:23
+Done. 200 submissions and 859 comments from bitcoin where obtained. @ 27-07-2020 18:35:54
+Collecting submissions and comments from btc... @ 27-07-2020 18:35:54
+Done. 178 submissions and 410 comments from btc where obtained. @ 27-07-2020 18:36:25
+Collecting submissions and comments from litecoin... @ 27-07-2020 18:36:25
+Done. 6 submissions and 5 comments from litecoin where obtained. @ 27-07-2020 18:36:26
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 18:36:26
+Done. 8 submissions and 22 comments from litecoinmarkets where obtained. @ 27-07-2020 18:36:28
+Collecting submissions and comments from ethtrader... @ 27-07-2020 18:36:28
+Done. 146 submissions and 99 comments from ethtrader where obtained. @ 27-07-2020 18:36:48
+Collecting submissions and comments from ethfinance... @ 27-07-2020 18:36:48
+Done. 24 submissions and 390 comments from ethfinance where obtained. @ 27-07-2020 18:36:59
+Collecting submissions and comments from xrp... @ 27-07-2020 18:36:59
+Done. 22 submissions and 1 comments from xrp where obtained. @ 27-07-2020 18:37:02
+Collecting submissions and comments from ripple... @ 27-07-2020 18:37:02
+Done. 20 submissions and 48 comments from ripple where obtained. @ 27-07-2020 18:37:05
+Collecting submissions and comments from bitcoin... @ 27-07-2020 18:37:05
+Done. 200 submissions and 931 comments from bitcoin where obtained. @ 27-07-2020 18:37:41
+Collecting submissions and comments from btc... @ 27-07-2020 18:37:41
+Done. 128 submissions and 468 comments from btc where obtained. @ 27-07-2020 18:38:01
+Collecting submissions and comments from litecoin... @ 27-07-2020 18:38:02
+Done. 4 submissions and 5 comments from litecoin where obtained. @ 27-07-2020 18:38:02
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 18:38:02
+Done. 6 submissions and 31 comments from litecoinmarkets where obtained. @ 27-07-2020 18:38:04
+Collecting submissions and comments from ethtrader... @ 27-07-2020 18:38:04
+Done. 60 submissions and 106 comments from ethtrader where obtained. @ 27-07-2020 18:38:13
+Collecting submissions and comments from ethfinance... @ 27-07-2020 18:38:13
+Done. 16 submissions and 397 comments from ethfinance where obtained. @ 27-07-2020 18:38:23
+Collecting submissions and comments from xrp... @ 27-07-2020 18:38:23
+Done. 16 submissions and 89 comments from xrp where obtained. @ 27-07-2020 18:38:27
+Collecting submissions and comments from ripple... @ 27-07-2020 18:38:27
+Done. 10 submissions and 49 comments from ripple where obtained. @ 27-07-2020 18:38:29
+Collecting submissions and comments from bitcoin... @ 27-07-2020 18:38:29
+Done. 200 submissions and 1157 comments from bitcoin where obtained. @ 27-07-2020 18:39:03
+Collecting submissions and comments from btc... @ 27-07-2020 18:39:03
+Done. 114 submissions and 333 comments from btc where obtained. @ 27-07-2020 18:39:20
+Collecting submissions and comments from litecoin... @ 27-07-2020 18:39:20
+Done. 16 submissions and 30 comments from litecoin where obtained. @ 27-07-2020 18:39:23
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 18:39:23
+Done. 8 submissions and 54 comments from litecoinmarkets where obtained. @ 27-07-2020 18:39:25
+Collecting submissions and comments from ethtrader... @ 27-07-2020 18:39:25
+Done. 110 submissions and 118 comments from ethtrader where obtained. @ 27-07-2020 18:39:40
+Collecting submissions and comments from ethfinance... @ 27-07-2020 18:39:40
+Done. 14 submissions and 563 comments from ethfinance where obtained. @ 27-07-2020 18:39:53
+Collecting submissions and comments from xrp... @ 27-07-2020 18:39:53
+Done. 20 submissions and 22 comments from xrp where obtained. @ 27-07-2020 18:39:56
+Collecting submissions and comments from ripple... @ 27-07-2020 18:39:56
+Done. 18 submissions and 89 comments from ripple where obtained. @ 27-07-2020 18:40:00
+Collecting submissions and comments from bitcoin... @ 27-07-2020 18:40:00
+Done. 200 submissions and 408 comments from bitcoin where obtained. @ 27-07-2020 18:40:26
+Collecting submissions and comments from btc... @ 27-07-2020 18:40:26
+Done. 150 submissions and 390 comments from btc where obtained. @ 27-07-2020 18:40:48
+Collecting submissions and comments from litecoin... @ 27-07-2020 18:40:48
+Done. 12 submissions and 29 comments from litecoin where obtained. @ 27-07-2020 18:40:50
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 18:40:50
+Done. 8 submissions and 35 comments from litecoinmarkets where obtained. @ 27-07-2020 18:40:52
+Collecting submissions and comments from ethtrader... @ 27-07-2020 18:40:52
+Done. 186 submissions and 106 comments from ethtrader where obtained. @ 27-07-2020 18:41:16
+Collecting submissions and comments from ethfinance... @ 27-07-2020 18:41:16
+Done. 30 submissions and 694 comments from ethfinance where obtained. @ 27-07-2020 18:41:53
+Collecting submissions and comments from xrp... @ 27-07-2020 18:41:53
+Done. 12 submissions and 2 comments from xrp where obtained. @ 27-07-2020 18:41:55
+Collecting submissions and comments from ripple... @ 27-07-2020 18:41:55
+Done. 24 submissions and 73 comments from ripple where obtained. @ 27-07-2020 18:42:00
+Collecting submissions and comments from bitcoin... @ 27-07-2020 18:42:00
+Done. 200 submissions and 588 comments from bitcoin where obtained. @ 27-07-2020 18:42:30
+Collecting submissions and comments from btc... @ 27-07-2020 18:42:30
+Done. 200 submissions and 401 comments from btc where obtained. @ 27-07-2020 18:42:57
+Collecting submissions and comments from litecoin... @ 27-07-2020 18:42:57
+Done. 16 submissions and 23 comments from litecoin where obtained. @ 27-07-2020 18:43:01
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 18:43:01
+Done. 10 submissions and 50 comments from litecoinmarkets where obtained. @ 27-07-2020 18:43:05
+Collecting submissions and comments from ethtrader... @ 27-07-2020 18:43:05
+Done. 200 submissions and 146 comments from ethtrader where obtained. @ 27-07-2020 18:43:32
+Collecting submissions and comments from ethfinance... @ 27-07-2020 18:43:32
+Done. 34 submissions and 573 comments from ethfinance where obtained. @ 27-07-2020 18:43:50
+Collecting submissions and comments from xrp... @ 27-07-2020 18:43:50
+Done. 22 submissions and 20 comments from xrp where obtained. @ 27-07-2020 18:43:53
+Collecting submissions and comments from ripple... @ 27-07-2020 18:43:53
+Done. 22 submissions and 98 comments from ripple where obtained. @ 27-07-2020 18:43:58
+Collecting submissions and comments from bitcoin... @ 27-07-2020 18:43:58
+Done. 200 submissions and 672 comments from bitcoin where obtained. @ 27-07-2020 18:44:27
+Collecting submissions and comments from btc... @ 27-07-2020 18:44:27
+Done. 200 submissions and 340 comments from btc where obtained. @ 27-07-2020 18:44:57
+Collecting submissions and comments from litecoin... @ 27-07-2020 18:44:57
+Done. 12 submissions and 21 comments from litecoin where obtained. @ 27-07-2020 18:45:00
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 18:45:00
+Done. 8 submissions and 53 comments from litecoinmarkets where obtained. @ 27-07-2020 18:45:02
+Collecting submissions and comments from ethtrader... @ 27-07-2020 18:45:02
+Done. 200 submissions and 184 comments from ethtrader where obtained. @ 27-07-2020 18:45:34
+Collecting submissions and comments from ethfinance... @ 27-07-2020 18:45:34
+Done. 46 submissions and 730 comments from ethfinance where obtained. @ 27-07-2020 18:46:09
+Collecting submissions and comments from xrp... @ 27-07-2020 18:46:09
+Done. 22 submissions and 94 comments from xrp where obtained. @ 27-07-2020 18:46:14
+Collecting submissions and comments from ripple... @ 27-07-2020 18:46:14
+Done. 26 submissions and 79 comments from ripple where obtained. @ 27-07-2020 18:46:18
+Collecting submissions and comments from bitcoin... @ 27-07-2020 18:46:18
+Done. 200 submissions and 699 comments from bitcoin where obtained. @ 27-07-2020 18:46:48
+Collecting submissions and comments from btc... @ 27-07-2020 18:46:48
+Done. 186 submissions and 471 comments from btc where obtained. @ 27-07-2020 18:47:16
+Collecting submissions and comments from litecoin... @ 27-07-2020 18:47:16
+Done. 0 submissions and 0 comments from litecoin where obtained. @ 27-07-2020 18:47:16
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 18:47:16
+Done. 4 submissions and 48 comments from litecoinmarkets where obtained. @ 27-07-2020 18:47:18
+Collecting submissions and comments from ethtrader... @ 27-07-2020 18:47:18
+Done. 190 submissions and 131 comments from ethtrader where obtained. @ 27-07-2020 18:47:44
+Collecting submissions and comments from ethfinance... @ 27-07-2020 18:47:44
+Done. 36 submissions and 540 comments from ethfinance where obtained. @ 27-07-2020 18:48:02
+Collecting submissions and comments from xrp... @ 27-07-2020 18:48:02
+Done. 8 submissions and 19 comments from xrp where obtained. @ 27-07-2020 18:48:04
+Collecting submissions and comments from ripple... @ 27-07-2020 18:48:04
+Done. 14 submissions and 90 comments from ripple where obtained. @ 27-07-2020 18:48:09
+Collecting submissions and comments from bitcoin... @ 27-07-2020 18:48:09
+Done. 200 submissions and 805 comments from bitcoin where obtained. @ 27-07-2020 18:48:42
+Collecting submissions and comments from btc... @ 27-07-2020 18:48:42
+Done. 172 submissions and 302 comments from btc where obtained. @ 27-07-2020 18:49:05
+Collecting submissions and comments from litecoin... @ 27-07-2020 18:49:05
+Done. 16 submissions and 101 comments from litecoin where obtained. @ 27-07-2020 18:49:09
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 18:49:09
+Done. 6 submissions and 22 comments from litecoinmarkets where obtained. @ 27-07-2020 18:49:10
+Collecting submissions and comments from ethtrader... @ 27-07-2020 18:49:10
+Done. 134 submissions and 124 comments from ethtrader where obtained. @ 27-07-2020 18:49:28
+Collecting submissions and comments from ethfinance... @ 27-07-2020 18:49:28
+Done. 48 submissions and 595 comments from ethfinance where obtained. @ 27-07-2020 18:49:46
+Collecting submissions and comments from xrp... @ 27-07-2020 18:49:46
+Done. 14 submissions and 2 comments from xrp where obtained. @ 27-07-2020 18:49:50
+Collecting submissions and comments from ripple... @ 27-07-2020 18:49:50
+Done. 12 submissions and 65 comments from ripple where obtained. @ 27-07-2020 18:49:52
+Collecting submissions and comments from bitcoin... @ 27-07-2020 18:49:52
+Done. 200 submissions and 748 comments from bitcoin where obtained. @ 27-07-2020 18:50:22
+Collecting submissions and comments from btc... @ 27-07-2020 18:50:22
+Done. 130 submissions and 411 comments from btc where obtained. @ 27-07-2020 18:50:45
+Collecting submissions and comments from litecoin... @ 27-07-2020 18:50:45
+Done. 12 submissions and 40 comments from litecoin where obtained. @ 27-07-2020 18:50:48
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 18:50:48
+Done. 8 submissions and 13 comments from litecoinmarkets where obtained. @ 27-07-2020 18:50:50
+Collecting submissions and comments from ethtrader... @ 27-07-2020 18:50:50
+Done. 78 submissions and 105 comments from ethtrader where obtained. @ 27-07-2020 18:51:01
+Collecting submissions and comments from ethfinance... @ 27-07-2020 18:51:01
+Done. 22 submissions and 471 comments from ethfinance where obtained. @ 27-07-2020 18:51:14
+Collecting submissions and comments from xrp... @ 27-07-2020 18:51:14
+Done. 14 submissions and 51 comments from xrp where obtained. @ 27-07-2020 18:51:17
+Collecting submissions and comments from ripple... @ 27-07-2020 18:51:17
+Done. 24 submissions and 117 comments from ripple where obtained. @ 27-07-2020 18:51:21
+Collecting submissions and comments from bitcoin... @ 27-07-2020 18:51:21
+Done. 200 submissions and 1055 comments from bitcoin where obtained. @ 27-07-2020 18:51:57
+Collecting submissions and comments from btc... @ 27-07-2020 18:51:57
+Done. 124 submissions and 365 comments from btc where obtained. @ 27-07-2020 18:52:21
+Collecting submissions and comments from litecoin... @ 27-07-2020 18:52:21
+Done. 8 submissions and 12 comments from litecoin where obtained. @ 27-07-2020 18:52:23
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 18:52:23
+Done. 6 submissions and 33 comments from litecoinmarkets where obtained. @ 27-07-2020 18:52:25
+Collecting submissions and comments from ethtrader... @ 27-07-2020 18:52:25
+Done. 88 submissions and 177 comments from ethtrader where obtained. @ 27-07-2020 18:52:41
+Collecting submissions and comments from ethfinance... @ 27-07-2020 18:52:41
+Done. 18 submissions and 432 comments from ethfinance where obtained. @ 27-07-2020 18:52:52
+Collecting submissions and comments from xrp... @ 27-07-2020 18:52:52
+Done. 20 submissions and 17 comments from xrp where obtained. @ 27-07-2020 18:52:56
+Collecting submissions and comments from ripple... @ 27-07-2020 18:52:56
+Done. 16 submissions and 99 comments from ripple where obtained. @ 27-07-2020 18:52:59
+Collecting submissions and comments from bitcoin... @ 27-07-2020 18:52:59
+Done. 200 submissions and 953 comments from bitcoin where obtained. @ 27-07-2020 18:53:30
+Collecting submissions and comments from btc... @ 27-07-2020 18:53:30
+Done. 200 submissions and 344 comments from btc where obtained. @ 27-07-2020 18:53:58
+Collecting submissions and comments from litecoin... @ 27-07-2020 18:53:58
+Done. 32 submissions and 59 comments from litecoin where obtained. @ 27-07-2020 18:54:02
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 18:54:02
+Done. 4 submissions and 30 comments from litecoinmarkets where obtained. @ 27-07-2020 18:54:04
+Collecting submissions and comments from ethtrader... @ 27-07-2020 18:54:04
+Done. 162 submissions and 229 comments from ethtrader where obtained. @ 27-07-2020 18:54:26
+Collecting submissions and comments from ethfinance... @ 27-07-2020 18:54:26
+Done. 46 submissions and 561 comments from ethfinance where obtained. @ 27-07-2020 18:54:43
+Collecting submissions and comments from xrp... @ 27-07-2020 18:54:43
+Done. 22 submissions and 21 comments from xrp where obtained. @ 27-07-2020 18:54:46
+Collecting submissions and comments from ripple... @ 27-07-2020 18:54:46
+Done. 14 submissions and 71 comments from ripple where obtained. @ 27-07-2020 18:54:50
+Collecting submissions and comments from bitcoin... @ 27-07-2020 18:54:50
+Done. 200 submissions and 1176 comments from bitcoin where obtained. @ 27-07-2020 18:55:23
+Collecting submissions and comments from btc... @ 27-07-2020 18:55:23
+Done. 196 submissions and 241 comments from btc where obtained. @ 27-07-2020 18:55:52
+Collecting submissions and comments from litecoin... @ 27-07-2020 18:55:52
+Done. 20 submissions and 47 comments from litecoin where obtained. @ 27-07-2020 18:55:57
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 18:55:57
+Done. 4 submissions and 37 comments from litecoinmarkets where obtained. @ 27-07-2020 18:55:58
+Collecting submissions and comments from ethtrader... @ 27-07-2020 18:55:58
+Done. 164 submissions and 168 comments from ethtrader where obtained. @ 27-07-2020 18:56:21
+Collecting submissions and comments from ethfinance... @ 27-07-2020 18:56:21
+Done. 50 submissions and 640 comments from ethfinance where obtained. @ 27-07-2020 18:56:51
+Collecting submissions and comments from xrp... @ 27-07-2020 18:56:51
+Done. 16 submissions and 15 comments from xrp where obtained. @ 27-07-2020 18:56:53
+Collecting submissions and comments from ripple... @ 27-07-2020 18:56:53
+Done. 20 submissions and 116 comments from ripple where obtained. @ 27-07-2020 18:56:58
+Collecting submissions and comments from bitcoin... @ 27-07-2020 18:56:58
+Done. 200 submissions and 1091 comments from bitcoin where obtained. @ 27-07-2020 18:57:36
+Collecting submissions and comments from btc... @ 27-07-2020 18:57:36
+Done. 194 submissions and 421 comments from btc where obtained. @ 27-07-2020 18:58:02
+Collecting submissions and comments from litecoin... @ 27-07-2020 18:58:02
+Done. 10 submissions and 7 comments from litecoin where obtained. @ 27-07-2020 18:58:04
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 18:58:04
+Done. 2 submissions and 39 comments from litecoinmarkets where obtained. @ 27-07-2020 18:58:05
+Collecting submissions and comments from ethtrader... @ 27-07-2020 18:58:05
+Done. 158 submissions and 148 comments from ethtrader where obtained. @ 27-07-2020 18:58:34
+Collecting submissions and comments from ethfinance... @ 27-07-2020 18:58:34
+Done. 54 submissions and 1336 comments from ethfinance where obtained. @ 27-07-2020 19:00:15
+Collecting submissions and comments from xrp... @ 27-07-2020 19:00:15
+Done. 10 submissions and 0 comments from xrp where obtained. @ 27-07-2020 19:00:25
+Collecting submissions and comments from ripple... @ 27-07-2020 19:00:25
+Done. 22 submissions and 67 comments from ripple where obtained. @ 27-07-2020 19:00:30
+Collecting submissions and comments from bitcoin... @ 27-07-2020 19:00:30
+Done. 200 submissions and 1082 comments from bitcoin where obtained. @ 27-07-2020 19:01:04
+Collecting submissions and comments from btc... @ 27-07-2020 19:01:04
+Done. 200 submissions and 1043 comments from btc where obtained. @ 27-07-2020 19:01:41
+Collecting submissions and comments from litecoin... @ 27-07-2020 19:01:41
+Done. 10 submissions and 3 comments from litecoin where obtained. @ 27-07-2020 19:01:43
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 19:01:43
+Done. 12 submissions and 74 comments from litecoinmarkets where obtained. @ 27-07-2020 19:01:46
+Collecting submissions and comments from ethtrader... @ 27-07-2020 19:01:46
+Done. 168 submissions and 221 comments from ethtrader where obtained. @ 27-07-2020 19:02:08
+Collecting submissions and comments from ethfinance... @ 27-07-2020 19:02:08
+Done. 58 submissions and 1351 comments from ethfinance where obtained. @ 27-07-2020 19:04:16
+Collecting submissions and comments from xrp... @ 27-07-2020 19:04:16
+Done. 8 submissions and 24 comments from xrp where obtained. @ 27-07-2020 19:04:18
+Collecting submissions and comments from ripple... @ 27-07-2020 19:04:18
+Done. 24 submissions and 69 comments from ripple where obtained. @ 27-07-2020 19:04:21
+Collecting submissions and comments from bitcoin... @ 27-07-2020 19:04:21
+Done. 200 submissions and 847 comments from bitcoin where obtained. @ 27-07-2020 19:04:46
+Collecting submissions and comments from btc... @ 27-07-2020 19:04:46
+Done. 180 submissions and 766 comments from btc where obtained. @ 27-07-2020 19:05:06
+Collecting submissions and comments from litecoin... @ 27-07-2020 19:05:06
+Done. 12 submissions and 62 comments from litecoin where obtained. @ 27-07-2020 19:05:08
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 19:05:08
+Done. 8 submissions and 105 comments from litecoinmarkets where obtained. @ 27-07-2020 19:05:12
+Collecting submissions and comments from ethtrader... @ 27-07-2020 19:05:12
+Done. 130 submissions and 136 comments from ethtrader where obtained. @ 27-07-2020 19:05:24
+Collecting submissions and comments from ethfinance... @ 27-07-2020 19:05:24
+Done. 36 submissions and 1374 comments from ethfinance where obtained. @ 27-07-2020 19:06:36
+Collecting submissions and comments from xrp... @ 27-07-2020 19:06:36
+Done. 6 submissions and 25 comments from xrp where obtained. @ 27-07-2020 19:06:37
+Collecting submissions and comments from ripple... @ 27-07-2020 19:06:37
+Done. 16 submissions and 160 comments from ripple where obtained. @ 27-07-2020 19:06:41
+Collecting submissions and comments from bitcoin... @ 27-07-2020 19:06:41
+Done. 200 submissions and 1145 comments from bitcoin where obtained. @ 27-07-2020 19:07:04
+Collecting submissions and comments from btc... @ 27-07-2020 19:07:04
+Done. 164 submissions and 748 comments from btc where obtained. @ 27-07-2020 19:07:23
+Collecting submissions and comments from litecoin... @ 27-07-2020 19:07:23
+Done. 8 submissions and 29 comments from litecoin where obtained. @ 27-07-2020 19:07:28
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 19:07:28
+Done. 8 submissions and 61 comments from litecoinmarkets where obtained. @ 27-07-2020 19:07:31
+Collecting submissions and comments from ethtrader... @ 27-07-2020 19:07:31
+Done. 116 submissions and 311 comments from ethtrader where obtained. @ 27-07-2020 19:07:43
+Collecting submissions and comments from ethfinance... @ 27-07-2020 19:07:43
+Done. 40 submissions and 2123 comments from ethfinance where obtained. @ 27-07-2020 19:09:57
+Collecting submissions and comments from xrp... @ 27-07-2020 19:09:57
+Done. 10 submissions and 6 comments from xrp where obtained. @ 27-07-2020 19:09:58
+Collecting submissions and comments from ripple... @ 27-07-2020 19:09:58
+Done. 10 submissions and 119 comments from ripple where obtained. @ 27-07-2020 19:10:00
+Collecting submissions and comments from bitcoin... @ 27-07-2020 19:10:00
+Done. 200 submissions and 1282 comments from bitcoin where obtained. @ 27-07-2020 19:10:24
+Collecting submissions and comments from btc... @ 27-07-2020 19:10:24
+Done. 182 submissions and 782 comments from btc where obtained. @ 27-07-2020 19:10:44
+Collecting submissions and comments from litecoin... @ 27-07-2020 19:10:44
+Done. 12 submissions and 15 comments from litecoin where obtained. @ 27-07-2020 19:10:45
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 19:10:45
+Done. 2 submissions and 154 comments from litecoinmarkets where obtained. @ 27-07-2020 19:10:49
+Collecting submissions and comments from ethtrader... @ 27-07-2020 19:10:49
+Done. 128 submissions and 230 comments from ethtrader where obtained. @ 27-07-2020 19:11:01
+Collecting submissions and comments from ethfinance... @ 27-07-2020 19:11:01
+Done. 32 submissions and 2007 comments from ethfinance where obtained. @ 27-07-2020 19:13:00
+Collecting submissions and comments from xrp... @ 27-07-2020 19:13:00
+Done. 22 submissions and 63 comments from xrp where obtained. @ 27-07-2020 19:13:03
+Collecting submissions and comments from ripple... @ 27-07-2020 19:13:03
+Done. 22 submissions and 70 comments from ripple where obtained. @ 27-07-2020 19:13:07
+Collecting submissions and comments from bitcoin... @ 27-07-2020 19:13:07
+Done. 200 submissions and 362 comments from bitcoin where obtained. @ 27-07-2020 19:13:24
+Collecting submissions and comments from btc... @ 27-07-2020 19:13:24
+Done. 186 submissions and 339 comments from btc where obtained. @ 27-07-2020 19:13:42
+Collecting submissions and comments from litecoin... @ 27-07-2020 19:13:42
+Done. 22 submissions and 24 comments from litecoin where obtained. @ 27-07-2020 19:13:44
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 19:13:44
+Done. 6 submissions and 5 comments from litecoinmarkets where obtained. @ 27-07-2020 19:13:46
+Collecting submissions and comments from ethtrader... @ 27-07-2020 19:13:46
+Done. 186 submissions and 106 comments from ethtrader where obtained. @ 27-07-2020 19:14:04
+Collecting submissions and comments from ethfinance... @ 27-07-2020 19:14:04
+Done. 44 submissions and 1421 comments from ethfinance where obtained. @ 27-07-2020 19:15:19
+Collecting submissions and comments from xrp... @ 27-07-2020 19:15:19
+Done. 0 submissions and 0 comments from xrp where obtained. @ 27-07-2020 19:15:19
+Collecting submissions and comments from ripple... @ 27-07-2020 19:15:19
+Done. 0 submissions and 0 comments from ripple where obtained. @ 27-07-2020 19:15:20
+Collecting submissions and comments from bitcoin... @ 27-07-2020 19:15:20
+Done. 0 submissions and 0 comments from bitcoin where obtained. @ 27-07-2020 19:15:20
+Collecting submissions and comments from btc... @ 27-07-2020 19:15:20
+Done. 0 submissions and 0 comments from btc where obtained. @ 27-07-2020 19:15:20
+Collecting submissions and comments from litecoin... @ 27-07-2020 19:15:20
+Done. 0 submissions and 0 comments from litecoin where obtained. @ 27-07-2020 19:15:21
+Collecting submissions and comments from litecoinmarkets... @ 27-07-2020 19:15:21
+Done. 0 submissions and 0 comments from litecoinmarkets where obtained. @ 27-07-2020 19:15:21
+Collecting submissions and comments from ethtrader... @ 27-07-2020 19:15:21
+Done. 0 submissions and 0 comments from ethtrader where obtained. @ 27-07-2020 19:15:22
+Collecting submissions and comments from ethfinance... @ 27-07-2020 19:15:22
+Done. 0 submissions and 0 comments from ethfinance where obtained. @ 27-07-2020 19:15:22
+root@2020-07-27 20:41:05,968 - Collecting missing posts
+root@2020-07-27 20:41:27,617 - Done. 5 submissions and 1357 comments where obtained from missing posts
+Collecting submissions and comments from xrp... @ 28-07-2020 18:48:24
+Done. 28 submissions and 80 comments from xrp where obtained. @ 28-07-2020 18:48:30
+Collecting submissions and comments from ripple... @ 28-07-2020 18:48:30
+Done. 20 submissions and 83 comments from ripple where obtained. @ 28-07-2020 18:48:35
+Collecting submissions and comments from bitcoin... @ 28-07-2020 18:48:35
+Done. 200 submissions and 456 comments from bitcoin where obtained. @ 28-07-2020 18:49:00
+Collecting submissions and comments from btc... @ 28-07-2020 18:49:00
+Done. 200 submissions and 479 comments from btc where obtained. @ 28-07-2020 18:49:27
+Collecting submissions and comments from litecoin... @ 28-07-2020 18:49:27
+Done. 20 submissions and 79 comments from litecoin where obtained. @ 28-07-2020 18:49:31
+Collecting submissions and comments from litecoinmarkets... @ 28-07-2020 18:49:31
+Done. 6 submissions and 148 comments from litecoinmarkets where obtained. @ 28-07-2020 18:49:35
+Collecting submissions and comments from ethtrader... @ 28-07-2020 18:49:35
+Done. 184 submissions and 181 comments from ethtrader where obtained. @ 28-07-2020 18:49:58
+Collecting submissions and comments from ethfinance... @ 28-07-2020 18:49:58
+Done. 62 submissions and 623 comments from ethfinance where obtained. @ 28-07-2020 18:50:23
+Collecting submissions and comments from xrp... @ 29-07-2020 19:21:10
+Done. 22 submissions and 29 comments from xrp where obtained. @ 29-07-2020 19:21:13
+Collecting submissions and comments from ripple... @ 29-07-2020 19:21:13
+Done. 36 submissions and 150 comments from ripple where obtained. @ 29-07-2020 19:21:19
+Collecting submissions and comments from bitcoin... @ 29-07-2020 19:21:19
+Done. 200 submissions and 591 comments from bitcoin where obtained. @ 29-07-2020 19:21:38
+Collecting submissions and comments from btc... @ 29-07-2020 19:21:38
+Done. 200 submissions and 661 comments from btc where obtained. @ 29-07-2020 19:22:01
+Collecting submissions and comments from litecoin... @ 29-07-2020 19:22:01
+Done. 4 submissions and 4 comments from litecoin where obtained. @ 29-07-2020 19:22:01
+Collecting submissions and comments from litecoinmarkets... @ 29-07-2020 19:22:01
+Done. 4 submissions and 71 comments from litecoinmarkets where obtained. @ 29-07-2020 19:22:03
+Collecting submissions and comments from ethtrader... @ 29-07-2020 19:22:03
+Done. 178 submissions and 87 comments from ethtrader where obtained. @ 29-07-2020 19:22:20
+Collecting submissions and comments from ethfinance... @ 29-07-2020 19:22:20
+Done. 28 submissions and 876 comments from ethfinance where obtained. @ 29-07-2020 19:22:52
+Collecting submissions and comments from xrp... @ 29-07-2020 19:58:34
+Done. 22 submissions and 31 comments from xrp where obtained. @ 29-07-2020 19:58:39
+Collecting submissions and comments from ripple... @ 29-07-2020 19:58:39
+Done. 36 submissions and 150 comments from ripple where obtained. @ 29-07-2020 19:58:46
+Collecting submissions and comments from bitcoin... @ 29-07-2020 19:58:46
+Done. 200 submissions and 616 comments from bitcoin where obtained. @ 29-07-2020 19:59:11
+Collecting submissions and comments from btc... @ 29-07-2020 19:59:11
+Done. 200 submissions and 688 comments from btc where obtained. @ 29-07-2020 19:59:40
+Collecting submissions and comments from litecoin... @ 29-07-2020 19:59:40
+Done. 4 submissions and 4 comments from litecoin where obtained. @ 29-07-2020 19:59:42
+Collecting submissions and comments from litecoinmarkets... @ 29-07-2020 19:59:42
+Done. 4 submissions and 71 comments from litecoinmarkets where obtained. @ 29-07-2020 19:59:43
+Collecting submissions and comments from ethtrader... @ 29-07-2020 19:59:43
+Done. 178 submissions and 93 comments from ethtrader where obtained. @ 29-07-2020 20:00:06
+Collecting submissions and comments from ethfinance... @ 29-07-2020 20:00:06
+Done. 28 submissions and 894 comments from ethfinance where obtained. @ 29-07-2020 20:00:56
+root@2020-07-29 20:08:18,936 - Collecting missing posts
+root@2020-07-29 20:08:22,733 - Done. 2 submissions and 577 comments where obtained from missing posts
+Collecting submissions and comments from xrp... @ 30-07-2020 18:50:34
+Done. 16 submissions and 50 comments from xrp where obtained. @ 30-07-2020 18:50:38
+Collecting submissions and comments from ripple... @ 30-07-2020 18:50:38
+Done. 18 submissions and 44 comments from ripple where obtained. @ 30-07-2020 18:50:42
+Collecting submissions and comments from bitcoin... @ 30-07-2020 18:50:42
+Done. 200 submissions and 361 comments from bitcoin where obtained. @ 30-07-2020 18:51:06
+Collecting submissions and comments from btc... @ 30-07-2020 18:51:06
+Done. 200 submissions and 428 comments from btc where obtained. @ 30-07-2020 18:51:32
+Collecting submissions and comments from litecoin... @ 30-07-2020 18:51:32
+Done. 14 submissions and 11 comments from litecoin where obtained. @ 30-07-2020 18:51:34
+Collecting submissions and comments from litecoinmarkets... @ 30-07-2020 18:51:34
+Done. 8 submissions and 93 comments from litecoinmarkets where obtained. @ 30-07-2020 18:51:39
+Collecting submissions and comments from ethtrader... @ 30-07-2020 18:51:39
+Done. 200 submissions and 138 comments from ethtrader where obtained. @ 30-07-2020 18:52:03
+Collecting submissions and comments from ethfinance... @ 30-07-2020 18:52:03
+Done. 40 submissions and 811 comments from ethfinance where obtained. @ 30-07-2020 18:53:33
+root@2020-07-30 18:55:23,996 - Collecting missing posts
+root@2020-07-30 18:55:25,507 - Done. 1 submissions and 109 comments where obtained from missing posts
+Collecting submissions and comments from xrp... @ 31-07-2020 18:53:29
+Done. 26 submissions and 43 comments from xrp where obtained. @ 31-07-2020 18:53:33
+Collecting submissions and comments from ripple... @ 31-07-2020 18:53:33
+Done. 34 submissions and 102 comments from ripple where obtained. @ 31-07-2020 18:53:38
+Collecting submissions and comments from bitcoin... @ 31-07-2020 18:53:38
+Done. 200 submissions and 652 comments from bitcoin where obtained. @ 31-07-2020 18:53:58
+Collecting submissions and comments from btc... @ 31-07-2020 18:53:58
+Done. 200 submissions and 367 comments from btc where obtained. @ 31-07-2020 18:54:17
+Collecting submissions and comments from litecoin... @ 31-07-2020 18:54:17
+Done. 24 submissions and 40 comments from litecoin where obtained. @ 31-07-2020 18:54:19
+Collecting submissions and comments from litecoinmarkets... @ 31-07-2020 18:54:19
+Done. 4 submissions and 66 comments from litecoinmarkets where obtained. @ 31-07-2020 18:54:22
+Collecting submissions and comments from ethtrader... @ 31-07-2020 18:54:22
+Done. 200 submissions and 78 comments from ethtrader where obtained. @ 31-07-2020 18:54:40
+Collecting submissions and comments from ethfinance... @ 31-07-2020 18:54:40
+Collecting submissions and comments from xrp... @ 31-07-2020 18:55:52
+Done. 22 submissions and 38 comments from xrp where obtained. @ 31-07-2020 18:55:55
+Collecting submissions and comments from ripple... @ 31-07-2020 18:55:55
+Done. 26 submissions and 39 comments from ripple where obtained. @ 31-07-2020 18:55:58
+Collecting submissions and comments from bitcoin... @ 31-07-2020 18:55:58
+Done. 200 submissions and 654 comments from bitcoin where obtained. @ 31-07-2020 18:56:18
+Collecting submissions and comments from btc... @ 31-07-2020 18:56:18
+root@2020-07-31 18:56:29,419 - Collecting missing posts
+root@2020-07-31 18:56:30,612 - Done. 1 submissions and 119 comments where obtained from missing posts
+Done. 192 submissions and 355 comments from btc where obtained. @ 31-07-2020 18:56:37
+Collecting submissions and comments from litecoin... @ 31-07-2020 18:56:37
+Done. 18 submissions and 17 comments from litecoin where obtained. @ 31-07-2020 18:56:39
+Collecting submissions and comments from litecoinmarkets... @ 31-07-2020 18:56:39
+Done. 2 submissions and 0 comments from litecoinmarkets where obtained. @ 31-07-2020 18:56:39
+Collecting submissions and comments from ethtrader... @ 31-07-2020 18:56:39
+Done. 200 submissions and 78 comments from ethtrader where obtained. @ 31-07-2020 18:56:56
+Collecting submissions and comments from ethfinance... @ 31-07-2020 18:56:56
+Done. 46 submissions and 1087 comments from ethfinance where obtained. @ 31-07-2020 18:57:57
+Collecting submissions and comments from xrp... @ 01-08-2020 18:51:06
+Done. 30 submissions and 43 comments from xrp where obtained. @ 01-08-2020 18:51:10
+Collecting submissions and comments from ripple... @ 01-08-2020 18:51:10
+Done. 24 submissions and 235 comments from ripple where obtained. @ 01-08-2020 18:51:16
+Collecting submissions and comments from bitcoin... @ 01-08-2020 18:51:16
+Done. 200 submissions and 554 comments from bitcoin where obtained. @ 01-08-2020 18:51:36
+Collecting submissions and comments from btc... @ 01-08-2020 18:51:36
+Done. 158 submissions and 574 comments from btc where obtained. @ 01-08-2020 18:51:53
+Collecting submissions and comments from litecoin... @ 01-08-2020 18:51:53
+Done. 8 submissions and 17 comments from litecoin where obtained. @ 01-08-2020 18:51:54
+Collecting submissions and comments from litecoinmarkets... @ 01-08-2020 18:51:54
+Done. 4 submissions and 112 comments from litecoinmarkets where obtained. @ 01-08-2020 18:51:57
+Collecting submissions and comments from ethtrader... @ 01-08-2020 18:51:57
+Done. 142 submissions and 179 comments from ethtrader where obtained. @ 01-08-2020 18:52:10
+Collecting submissions and comments from ethfinance... @ 01-08-2020 18:52:10
+Done. 42 submissions and 1797 comments from ethfinance where obtained. @ 01-08-2020 18:53:58
+root@2020-08-01 18:54:27,374 - Collecting missing posts
+root@2020-08-01 18:54:29,815 - Done. 1 submissions and 153 comments where obtained from missing posts
+Collecting submissions and comments from xrp... @ 02-08-2020 18:45:09
+Done. 60 submissions and 136 comments from xrp where obtained. @ 02-08-2020 18:45:17
+Collecting submissions and comments from ripple... @ 02-08-2020 18:45:17
+Done. 22 submissions and 179 comments from ripple where obtained. @ 02-08-2020 18:45:22
+Collecting submissions and comments from bitcoin... @ 02-08-2020 18:45:22
+Done. 200 submissions and 387 comments from bitcoin where obtained. @ 02-08-2020 18:45:40
+Collecting submissions and comments from btc... @ 02-08-2020 18:45:40
+Done. 162 submissions and 534 comments from btc where obtained. @ 02-08-2020 18:46:00
+Collecting submissions and comments from litecoin... @ 02-08-2020 18:46:00
+Done. 12 submissions and 44 comments from litecoin where obtained. @ 02-08-2020 18:46:17
+Collecting submissions and comments from litecoinmarkets... @ 02-08-2020 18:46:17
+Done. 2 submissions and 133 comments from litecoinmarkets where obtained. @ 02-08-2020 18:46:21
+Collecting submissions and comments from ethtrader... @ 02-08-2020 18:46:21
+root@2020-08-02 18:46:26,560 - Collecting missing posts
+root@2020-08-02 18:46:29,023 - Done. 1 submissions and 244 comments where obtained from missing posts
+Done. 152 submissions and 299 comments from ethtrader where obtained. @ 02-08-2020 18:46:36
+Collecting submissions and comments from ethfinance... @ 02-08-2020 18:46:36
+Done. 56 submissions and 768 comments from ethfinance where obtained. @ 02-08-2020 18:47:13
+Collecting submissions and comments from xrp... @ 03-08-2020 18:54:39
+Done. 32 submissions and 53 comments from xrp where obtained. @ 03-08-2020 18:54:46
+Collecting submissions and comments from ripple... @ 03-08-2020 18:54:46
+Done. 34 submissions and 45 comments from ripple where obtained. @ 03-08-2020 18:54:51
+Collecting submissions and comments from bitcoin... @ 03-08-2020 18:54:51
+Done. 200 submissions and 730 comments from bitcoin where obtained. @ 03-08-2020 18:55:20
+Collecting submissions and comments from btc... @ 03-08-2020 18:55:20
+Done. 200 submissions and 547 comments from btc where obtained. @ 03-08-2020 18:55:49
+Collecting submissions and comments from litecoin... @ 03-08-2020 18:55:49
+root@2020-08-03 18:55:50,916 - Collecting missing posts
+root@2020-08-03 18:55:52,305 - Done. 1 submissions and 89 comments where obtained from missing posts
+Done. 14 submissions and 26 comments from litecoin where obtained. @ 03-08-2020 18:55:52
+Collecting submissions and comments from litecoinmarkets... @ 03-08-2020 18:55:52
+Done. 4 submissions and 4 comments from litecoinmarkets where obtained. @ 03-08-2020 18:55:54
+Collecting submissions and comments from ethtrader... @ 03-08-2020 18:55:54
+Done. 196 submissions and 187 comments from ethtrader where obtained. @ 03-08-2020 18:56:20
+Collecting submissions and comments from ethfinance... @ 03-08-2020 18:56:20
+Done. 50 submissions and 1119 comments from ethfinance where obtained. @ 03-08-2020 18:57:28
+Collecting submissions and comments from xrp... @ 03-08-2020 19:11:20
+Done. 34 submissions and 58 comments from xrp where obtained. @ 03-08-2020 19:11:26
+Collecting submissions and comments from ripple... @ 03-08-2020 19:11:26
+Done. 36 submissions and 227 comments from ripple where obtained. @ 03-08-2020 19:11:34
+Collecting submissions and comments from bitcoin... @ 03-08-2020 19:11:34
+Done. 200 submissions and 758 comments from bitcoin where obtained. @ 03-08-2020 19:12:05
+Collecting submissions and comments from btc... @ 03-08-2020 19:12:05
+Done. 200 submissions and 565 comments from btc where obtained. @ 03-08-2020 19:12:39
+Collecting submissions and comments from litecoin... @ 03-08-2020 19:12:39
+Done. 16 submissions and 33 comments from litecoin where obtained. @ 03-08-2020 19:12:42
+Collecting submissions and comments from litecoinmarkets... @ 03-08-2020 19:12:42
+Done. 6 submissions and 51 comments from litecoinmarkets where obtained. @ 03-08-2020 19:12:46
+Collecting submissions and comments from ethtrader... @ 03-08-2020 19:12:46
+Done. 200 submissions and 196 comments from ethtrader where obtained. @ 03-08-2020 19:13:15
+Collecting submissions and comments from ethfinance... @ 03-08-2020 19:13:15
+Done. 62 submissions and 1133 comments from ethfinance where obtained. @ 03-08-2020 19:14:47

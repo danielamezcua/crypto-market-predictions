@@ -9,7 +9,7 @@ import secret
 import pytz
 import re
 from prawcore.exceptions import NotFound
-from datetime import datetime,timedelta,date
+from datetime import datetime,timedelta,date, timezone
 URL_PUSHSHIFT = "https://api.pushshift.io/reddit/search/submission/"
 SUBMISSIONS_COLLECTION = "submissions"
 COMMENTS_COLLECTION = "comments"
@@ -35,7 +35,7 @@ def is_daily_discussion(id_subreddit, title):
 		"t5_v7civ": "^Daily General Discussion -(.*)" #r/ethfinance
 	}
 
-	if id_subreddit not in id_to_name:
+	if id_subreddit not in regex_daily_discussions:
 		return False
 
 	if re.match(regex_daily_discussions[id_subreddit], title):
@@ -71,19 +71,24 @@ def generate_dates(start,end):
 		end_epoch = int(datetime(day.year,day.month,day.day,23,59,59).timestamp())
 		yield start_epoch, end_epoch
 
-def daily_collect():
+def daily_collect(shift=1):
 	""" 
 	Triggers the fecthing of the data posted on the day that this
 	function is called. 
 	Parameters: 
-	   
+	   shift (int) : 1 for midnight shift, 2 for afternoon shift
 	Returns: 
 	    void
 	"""
 
 	day = date.today()
-	start_date = int(datetime(day.year,day.month,day.day,0,0,0).timestamp())
-	end_date = int(datetime(day.year,day.month,day.day,23,59,59).timestamp())
+	if shift == 1:
+		start_date = int(datetime(day.year,day.month,day.day,0,0,0).timestamp())
+		end_date = int(datetime(day.year,day.month,day.day,23,59,59).timestamp())
+	else:
+		start_date = int(datetime(day.year,day.month,day.day,0,0,0,tzinfo=timezone.utc).timestamp())
+		end_date = int(datetime(day.year,day.month,day.day, 23,59,59, tzinfo=timezone.utc).timestamp())
+	
 	fetch_data(start_date,end_date)
 
 def bulk_collect():
@@ -94,8 +99,8 @@ def bulk_collect():
 	Returns: 
 	    void
 	"""
-	start_date_query = date(2020,4,1)
-	end_date_query = date(2020,6,1)
+	start_date_query = date(2020,7,10)
+	end_date_query = date(2020,7,29)
 	for start_date, end_date in generate_dates(start_date_query,end_date_query):
 		print(date.fromtimestamp(start_date))
 		fetch_data(start_date,end_date)
@@ -120,7 +125,7 @@ def fetch_data(start_date,end_date):
 					"sort_type": "created_utc", 
 					"subreddit": subreddit, 
 					"size": 1000,
-					"after": start_date, 
+					"after": start_date-1, 
 					"before": end_date
 				}
 		while True:
@@ -139,28 +144,27 @@ def fetch_data(start_date,end_date):
 				try:
 					submission = reddit.submission(id = sub["id"])
 					daily_discussion = is_daily_discussion(submission.subreddit_id, submission.title)
-					if submissions_db.count_documents({"_id" : sub["id"]}) == 0:
-						submission_obj = {}
-						submission_obj["category"] = submission.category
-						submission_obj["created"] = submission.created
-						submission_obj["created_utc"] = submission.created_utc
-						dt_object = datetime.fromtimestamp(submission.created_utc)
-						date_aux = dt_object.strftime("%d/%m/%Y")
-						submission_obj["date"] = date_aux
-						submission_obj["downs"] = submission.downs
-						submission_obj["_id"] = submission.id
-						submission_obj["num_comments"] = submission.num_comments
-						submission_obj["score"] = submission.score
-						submission_obj["selftext"] = submission.selftext
-						submission_obj["subrreddit_id"] = submission.subreddit_id
-						submission_obj["subreddit_name_prefixed"] = submission.subreddit_name_prefixed
-						submission_obj["title"] = submission.title
-						submission_obj["ups"] = submission.ups
-						submission_obj["url"] = submission.url
-						submission_obj["daily_discussion"] = daily_discussion
+					submission_obj = {}
+					submission_obj["category"] = submission.category
+					submission_obj["created"] = submission.created
+					submission_obj["created_utc"] = submission.created_utc
+					dt_object = datetime.fromtimestamp(submission.created_utc)
+					date_aux = dt_object.strftime("%d/%m/%Y")
+					submission_obj["date"] = date_aux
+					submission_obj["downs"] = submission.downs
+					submission_obj["_id"] = submission.id
+					submission_obj["num_comments"] = submission.num_comments
+					submission_obj["score"] = submission.score
+					submission_obj["selftext"] = submission.selftext
+					submission_obj["subrreddit_id"] = submission.subreddit_id
+					submission_obj["subreddit_name_prefixed"] = submission.subreddit_name_prefixed
+					submission_obj["title"] = submission.title
+					submission_obj["ups"] = submission.ups
+					submission_obj["url"] = submission.url
+					submission_obj["daily_discussion"] = daily_discussion
 
-						#save submission object
-						submissions_db.insert_one(submission_obj)
+					#save submission object
+					submissions_db.update_one({"_id": sub["id"]}, {"$set" :submission_obj}, upsert=True)
 
 					#obtain and construct comment objects
 					submission.comments.replace_more(limit=None)
@@ -258,4 +262,3 @@ comments_db = mydb[COMMENTS_COLLECTION]
 
 #bulk_collect()
 daily_collect()
-#add_discussion_comments()

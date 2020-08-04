@@ -33,8 +33,7 @@ subreddits_regex = ["r\/btc", "r\/ripple", "r\/xrp", "r\/bitcoin", "r\/litecoin"
 "r\/ethfinance"]
 
 analyzer = SentimentIntensityAnalyzer()
-# analyzer.lexicon.update(lm_positive)
-# analyzer.lexicon.update(lm_negative)
+
 
 def add_sentiment_reddit():
 	for subreddit in subreddits_regex:
@@ -43,25 +42,20 @@ def add_sentiment_reddit():
 
 		#add sentiment values to the comments
 		comments = comments_db.find({
-			"created_utc" : {
-								"$gt" : query_start_date,
-								"$lt": query_end_date
-							},
+			"compound" : {"$exists":False},
 			"subreddit_name_prefixed": regx
 		})
 
 		no_comments = 0
-		if subreddit.split('/')[1] != "btc":
-			for comment in comments:
-				#check if it has already been anaalyzed
-				# if "compound" in comment:
-				# 	continue
-				query = {
-					"_id" : comment["_id"]
-				}
-				vs = analyzer.polarity_scores(comment["body"])
-				comments_db.update_one(query, {"$set": vs})
-				no_comments+=1
+		
+		for comment in comments:
+			#check if it has already been anaalyzed
+			query = {
+				"_id" : comment["_id"]
+			}
+			vs = analyzer.polarity_scores(comment["body"])
+			comments_db.update_one(query, {"$set": vs})
+			no_comments+=1
 
 		logging.info("Done. %d comments from %s where analyzed.", no_comments, subreddit.split('/')[1])
 
@@ -69,10 +63,7 @@ def add_sentiment_reddit():
 		logging.info("Adding sentiment data to submissions of %s", subreddit.split('/')[1])
 		no_submissions = 0
 		submissions = submissions_db.find({
-			"created_utc" : {
-								"$gt" : query_start_date,
-								"$lt": query_end_date
-							},
+			"compound_title": {"$exists": False},
 			"subreddit_name_prefixed": regx
 		})
 
@@ -102,7 +93,16 @@ def add_sentiment_news():
 	logging.info("Adding sentiment data to news of Coin Telegraph")
 	db = myclient[NEWS_DATABASE_NAME]
 	news_collection = db[NEWS_COLLECTION]
-	news = news_collection.find()
+	news = news_collection.find({
+		 "$and":
+		   [ 
+		    {"sent_comp": {"$exists": False}},
+		    {"sent_comp_xrp": {"$exists" : False}},
+		    {"sent_comp_btc": {"$exists" : False}},
+		    {"sent_comp_eth": {"$exists" : False}},
+		    {"sent_comp_ltc": {"$exists" : False}}
+		   ]
+	})
 	analysed_news = 0
 	not_analysed = 0
 	for new in news:
@@ -149,6 +149,7 @@ def add_sentiment_news():
 					"id_new" : new["id_new"]
 				}
 		if not data:
+			print(new["title"])
 			not_analysed += 1
 		else:
 			news_collection.update_one(query, {"$set": data})
@@ -170,4 +171,7 @@ def add_lm_lexicon():
 	print(negatives)
 
 add_sentiment_reddit()
+analyzer.lexicon.update(lm_positive)
+analyzer.lexicon.update(lm_negative)
+add_sentiment_news()
 

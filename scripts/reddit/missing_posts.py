@@ -55,7 +55,13 @@ deleted_posts = [
 	"hd1x4s",
 	"hdmp6t",
 	"he990y",
-	"hevm5j"
+	"hevm5j",
+	"hg29z9",
+	"hgobvm",
+	"hh9j9w",
+	"hhum6u",
+	"hihm01",
+	"hj4s7n"
 ]
 
-missing_discussions = []
+missing_discussions = ["i2seqq"]

@@ -37,28 +37,27 @@ def add_missing_posts(id_posts):
 	for id in id_posts:
 		try:
 			submission = reddit.submission(id = id)
-			if submissions_db.count_documents({"_id" : id}) == 0:
-				submission_obj = {}
-				submission_obj["category"] = submission.category
-				submission_obj["created"] = submission.created
-				submission_obj["created_utc"] = submission.created_utc
-				dt_object = datetime.fromtimestamp(submission.created_utc)
-				date_aux = dt_object.strftime("%d/%m/%Y")
-				submission_obj["date"] = date_aux
-				submission_obj["downs"] = submission.downs
-				submission_obj["_id"] = submission.id
-				submission_obj["num_comments"] = submission.num_comments
-				submission_obj["score"] = submission.score
-				submission_obj["selftext"] = submission.selftext
-				submission_obj["subrreddit_id"] = submission.subreddit_id
-				submission_obj["subreddit_name_prefixed"] = submission.subreddit_name_prefixed
-				submission_obj["title"] = submission.title
-				submission_obj["ups"] = submission.ups
-				submission_obj["url"] = submission.url
-				submission_obj["daily_discussion"] = True
+			submission_obj = {}
+			submission_obj["category"] = submission.category
+			submission_obj["created"] = submission.created
+			submission_obj["created_utc"] = submission.created_utc
+			dt_object = datetime.fromtimestamp(submission.created_utc)
+			date_aux = dt_object.strftime("%d/%m/%Y")
+			submission_obj["date"] = date_aux
+			submission_obj["downs"] = submission.downs
+			submission_obj["_id"] = submission.id
+			submission_obj["num_comments"] = submission.num_comments
+			submission_obj["score"] = submission.score
+			submission_obj["selftext"] = submission.selftext
+			submission_obj["subrreddit_id"] = submission.subreddit_id
+			submission_obj["subreddit_name_prefixed"] = submission.subreddit_name_prefixed
+			submission_obj["title"] = submission.title
+			submission_obj["ups"] = submission.ups
+			submission_obj["url"] = submission.url
+			submission_obj["daily_discussion"] = True
 
-				#save submission object
-				submissions_db.insert_one(submission_obj)
+			#save submission object
+			submissions_db.update_one({"_id": submission_obj["_id"]}, {"$set": submission_obj}, upsert=True)
 
 			#obtain and construct comment objects
 			submission.comments.replace_more(limit=None)
@@ -86,6 +85,7 @@ def add_missing_posts(id_posts):
 					comment_obj["ups"] = comment.ups
 
 					comment_obj["_id"] = comment.id
+					comment_obj["from_daily_disc"] = True
 					comments_operations_list.append(pymongo.UpdateOne({"_id": comment.id}, {"$set": comment_obj}, upsert=True))
 
 				#save comments object
@@ -96,5 +96,5 @@ def add_missing_posts(id_posts):
 
 	logging.info("Done. " + str(total_submissions) + " submissions and " + str(total_comments) + " comments where obtained from missing posts")
 
-add_missing_posts(deleted_posts)
+add_missing_posts(missing_discussions)
 myclient.close()

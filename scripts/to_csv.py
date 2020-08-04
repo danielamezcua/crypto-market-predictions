@@ -24,7 +24,7 @@ import csv
 import pymongo
 import logging
 import re
-from datetime import datetime,timezone
+from datetime import datetime,timezone, timedelta
 import pandas
 import numpy as np
 
@@ -172,14 +172,17 @@ def obtain_comments_discussions(subreddit, start_date, end_date):
 	Returns: 
 	    (mongodb cursor) : the cursor pointing to the first of the comment objects returned by the query
 	"""
-	subreddit_pattern = "r\/" + subreddit
-
+	subreddit_pattern = subreddit
+	
+	
+	
+	subreddit_regex = re.compile(subreddit_pattern, re.IGNORECASE)
 	comments = comments_db.find({
 		"subreddit_name_prefixed": subreddit_regex,
 		"from_daily_disc":True,
 		"created_utc": {
 			"$gte": start_date,
-			"$lte": end_date
+			"$lt": end_date
 		},
 	})
 	return comments
@@ -200,7 +203,60 @@ def obtain_time(time):
 	start_timestamp = datetime(aux_datetime.year, aux_datetime.month, aux_datetime.day, tzinfo=timezone.utc).timestamp()
 	return start_timestamp
 
-#TODO: add flexible query dates
+def get_time_series_data(crypto,start,end):
+	crypto = crypto.upper()
+	data = {}
+	for subreddit in crypto_subreddits[crypto]:
+		#find all comments from dailly discussions 
+		comments = obtain_comments_discussions(subreddit,start, end)
+		for comment in comments:
+			#obtain the date to which this comment belongs to
+			time = obtain_time(comment["created_utc"])
+
+			#check if the entry for this time exists
+			if time not in data:
+				init_data(data,time,crypto)
+
+			data_row = data[time]
+
+			if "compound" not in comment:
+					continue
+			compound = comment["compound"]
+			data_row["comp_ns"] += compound
+			if compound >= 0.05:
+				data_row["pos_ns"] += 1
+				data_row["sum_pos_ns"] += compound
+			elif compound <= -0.05:
+				data_row["neg_ns"] += 1
+				data_row["sum_neg_ns"] += compound
+			else:
+				data_row["neutral_ns"] += 1
+
+			#considering the score of the comment:
+			score = comment["score"]
+			if score >= -10:
+				if score > 0:
+					if compound >= 0.05:
+						data_row["pos_s"] += score
+						data_row["sum_pos_s"] += compound*score
+					elif compound <= -0.05:
+						data_row["neg_s"] += score
+						data_row["sum_neg_s"] += compound*score
+					else:
+						data_row["neu_s"] += score
+					data_row["comp_s"] += compound * score
+
+				if compound >= 0.05:
+					data_row["pos_s"] += 1
+					data_row["sum_pos_s"] += compound
+				elif compound <= -0.05:
+					data_row["neg_s"] += 1
+					data_row["sum_neg_ns"] += compound
+				else:
+					data_row["neu_s"] += 1
+				data_row["comp_s"] += compound
+	return data
+
 def write_from_db():
 	""" 
 	Synthethize all reddit database data to a csv file. Each row of the csv summarizes data
@@ -213,7 +269,7 @@ def write_from_db():
 	"""
 
 	query_start_date = datetime(2019,1,1).replace(tzinfo=timezone.utc).timestamp()
-	query_end_date =datetime(2020,6,10).replace(tzinfo=timezone.utc).timestamp()
+	query_end_date =datetime(2020,6,20).replace(tzinfo=timezone.utc).timestamp()
 	file = open(DATASETS_PATH + 'dataset.csv', 'w', newline='')
 	field_names = ["time", "neg_ns", "pos_ns", "neutral_ns","sum_pos_ns","sum_neg_ns",
 	"sum_pos_s","sum_neg_s","comp_ns","neg_s", "pos_s", "neu_s","comp_s","coin","open",
@@ -222,82 +278,96 @@ def write_from_db():
 	writer.writeheader()
 
 	for crypto in crypto_subreddits.keys():
-		data = {}
-		for subreddit in crypto_subreddits[crypto]:
-			#find all comments from dailly discussions 
-			comments = obtain_comments_discussions(subreddit,query_start_date, query_end_date)
-			for comment in comments:
-				#obtain the date to which this comment belongs to
-				time = obtain_time(comment["created_utc"])
-
-				#check if the entry for this time exists
-				if time not in data:
-					init_data(data,time,crypto)
-
-				data_row = data[time]
-
-				if "compound" not in comment:
-						continue
-				compound = comment["compound"]
-				data_row["comp_ns"] += compound
-				if compound >= 0.05:
-					data_row["pos_ns"] += 1
-					data_row["sum_pos_ns"] += compound
-				elif compound <= -0.05:
-					data_row["neg_ns"] += 1
-					data_row["sum_neg_ns"] += compound
-				else:
-					data_row["neutral_ns"] += 1
-
-				#considering the score of the comment:
-				score = comment["score"]
-				if score >= -10:
-					if score > 0:
-						if compound >= 0.05:
-							data_row["pos_s"] += score
-							data_row["sum_pos_s"] += compound*score
-						elif compound <= -0.05:
-							data_row["neg_s"] += score
-							data_row["sum_neg_s"] += compound*score
-						else:
-							data_row["neu_s"] += score
-						data_row["comp_s"] += compound * score
-
-					if compound >= 0.05:
-						data_row["pos_s"] += 1
-						data_row["sum_pos_s"] += compound
-					elif compound <= -0.05:
-						data_row["neg_s"] += 1
-						data_row["sum_neg_ns"] += compound
-					else:
-						data_row["neu_s"] += 1
-					data_row["comp_s"] += compound
-
+		data = get_time_series_data(crypto, query_start_date, query_end_date)
+	
 		#write rows to csv file
 		for key in data.keys():
 			writer.writerow(data[key])
+		print(len(data), " written from " + crypto)
 	file.close()
 
 def update_csv():
 	""" 
 	Updates the csv file containing all the syntethized data
+	Parameters:
+	Returns: 
+		void
 	"""
 	for crypto in crypto_subreddits.keys():
 		#obtain last row of the current file
 		df = pandas.read_csv(DATASETS_PATH + "/" + crypto + "_news.csv")
 		first_row = df.iloc[0]
 		last_row = df.iloc[-1]
-		print(crypto)
-		
-		last_timestamp = last_row["time"]
-		date_to_update = datetime.date(datetime.today() - timedelta(2)) #the day before yesterday
-		timestamp_to_update = date_to_update.
-
-		for date in range(last_date + SECONDS_ONE_DAY, date_to_update + SECONDS_ONE_DAY, SECONDS_ONE_DAY):
-
 		#define the dates that are missing on the dataset
+		last_timestamp = last_row["time"]
+		d = datetime.utcnow().date() - timedelta(2) #the day before yesterday
+		timestamp_to_update = datetime(d.year,d.month,d.day, tzinfo=timezone.utc).timestamp()
 
-def add_labels():
+		start = last_timestamp + SECONDS_ONE_DAY
+		end = timestamp_to_update + SECONDS_ONE_DAY - 1 #include the last day of the range
+
+		print(crypto, last_timestamp, timestamp_to_update)
+		#obtain data from reddit
+		data = get_time_series_data(crypto,start,end)
+		#add labels
+		add_labels(data)
+
+		#add news data
+		get_news_data(data,crypto)
+		
+		new_df = df.append(pandas.DataFrame.from_dict(data,orient="index"), sort=False)
+
+		new_df.sort_values(by=['time'], inplace=True)
+		filename = DATASETS_PATH + crypto + "_news.csv"
+		new_df.to_csv(filename,index = False)
+
+def add_labels(data):
+	""" 
+	Add the correspoing label to each of the entries of the data
+	Label will be one if the closing price of the next day is lower
+	than the closing price of the day being looked; it will be minus 
+	one otherwise.
+
+	Parameters:
+		data (dictionary) : {timestamp, attributes}
+	Returns: 
+		void
+	"""
+	for timestamp in data.keys():
+		#look for the closing price of the next day
+		next_day_data = prices_db.find_one({
+			"timestamp":data[timestamp]["time"] + SECONDS_ONE_DAY,
+			"coin": data[timestamp]["coin"]
+		})
+		if data[timestamp]["close"] < next_day_data["close"]:
+			label = 1
+		else:
+			label = -1
+		data[timestamp]["label"] = label
+
+def get_news_data(data,crypto):
+	for timestamp in data.keys():
+		news = news_collection.find({
+			crypto.lower() : True,
+			"datetime": {
+				"$gte": datetime.fromtimestamp(timestamp, tz=timezone.utc),
+				"$lt": datetime.fromtimestamp(timestamp+86400, tz=timezone.utc)
+			}
+		})
+		compounds = []
+		for new in news:
+			if new["analysis"] == True and "sent_comp_"+crypto.lower() in new:
+				compounds.append(new["sent_comp_"+crypto.lower()])
+			elif "sent_comp" in new:
+				compounds.append(new["sent_comp"])
+
+		data[timestamp]["n_news"] = len(compounds)
+		if compounds:
+			data[timestamp]["avg_news_compound"] = sum(compounds)/len(compounds)
+		else:
+			data[timestamp]["avg_news_compound"] = 0
+
+def divide_dataset():
 	""" 
 	Divide dataset in a dataset for each of the cryptocurrencies. 
 	Label (price up or down) is also added to the data.
@@ -325,6 +395,8 @@ def add_labels():
 		
 		filename = DATASETS_PATH + crypto + ".csv"
 		subset.to_csv(filename, index=False)
+
+
 
 #add the data from news to the respective csv of each cryptocoin
 def add_news_data():
@@ -370,7 +442,8 @@ def add_news_data():
 
 def write_datasets():
 	write_from_db()
-	add_labels()
+	divide_dataset()
 	add_news_data()
 
-write_datasets()
+#write_datasets()
+update_csv()

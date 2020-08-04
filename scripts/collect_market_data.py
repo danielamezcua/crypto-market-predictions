@@ -1,4 +1,4 @@
-	#script to collect the market data
+#script to collect the market data
 import secret
 from requests import get
 from datetime import datetime,date
@@ -6,7 +6,7 @@ import pymongo
 
 DATABASE_NAME = "market_data"
 PRICES_COLLECTION = "prices"
-URL_CRYPTOCOMPARE_DAILY_PRICE = "https://min-api.cryptocompare.com/data/v2/histoday?&tsym=USD&limit=730&api_key="+secret.api_key_cryptocompare
+URL_CRYPTOCOMPARE_DAILY_PRICE = "https://min-api.cryptocompare.com/data/v2/histoday?&tsym=USD&limit=20&api_key="+secret.api_key_cryptocompare
 CRYPTO_COINS = ['ETH', 'BTC', 'XRP', 'LTC']
 MONGO_SERVICE = "mongodb://localhost:27017/"
 
@@ -36,6 +36,6 @@ for coin in CRYPTO_COINS:
 			new_item["volumeto"] = item['volumeto']
 
 
-			prices_info.append(new_item)
+			prices_info.append(pymongo.UpdateOne({"timestamp": timestamp , "coin":coin}, {"$set" :new_item}, upsert=True))
 
-prices_db.insert_many(prices_info)
+prices_db.bulk_write(prices_info)

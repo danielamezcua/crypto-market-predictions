@@ -27,8 +27,10 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-	'crawlers.pipelines.StatusPipeLine' : 200,
-    'crawlers.pipelines.MongoDBPipeline': 300,
+	'crawlers.pipelines.StatusPipeLine' : 100,
+	'crawlers.pipelines.DuplicatePipeLine' : 200,
+	'crawlers.pipelines.ProcessItemPipeLine' : 300,
+    'crawlers.pipelines.MongoDBPipeLine': 400,
 }
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)

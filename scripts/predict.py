@@ -133,14 +133,7 @@ def experiment():
 	label = "label"
 	sc = StandardScaler()
 
-	# with comment scores
-	# features_selection = [["number_comments_s"],["avg_compound_s"],["avg_compound_s","number_comments_s"],
-	# ["avg_pos_s"],["ratio_pos_s","ratio_neg_s"],["avg_news_compound"],["avg_news_compound", "avg_compound_s"],
-	# ["number_comments_s","avg_news_compound","avg_compound_s"],["avg_pos_s","avg_news_compound"],
-	# ["ratio_pos_s","ratio_neg_s","avg_news_compound"], ["avg_news_compound","avg_compound_s","open","close","high","low"],
-	# ["avg_news_compound","avg_pos_s","open","close","high","low"]]
-
-	# without comment scores
+	# without and without comment scores
 	features_selection = [["number_comments_ns"],["avg_compound_ns"],["avg_compound_ns","number_comments_ns"],
 	["avg_pos_ns"],["ratio_pos_ns","ratio_neg_ns"],["avg_news_compound"],["avg_news_compound", "avg_compound_ns"],
 	["number_comments_ns","avg_news_compound","avg_compound_ns"],["avg_pos_ns","avg_news_compound"],

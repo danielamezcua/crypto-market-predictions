@@ -605,3 +605,31 @@ Fetching data form Reddit... @ Mon Aug  3 23:45:02 CDT 2020
 Done collecting data from Reddit @ Mon Aug  3 23:47:57 CDT 2020
 Crawling Coin Telegraph... @ Mon Aug  3 23:47:57 CDT 2020
 Done collecting data from Coin Telegraph @ Mon Aug  3 23:50:30 CDT 2020
+Fetching data form Reddit... @ Tue Aug  4 23:45:02 CDT 2020
+Done collecting data from Reddit @ Tue Aug  4 23:47:48 CDT 2020
+Crawling Coin Telegraph... @ Tue Aug  4 23:47:48 CDT 2020
+Done collecting data from Coin Telegraph @ Tue Aug  4 23:50:28 CDT 2020
+Fetching data form Reddit... @ Wed Aug  5 23:45:02 CDT 2020
+Done collecting data from Reddit @ Wed Aug  5 23:48:22 CDT 2020
+Crawling Coin Telegraph... @ Wed Aug  5 23:48:22 CDT 2020
+Done collecting data from Coin Telegraph @ Wed Aug  5 23:51:01 CDT 2020
+Fetching data form Reddit... @ Thu Aug  6 23:45:03 CDT 2020
+Done collecting data from Reddit @ Thu Aug  6 23:47:38 CDT 2020
+Crawling Coin Telegraph... @ Thu Aug  6 23:47:38 CDT 2020
+Done collecting data from Coin Telegraph @ Thu Aug  6 23:50:14 CDT 2020
+Fetching data form Reddit... @ Fri Aug  7 23:45:02 CDT 2020
+Done collecting data from Reddit @ Fri Aug  7 23:47:43 CDT 2020
+Crawling Coin Telegraph... @ Fri Aug  7 23:47:43 CDT 2020
+Done collecting data from Coin Telegraph @ Fri Aug  7 23:50:17 CDT 2020
+Fetching data form Reddit... @ Sat Aug  8 23:45:02 CDT 2020
+Done collecting data from Reddit @ Sat Aug  8 23:47:16 CDT 2020
+Crawling Coin Telegraph... @ Sat Aug  8 23:47:16 CDT 2020
+Done collecting data from Coin Telegraph @ Sat Aug  8 23:49:49 CDT 2020
+Fetching data form Reddit... @ Sun Aug  9 23:45:05 CDT 2020
+Done collecting data from Reddit @ Sun Aug  9 23:47:19 CDT 2020
+Crawling Coin Telegraph... @ Sun Aug  9 23:47:19 CDT 2020
+Done collecting data from Coin Telegraph @ Sun Aug  9 23:49:56 CDT 2020
+Fetching data form Reddit... @ Mon Aug 10 23:45:02 CDT 2020
+Done collecting data from Reddit @ Mon Aug 10 23:47:42 CDT 2020
+Crawling Coin Telegraph... @ Mon Aug 10 23:47:42 CDT 2020
+Done collecting data from Coin Telegraph @ Mon Aug 10 23:50:13 CDT 2020

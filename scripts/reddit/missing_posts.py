@@ -64,4 +64,4 @@ deleted_posts = [
 	"hj4s7n"
 ]
 
-missing_discussions = ["i2seqq"]
+missing_discussions = ["cnyqmn","i7023q","i7n1pz"]

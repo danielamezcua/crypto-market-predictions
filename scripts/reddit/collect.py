@@ -10,6 +10,9 @@ import pytz
 import re
 from prawcore.exceptions import NotFound
 from datetime import datetime,timedelta,date, timezone
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+
 URL_PUSHSHIFT = "https://api.pushshift.io/reddit/search/submission/"
 SUBMISSIONS_COLLECTION = "submissions"
 COMMENTS_COLLECTION = "comments"
@@ -91,6 +94,95 @@ def daily_collect(shift=1):
 	
 	fetch_data(start_date,end_date)
 
+def construct_submission_obj(submission, submission_obj):
+	""" 
+	Extracts the relevant data from the submission object received from the api 
+	and adds sentiment to it.
+	Parameters: 
+	   submission (dict) : submission object received by api
+	   submission_obj (dict) : target dictionary where the relevant info is to be stored
+	Returns: 
+	    void
+	"""
+	daily_discussion = is_daily_discussion(submission.subreddit_id, submission.title)
+	submission_obj["category"] = submission.category
+	submission_obj["created"] = submission.created
+	submission_obj["created_utc"] = submission.created_utc
+	dt_object = datetime.fromtimestamp(submission.created_utc)
+	date_aux = dt_object.strftime("%d/%m/%Y")
+	submission_obj["date"] = date_aux
+	submission_obj["downs"] = submission.downs
+	submission_obj["_id"] = submission.id
+	submission_obj["num_comments"] = submission.num_comments
+	submission_obj["score"] = submission.score
+	submission_obj["selftext"] = submission.selftext
+	submission_obj["subrreddit_id"] = submission.subreddit_id
+	submission_obj["subreddit_name_prefixed"] = submission.subreddit_name_prefixed
+	submission_obj["title"] = submission.title
+	submission_obj["ups"] = submission.ups
+	submission_obj["url"] = submission.url
+	submission_obj["daily_discussion"] = daily_discussion
+
+	#add sentiment
+	scores = get_sentiment(submission_obj["title"])
+	submission_obj["compound_title"] = scores["compound"]
+	submission_obj["neg_title"] = scores["neg"]
+	submission_obj["neu_title"] = scores["neu"]
+	submission_obj["pos_title"] = scores["pos"]
+
+	scores = get_sentiment(submission_obj["selftext"])
+	submission_obj["compound_selftext"] = scores["compound"]
+	submission_obj["neg_selftext"] = scores["neg"]
+	submission_obj["neu_selftext"] = scores["neu"]
+	submission_obj["pos_selftext"] = scores["pos"]
+
+def construct_comment_obj(comment, comment_obj, is_daily_discussion):
+	""" 
+	Extracts the relevant data from the comment object received from the api 
+	and adds sentiment to it.
+	Parameters: 
+	   comment (dict) : comment object received by api
+	   comment_obj (dict) : target dictionary where the relevant info is to be stored
+	   is_daily_discussion (boolean): 	whether the comment belongs to a daily discussion
+	   									thread
+	Returns: 
+	    void
+	"""
+
+	comment_obj["body"] = comment.body
+	comment_obj["created"] = comment.created
+	comment_obj["created_utc"] = comment.created_utc
+	dt_object = datetime.fromtimestamp(comment.created_utc)
+	date_aux = dt_object.strftime("%d/%m/%Y")
+	comment_obj["date"] = date_aux
+	comment_obj["depth"] = comment.depth
+	comment_obj["downs"] = comment.downs
+	comment_obj["link_id"] = comment.link_id
+	comment_obj["name"] = comment.name
+	comment_obj["parent_id"] = comment.parent_id
+	comment_obj["subreddit_id"] = comment.subreddit_id
+	comment_obj["subreddit_name_prefixed"] = comment.subreddit_name_prefixed
+	comment_obj["score"] = comment.score
+	comment_obj["ups"] = comment.ups
+
+	comment_obj["_id"] = comment.id
+	comment_obj["from_daily_disc"] = is_daily_discussion
+
+	#add sentiment
+	scores = get_sentiment(comment_obj["body"])
+	comment_obj.update(scores)
+
+def get_sentiment(text):
+	""" 
+	Sentiment analysis on a text.
+	This analysis is performed using the VADER tool.
+	Parameters: 
+	   text (string) :	text to be analysed
+	Returns: 
+	   vs (dictionary) : polarity scores calculated in the analysis
+	"""
+	return analyzer.polarity_scores(text)
+
 def bulk_collect():
 	""" 
 	Collects all data posted between two dates
@@ -99,8 +191,8 @@ def bulk_collect():
 	Returns: 
 	    void
 	"""
-	start_date_query = date(2020,7,10)
-	end_date_query = date(2020,7,29)
+	start_date_query = date(2020,8,8)
+	end_date_query = date(2020,8,11)
 	for start_date, end_date in generate_dates(start_date_query,end_date_query):
 		print(date.fromtimestamp(start_date))
 		fetch_data(start_date,end_date)
@@ -141,65 +233,34 @@ def fetch_data(start_date,end_date):
 		#obtain the comments of each one
 		total_submissions += len(data["data"])
 		for sub in data["data"]:
-				try:
-					submission = reddit.submission(id = sub["id"])
-					daily_discussion = is_daily_discussion(submission.subreddit_id, submission.title)
-					submission_obj = {}
-					submission_obj["category"] = submission.category
-					submission_obj["created"] = submission.created
-					submission_obj["created_utc"] = submission.created_utc
-					dt_object = datetime.fromtimestamp(submission.created_utc)
-					date_aux = dt_object.strftime("%d/%m/%Y")
-					submission_obj["date"] = date_aux
-					submission_obj["downs"] = submission.downs
-					submission_obj["_id"] = submission.id
-					submission_obj["num_comments"] = submission.num_comments
-					submission_obj["score"] = submission.score
-					submission_obj["selftext"] = submission.selftext
-					submission_obj["subrreddit_id"] = submission.subreddit_id
-					submission_obj["subreddit_name_prefixed"] = submission.subreddit_name_prefixed
-					submission_obj["title"] = submission.title
-					submission_obj["ups"] = submission.ups
-					submission_obj["url"] = submission.url
-					submission_obj["daily_discussion"] = daily_discussion
+			try:
 
-					#save submission object
-					submissions_db.update_one({"_id": sub["id"]}, {"$set" :submission_obj}, upsert=True)
+				#construct submission object
+				submission = reddit.submission(id = sub["id"])
+				submission_obj = {}
+				construct_submission_obj(submission, submission_obj)
+				is_daily_discussion = submission_obj["daily_discussion"]
 
-					#obtain and construct comment objects
-					submission.comments.replace_more(limit=None)
-					list_comments = submission.comments.list()
-					total_submissions+=1
-					if len(list_comments) > 0:
-						total_comments+= len(list_comments)
-						comments_operations_list = []
-						for comment in list_comments:
-							comment_obj = {}
-							comment_obj["body"] = comment.body
-							comment_obj["created"] = comment.created
-							comment_obj["created_utc"] = comment.created_utc
-							dt_object = datetime.fromtimestamp(comment.created_utc)
-							date_aux = dt_object.strftime("%d/%m/%Y")
-							comment_obj["date"] = date_aux
-							comment_obj["depth"] = comment.depth
-							comment_obj["downs"] = comment.downs
-							comment_obj["link_id"] = comment.link_id
-							comment_obj["name"] = comment.name
-							comment_obj["parent_id"] = comment.parent_id
-							comment_obj["subreddit_id"] = comment.subreddit_id
-							comment_obj["subreddit_name_prefixed"] = comment.subreddit_name_prefixed
-							comment_obj["score"] = comment.score
-							comment_obj["ups"] = comment.ups
+				#save submission object
+				submissions_db.update_one({"_id": sub["id"]}, {"$set" :submission_obj}, upsert=True)
+				total_submissions+=1
 
-							comment_obj["_id"] = comment.id
-							comment_obj["from_daily_disc"] = daily_discussion
-							comments_operations_list.append(pymongo.UpdateOne({"_id": comment.id}, {"$set": comment_obj}, upsert=True))
+				#obtain and construct comment objects
+				submission.comments.replace_more(limit=None)
+				list_comments = submission.comments.list()
+				if len(list_comments) > 0:
+					total_comments+= len(list_comments)
+					comments_operations_list = []
+					for comment in list_comments:
+						comment_obj = {}
+						construct_comment_obj(comment, comment_obj, is_daily_discussion)
+						comments_operations_list.append(pymongo.UpdateOne({"_id": comment.id}, {"$set": comment_obj}, upsert=True))
 
-						#save comments object
-						comments_db.bulk_write(comments_operations_list)
-				except NotFound:
-					write_log("Unexpected error on subrredit " + subreddit + " and submission "+ sub["id"] + ": " + str(sys.exc_info()[0]))
-					continue
+					#save comments objects
+					comments_db.bulk_write(comments_operations_list)
+			except NotFound:
+				write_log("Unexpected error on subrredit " + subreddit + " and submission "+ sub["id"] + ": " + str(sys.exc_info()[0]))
+				continue
 
 		write_log("Done. " + str(total_submissions) + " submissions and " + str(total_comments) + " comments from " + subreddit + " where obtained.")
 
@@ -259,6 +320,9 @@ myclient = pymongo.MongoClient(MONGO_SERVICE)
 mydb = myclient[DATABASE_NAME]
 submissions_db = mydb[SUBMISSIONS_COLLECTION]
 comments_db = mydb[COMMENTS_COLLECTION]
+
+#initialize sentiment analyzer
+analyzer = SentimentIntensityAnalyzer()
 
 #bulk_collect()
 daily_collect()

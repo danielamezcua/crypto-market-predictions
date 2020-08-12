@@ -85,10 +85,10 @@ def process_item(item):
 	else:
 	    tweet = parse_tweet(item)
 	process_tweet(tweet)
-	print(tweet)
 	insert_tweet(tweet)
 
 while True:
+    counter = 0
     try:
         iterator = api.request('statuses/filter', {'track': TRACK_TERMS}).get_iterator()
         for item in iterator:
@@ -100,7 +100,16 @@ while True:
                 else:
                     # temporary interruption, re-try request
                     break
-            process_item(item)
+            if 'id' in item:
+                if counter == 100:
+                    print(item)
+                    counter = 0
+                process_item(item)
+            else:
+                print("--------------------------- ERROR ---------------------------")
+                print(item)
+                print("-------------------------------------------------------------")
+            counter+=1
             
 
     except TwitterRequestError as e:

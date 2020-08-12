@@ -633,3 +633,7 @@ Fetching data form Reddit... @ Mon Aug 10 23:45:02 CDT 2020
 Done collecting data from Reddit @ Mon Aug 10 23:47:42 CDT 2020
 Crawling Coin Telegraph... @ Mon Aug 10 23:47:42 CDT 2020
 Done collecting data from Coin Telegraph @ Mon Aug 10 23:50:13 CDT 2020
+Fetching data form Reddit... @ Tue Aug 11 23:45:02 CDT 2020
+Done collecting data from Reddit @ Tue Aug 11 23:47:55 CDT 2020
+Crawling Coin Telegraph... @ Tue Aug 11 23:47:55 CDT 2020
+Done collecting data from Coin Telegraph @ Tue Aug 11 23:50:30 CDT 2020

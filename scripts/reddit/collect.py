@@ -3,7 +3,7 @@ import pprint
 import pymongo
 import requests
 import json
-import sys,os
+import sys,os,getopt
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import secret
 import pytz
@@ -12,6 +12,7 @@ from prawcore.exceptions import NotFound
 from datetime import datetime,timedelta,date, timezone
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
+import logging
 
 URL_PUSHSHIFT = "https://api.pushshift.io/reddit/search/submission/"
 SUBMISSIONS_COLLECTION = "submissions"
@@ -19,6 +20,22 @@ COMMENTS_COLLECTION = "comments"
 DATABASE_NAME = "reddit_data"
 LOG_FILE = "./logs.txt"
 MONGO_SERVICE = "mongodb://localhost:27017/"
+
+#connect to reddit API
+reddit = praw.Reddit(client_id=secret.client_id,
+ 					client_secret=secret.client_secret,
+ 					user_agent=secret.user_agent)
+
+subreddits = ["xrp","ripple", "bitcoin", "btc", "litecoin", "litecoinmarkets", "ethtrader", "ethfinance"]
+
+#connect to database
+myclient = pymongo.MongoClient(MONGO_SERVICE)
+mydb = myclient[DATABASE_NAME]
+submissions_db = mydb[SUBMISSIONS_COLLECTION]
+comments_db = mydb[COMMENTS_COLLECTION]
+
+#initialize sentiment analyzer
+analyzer = SentimentIntensityAnalyzer()
 
 def is_daily_discussion(id_subreddit, title):
 	""" 
@@ -307,22 +324,97 @@ def add_discussion_comments():
 					multi=True
 				)
 		print("Done")
-			
-#connect to reddit API
-reddit = praw.Reddit(client_id=secret.client_id,
- 					client_secret=secret.client_secret,
- 					user_agent=secret.user_agent)
 
-subreddits = ["xrp","ripple", "bitcoin", "btc", "litecoin", "litecoinmarkets", "ethtrader", "ethfinance"]
+def add_posts(id_posts):
+	""" 
+	Collects data from specific posts
+	Parameters: 
+	    id_posts (list): a list of the id strings of the posts to collect
+	Returns: 
+	    void
+	"""
+	total_submissions = 0
+	total_comments = 0
+	for id in id_posts:
+		try:
+			#construct submission object
+			submission = reddit.submission(id = id)
+			submission_obj = {}
+			construct_submission_obj(submission, submission_obj)
+			is_daily_discussion = submission_obj["daily_discussion"]
 
-#connect to database
-myclient = pymongo.MongoClient(MONGO_SERVICE)
-mydb = myclient[DATABASE_NAME]
-submissions_db = mydb[SUBMISSIONS_COLLECTION]
-comments_db = mydb[COMMENTS_COLLECTION]
+			#save submission object
+			submissions_db.update_one({"_id": id}, {"$set" :submission_obj}, upsert=True)
+			total_submissions+=1
 
-#initialize sentiment analyzer
-analyzer = SentimentIntensityAnalyzer()
+			#obtain and construct comment objects
+			submission.comments.replace_more(limit=None)
+			list_comments = submission.comments.list()
+			if len(list_comments) > 0:
+				total_comments+= len(list_comments)
+				comments_operations_list = []
+				for comment in list_comments:
+					comment_obj = {}
+					construct_comment_obj(comment, comment_obj, is_daily_discussion)
+					comments_operations_list.append(pymongo.UpdateOne({"_id": comment.id}, {"$set": comment_obj}, upsert=True))
 
-#bulk_collect()
-daily_collect()
+				#save comments objects
+				comments_db.bulk_write(comments_operations_list)
+
+		except NotFound:
+			print("skipping %s" % id)
+			#logging.info("Unexpected error on submission" + id + ": " + str(sys.exc_info()[0]))
+			continue
+
+def main():
+	""" 
+	Main function. Triggers the start of the reddit collect process.
+
+	Parameters:
+		args (list): holds the arguments required to run the collect process.
+	    
+	Returns:
+	    int : the exit status
+	"""
+
+	#parse command-line arguments		
+	argv = sys.argv[1:]
+
+	if not argv:
+		print("Usage: python3 collect.py [--shift 1(midnight)| 2(afternoon)] [--bulk] [--posts id_post1,id_post2]")
+		sys.exit(2)
+
+	try:
+		opts, args = getopt.getopt(argv,"", ["shift=", "bulk", "posts="])
+	except:
+		print("Usage: python3 collect.py [--shift 1(midnight)| 2(afternoon)] [--bulk] [--posts id_post1,id_post2]")
+		sys.exit(2)
+
+	bulk = False
+	shift = None
+	id_posts = None
+
+	for opt,arg in opts:
+		if opt in ['--shift']:
+			shift = int(arg)
+		elif opt in ['--bulk']:
+			#TODO: recieve bulk dates
+			bulk = True
+		elif opt in['--posts']:
+			id_posts = arg.split(',')
+		else:
+			print("Usage: python3 collect.py [--shift 1(midnight)| 2(afternoon)] [--bulk] [--posts id_post1,id_post2]")
+			sys.exit(2)
+
+	#trigger actions based on arguments
+	if bulk:
+		bulk_collect()
+
+	if shift is not None:
+		daily_collect(shift)
+
+	if id_posts is not None:
+		add_posts(id_posts)
+
+if __name__ == "__main__":
+	main()

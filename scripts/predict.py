@@ -69,20 +69,22 @@ def input_estimator():
 
 def predict_daily():
 	features_selection = {
-		"btc" :	[["avg_pos_s"],["avg_news_compound"],
-				["avg_news_compound","avg_compound_s"], 
-				["number_comments_s","avg_news_compound","avg_compound_s"]],
-		"xrp" :	[["avg_compound_ns"],["avg_pos_s"],
-				["avg_news_compound","avg_pos_s","open","close","high","low"]],
-		"ltc" : [["avg_news_compound","avg_compound_ns","open","close","high","low"],
-				["avg_pos_ns","avg_neg_ns","high","low","close","open"],
-				["avg_pos_ns","avg_neg_ns","high","low","close","open"],
-				["ratio_pos_s","ratio_neg_s"]],
-		"eth" : [["avg_pos_ns"],["avg_pos_ns","avg_news_compound"]]
+		"btc" :	[["ratio_pos_ns","ratio_neg_ns"],["avg_news_compound"],
+				["number_comments_s",",avg_news_compound","avg_compound_s"]],
+		"xrp" :	[["avg_compound_ns","number_comments_ns"],["avg_pos_ns"],
+					["number_comments_ns","avg_news_compound","avg_compound_ns"],["avg_pos_s"],
+					["avg_pos_s","avg_news_compound"]],
+		"ltc" : [["avg_pos_ns"],["avg_news_compound"],["avg_pos_ns","avg_news_compound"],
+					["avg_news_compound","avg_compound_ns","open","close","high","low"],
+					["avg_news_compound","avg_pos_ns","open","close","high","low"],
+					["ratio_pos_s","ratio_neg_s"],["avg_news_compound","avg_compound_s","open","close","high","low"]],
+		"eth" : [["avg_pos_s"],["number_comments_s","avg_news_compound","avg_compound_s"],["avg_pos_s","avg_news_compound"]]
 	}
 	
 
 	for crypto in features_selection.keys():
+		if crypto == "btc":
+			continue
 		print(crypto + " predictions")
 		#build model
 		filename_dataset = crypto+"_news.csv"
@@ -91,7 +93,7 @@ def predict_daily():
 		dataset = pd.read_csv(DATASETS_PATH + crypto + "_news.csv")
 		#only use the desired period of time of the dataset
 		end_day = datetime.today()
-		start_day = end_day - timedelta(60)
+		start_day = end_day - timedelta(90)
 
 		start_dataset = datetime(start_day.year,start_day.month,start_day.day, tzinfo=timezone.utc).timestamp()
 		end_dataset = datetime(end_day.year,end_day.month,end_day.day, tzinfo=timezone.utc).timestamp()

@@ -4,9 +4,14 @@ from datetime import datetime
 import re
 import sys,os
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
-import secret
 
-api = TwitterAPI(secret.api_key_twitter, secret.api_secret_key_twitter, secret.access_token_key, secret.access_token_secret)
+api = TwitterAPI(
+    os.environ.get('twitter_api_key'), 
+    os.environ.get('twitter_api_secret'), 
+    os.environ.get('twitter_access_token_key'), 
+    os.environ.get('twitter_access_token_secret'),
+)
+
 TRACK_TERMS = 'btc,xrp,ltc,eth,#btc,#ltc,#xrp,#eth,ethereum,bitcoin,ripple,litecoin,#bitcoin,#litecoin,#ethereum,#ripple'
 "Tue Jun 23 00:17:53 +0000 2020"
 DATE_FORMAT_TWEETS = "%a %b %d %H:%M:%S %z %Y"

@@ -1,13 +1,14 @@
+import os
+import threading
 from pymongo import MongoClient
 import pymongo
-import threading
 
 class MongoConnectionTweets():
 
 	_lock = threading.Lock() #lock for creating _collection_instance
 	_collection_instance = None
 	_database_instance = None
-	_mongo_service = "mongodb://localhost:27017/"
+	_mongo_service = os.environ.get('mongo_url')
 	_database_tweets = "twitter_data"
 	_collection_tweets = "tweets"
 

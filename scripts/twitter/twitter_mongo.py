@@ -25,8 +25,10 @@ class MongoConnectionTweets():
 
 
 	@classmethod
-	def count_documents(cls,query):
+	def count_documents(cls,query=dict(), estimated=False):
 		tweets = MongoConnectionTweets.get_collection()
+		if estimated:
+			return tweets.estimated_document_count()
 		return tweets.count_documents(query)
 
 	@classmethod
@@ -37,5 +39,8 @@ class MongoConnectionTweets():
 		except pymongo.errors.DuplicateKeyError:
 			pass
 
-
-
+	@classmethod
+	def get_documents(cls,query=dict(), **query_options):
+		print(query)
+		tweets = MongoConnectionTweets.get_collection()
+		return tweets.find(query, **query_options)

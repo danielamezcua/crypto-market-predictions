@@ -41,6 +41,5 @@ class MongoConnectionTweets():
 
 	@classmethod
 	def get_documents(cls,query=dict(), **query_options):
-		print(query)
 		tweets = MongoConnectionTweets.get_collection()
 		return tweets.find(query, **query_options)

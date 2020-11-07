@@ -12,7 +12,8 @@ def main():
 	if args.time_series:
 		store_time_series_data()
 	else:
-		twitter_pg.create_time_series()
+		# modify when running other custom operations
+		twitter_pg.get_tweets_reach()
 
 def store_time_series_data():
 	""" summarizes twitter data from the last hour """

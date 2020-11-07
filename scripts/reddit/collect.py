@@ -5,7 +5,6 @@ import requests
 import json
 import sys,os,getopt
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
-import secret
 import pytz
 import re
 from prawcore.exceptions import NotFound
@@ -22,9 +21,11 @@ LOG_FILE = "./logs.txt"
 MONGO_SERVICE = "mongodb://localhost:27017/"
 
 #connect to reddit API
-reddit = praw.Reddit(client_id=secret.client_id,
- 					client_secret=secret.client_secret,
- 					user_agent=secret.user_agent)
+reddit = praw.Reddit(
+	os.environ.get('reddit_client_id')
+	os.environ.get('reddit_client_secret')
+	os.environ.get('reddit_user_agent')
+)
 
 subreddits = ["xrp","ripple", "bitcoin", "btc", "litecoin", "litecoinmarkets", "ethtrader", "ethfinance"]
 
@@ -259,7 +260,7 @@ def fetch_data(start_date,end_date):
 				is_daily_discussion = submission_obj["daily_discussion"]
 
 				#save submission object
-				submissions_db.update_one({"_id": sub["id"]}, {"$set" :submission_obj}, upsert=True)
+				submissions_db.update_one({"_id": sub["id"], "created_utc": submission_obj.created_utc}, {"$set" :submission_obj}, upsert=True)
 				total_submissions+=1
 
 				#obtain and construct comment objects
@@ -271,7 +272,7 @@ def fetch_data(start_date,end_date):
 					for comment in list_comments:
 						comment_obj = {}
 						construct_comment_obj(comment, comment_obj, is_daily_discussion)
-						comments_operations_list.append(pymongo.UpdateOne({"_id": comment.id}, {"$set": comment_obj}, upsert=True))
+						comments_operations_list.append(pymongo.UpdateOne({"_id": comment.id, "created_utc": comment.created_utc}, {"$set": comment_obj}, upsert=True))
 
 					#save comments objects
 					comments_db.bulk_write(comments_operations_list)
@@ -344,7 +345,7 @@ def add_posts(id_posts):
 			is_daily_discussion = submission_obj["daily_discussion"]
 
 			#save submission object
-			submissions_db.update_one({"_id": id}, {"$set" :submission_obj}, upsert=True)
+			submissions_db.update_one({"_id": id, "created_utc": submission_obj.created_utc}, {"$set" :submission_obj}, upsert=True)
 			total_submissions+=1
 
 			#obtain and construct comment objects
@@ -369,9 +370,6 @@ def add_posts(id_posts):
 def main():
 	""" 
 	Main function. Triggers the start of the reddit collect process.
-
-	Parameters:
-		args (list): holds the arguments required to run the collect process.
 	    
 	Returns:
 	    int : the exit status
@@ -382,13 +380,13 @@ def main():
 
 	if not argv:
 		print("Usage: python3 collect.py [--shift 1(midnight)| 2(afternoon)] [--bulk] [--posts id_post1,id_post2]")
-		sys.exit(2)
+		return 2
 
 	try:
 		opts, args = getopt.getopt(argv,"", ["shift=", "bulk", "posts="])
 	except:
 		print("Usage: python3 collect.py [--shift 1(midnight)| 2(afternoon)] [--bulk] [--posts id_post1,id_post2]")
-		sys.exit(2)
+		return 2
 
 	bulk = False
 	shift = None
@@ -404,7 +402,7 @@ def main():
 			id_posts = arg.split(',')
 		else:
 			print("Usage: python3 collect.py [--shift 1(midnight)| 2(afternoon)] [--bulk] [--posts id_post1,id_post2]")
-			sys.exit(2)
+			return 2
 
 	#trigger actions based on arguments
 	if bulk:
@@ -417,4 +415,4 @@ def main():
 		add_posts(id_posts)
 
 if __name__ == "__main__":
-	main()
+	sys.exit(main())

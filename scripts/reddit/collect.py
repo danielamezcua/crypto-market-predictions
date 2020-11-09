@@ -22,9 +22,9 @@ MONGO_SERVICE = "mongodb://localhost:27017/"
 
 #connect to reddit API
 reddit = praw.Reddit(
-	os.environ.get('reddit_client_id')
-	os.environ.get('reddit_client_secret')
-	os.environ.get('reddit_user_agent')
+	client_id=os.environ.get('reddit_client_id'),
+        client_secret=os.environ.get('reddit_client_secret'),
+	user_agent=os.environ.get('reddit_user_agent')
 )
 
 subreddits = ["xrp","ripple", "bitcoin", "btc", "litecoin", "litecoinmarkets", "ethtrader", "ethfinance"]
@@ -260,7 +260,7 @@ def fetch_data(start_date,end_date):
 				is_daily_discussion = submission_obj["daily_discussion"]
 
 				#save submission object
-				submissions_db.update_one({"_id": sub["id"], "created_utc": submission_obj.created_utc}, {"$set" :submission_obj}, upsert=True)
+				submissions_db.update_one({"_id": sub["id"], "created_utc": submission_obj["created_utc"]}, {"$set" :submission_obj}, upsert=True)
 				total_submissions+=1
 
 				#obtain and construct comment objects

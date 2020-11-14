@@ -155,9 +155,9 @@ def time_series_last_hour():
 
 	# make summary
 	for tweet in tweets:
-		n_tweets += 1
 		#TODO: add sentiment average, etc
 		for tweet in tweets:
+			n_tweets += 1
 			if tweet["btc"]:
 				n_btc += 1
 				reach_btc += tweet["followers_user"]

@@ -254,6 +254,7 @@ def time_series_last_hour():
 	db = client["analytics"]
 	collection = db["time_series_1_hour"]
 	collection.update_one({"timestamp": start_timestamp}, {"$set": time_series_object}, upsert=True)
+	
 
 def get_time_series_dataframe():
 	client = MongoClient(os.environ.get("mongo_url"))
@@ -263,11 +264,11 @@ def get_time_series_dataframe():
 	time_series = pd.DataFrame(time_series)
 	return time_series
 
-def visualize_time_series(time_series,columns=None):
+def visualize_time_series(time_series,y="n_tweets"):
 	fig, ax = plt.subplots()
 	time_series["datetime"] = time_series["timestamp"].apply(datetime.fromtimestamp)
 
-	ax.plot(time_series["datetime"], time_series["n_tweets"], 'ro')
+	ax.plot(time_series["datetime"], time_series[y], 'ro')
 
 def strip_unoperating_hours(dataframe, threshold=5000):
 	""" removes data points in which tweets weren't collected correctly """
@@ -299,6 +300,20 @@ def remove_outliers(dataframe):
 	logger.debug("Shape of dataframe without outliers: {}".format(aux.shape))
 	return aux
 
+def get_labels(dataframe):
+	eth = []
+	btc = []
+	ltc = []
+	xrp = []
+
+	for idx, x in dataframe.iterrows():
+		eth.append((x["eth_close"] - x["eth_open"])/x["eth_open"])
+		btc.append((x["btc_close"] - x["btc_open"])/x["btc_open"])
+		xrp.append((x["xrp_close"] - x["xrp_open"])/x["xrp_open"])
+		ltc.append((x["ltc_close"] - x["ltc_open"])/x["ltc_open"])
+	
+	return (btc,eth,xrp,ltc)
+
 def create_random_forest_model():
 	logger = logging.getLogger(LOGGER_NAME)
 	logger.info("Creating a Random Forest Model")
@@ -308,9 +323,17 @@ def create_random_forest_model():
 	time_series_df = filter_dataframe_range_timestamps(time_series_df, min_timestamp, max_timestamp)
 	time_series_df.set_index("timestamp")	
 
-	time_series_df = add_labels(time_series_df)
+
+	#add labels
+	btc_label, eth_label, xrp_label, ltc_label = get_labels(time_series_df)
+
+	time_series_df = time_series_df.assign(
+		eth_label=eth_label, btc_label=btc_label, xrp_label=xrp_label, ltc_label=ltc_label
+	)
+
 	time_series_df = strip_unoperating_hours(time_series_df)
 	time_series_df = remove_outliers(time_series_df)
 
 
+	visualize_time_series(time_series_df, "xrp_label")
 	plt.show()

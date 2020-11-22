@@ -1,14 +1,19 @@
 from datetime import datetime, timezone, date, timedelta
 from collections import defaultdict
 import time
-from scripts.twitter.twitter_mongo import MongoConnectionTweets
 import multiprocessing
-from pymongo import MongoClient
 import os
 import matplotlib.pyplot as plt
+import requests
+import logging
+
 import numpy as np
 import pandas as pd
-import requests
+from scipy.stats import zscore
+
+from scripts.twitter.twitter_mongo import MongoConnectionTweets
+from pymongo import MongoClient
+from settings import LOGGER_NAME
 
 def get_tweets_per_hour(tweets):
 	""" used to initialize time series data """
@@ -115,7 +120,7 @@ def get_historical_data():
 			print(last_ts)
 
 	for ts,prices in prices_data.items():
-		collection.update_one({"timestamp": ts},{"$set": prices})
+		collection.update_one({"timestamp": ts},{"$set": prices}, upsert=True)
 
 def create_time_series(days=1):
 	start = time.time()
@@ -250,26 +255,62 @@ def time_series_last_hour():
 	collection = db["time_series_1_hour"]
 	collection.update_one({"timestamp": start_timestamp}, {"$set": time_series_object}, upsert=True)
 
-def visualize_time_series(columns=None):
+def get_time_series_dataframe():
 	client = MongoClient(os.environ.get("mongo_url"))
 	db = client["analytics"]
 	collection = db["time_series_1_hour"]
 	time_series = collection.find({})
-	fig, ax = plt.subplots()
 	time_series = pd.DataFrame(time_series)
-	
-	min_timestamp = datetime(2020,10,1,0,0,0, tzinfo=timezone.utc).timestamp()
-	max_timestamp = datetime(2020,10,1,23,59,0, tzinfo=timezone.utc).timestamp()
+	return time_series
 
-	print(len(time_series))
-	time_series = time_series[time_series["timestamp"] >= min_timestamp]
-	time_series = time_series[time_series["timestamp"] < max_timestamp]
-	print(len(time_series))
+def visualize_time_series(time_series,columns=None):
+	fig, ax = plt.subplots()
+	time_series["datetime"] = time_series["timestamp"].apply(datetime.fromtimestamp)
 
-	time_series["timestamp"] = time_series["timestamp"].apply(datetime.fromtimestamp)
+	ax.plot(time_series["datetime"], time_series["n_tweets"], 'ro')
 
-	ax.plot(time_series["timestamp"], time_series["n_tweets"], 'ro')
+def strip_unoperating_hours(dataframe, threshold=5000):
+	""" removes data points in which tweets weren't collected correctly """
+	logger = logging.getLogger(LOGGER_NAME)
+	logger.info("Removing data points where there tweets recollection was not working")
+	logger.debug("Shape of dataframe before removing data points: {}".format(dataframe.shape))
+	aux = dataframe[dataframe["n_tweets"] >= threshold]
+	logger.debug("Shape of dataframe after removing data points: {}".format(aux.shape))
+	return aux
+
+def filter_dataframe_range_timestamps(dataframe,from_ts, to_ts):
+	logger = logging.getLogger(LOGGER_NAME)
+	logger.info("Filtering dataframe by time")
+	logger.debug("Shape of dataframe before filtering {}".format(dataframe.shape))
+	aux = dataframe[dataframe["timestamp"] >= from_ts]
+	aux = aux[aux["timestamp"] < to_ts]
+	logger.debug("Shape of dataframe before filtering {}".format(aux.shape))
+	return aux
+
+def remove_outliers(dataframe):
+	logger = logging.getLogger(LOGGER_NAME)
+	logger.info("Removing outliers")
+	logger.debug("Shape of dataframe with outliers: {}".format(dataframe.shape))
+	z_scores = zscore(dataframe["n_tweets"])
+	m = np.array(dataframe["n_tweets"]).argmax()
+	z_scores_abs = np.abs(z_scores)
+	mask = z_scores_abs <= 3
+	aux = dataframe[mask]
+	logger.debug("Shape of dataframe without outliers: {}".format(aux.shape))
+	return aux
+
+def create_random_forest_model():
+	logger = logging.getLogger(LOGGER_NAME)
+	logger.info("Creating a Random Forest Model")
+	time_series_df = get_time_series_dataframe()
+	min_timestamp = datetime(2020,6,23,0,0,0, tzinfo=timezone.utc).timestamp()
+	max_timestamp = datetime(2020,11,21,0,0,0, tzinfo=timezone.utc).timestamp()
+	time_series_df = filter_dataframe_range_timestamps(time_series_df, min_timestamp, max_timestamp)
+	time_series_df.set_index("timestamp")	
+
+	time_series_df = add_labels(time_series_df)
+	time_series_df = strip_unoperating_hours(time_series_df)
+	time_series_df = remove_outliers(time_series_df)
+
+
 	plt.show()
-
-
-

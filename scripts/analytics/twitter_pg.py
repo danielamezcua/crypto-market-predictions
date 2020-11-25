@@ -301,20 +301,59 @@ def remove_outliers(dataframe):
 	return aux
 
 def get_labels(dataframe):
+	""" current: check how much needs to be invested in order to gain minimum_profit.	
+	If investement <= maximum_investment, tag as positive
+	"""
+
+	minimum_profit = 0.5
 	eth = []
 	btc = []
 	ltc = []
 	xrp = []
 
-	for idx, x in dataframe.iterrows():
-		eth.append((x["eth_close"] - x["eth_open"])/x["eth_open"])
-		btc.append((x["btc_close"] - x["btc_open"])/x["btc_open"])
-		xrp.append((x["xrp_close"] - x["xrp_open"])/x["xrp_open"])
-		ltc.append((x["ltc_close"] - x["ltc_open"])/x["ltc_open"])
+	investments = dataframe["eth_close"] - dataframe["eth_open"]
+	investments.replace(0,-1, inplace=True)
+	investments = dataframe["eth_close"]*minimum_profit/investments
+	eth = [1 if 0 < investment <= 200 else -1 for investment in investments]
+
+	investments = dataframe["btc_close"] - dataframe["btc_open"]
+	investments.replace(0,-1, inplace=True)
+	investments = dataframe["btc_close"]*minimum_profit/investments
+	btc = [1 if 0 < investment <= 200 else -1 for investment in investments]
+
+	investments = dataframe["ltc_close"] - dataframe["ltc_open"]
+	investments.replace(0,-1, inplace=True)
+	investments = dataframe["ltc_close"]*minimum_profit/investments
+	ltc = [1 if 0 < investment <= 200  else -1 for investment in investments]
+
+	investments = dataframe["xrp_close"] - dataframe["xrp_open"]
+	investments.replace(0,-1, inplace=True)
+	investments = dataframe["xrp_close"]*minimum_profit/investments
+	xrp = [1 if 0 < investment <= 200 else -1 for investment in investments]
 	
 	return (btc,eth,xrp,ltc)
 
 def create_random_forest_model():
+	def undersample(time_series, label):
+		logger.info("{}: Initial number of data points: {}. Count of labels {}".format(
+			label, time_series.shape[0], time_series[label].value_counts()
+		))
+		invest_raw = time_series[time_series[label] == 1]
+		no_invest_raw = time_series[time_series[label] == -1]
+
+		# Since there are less risky loans than safe loans, find the ratio of the sizes
+		# and use that percentage to undersample the safe loans.
+		percentage = len(invest_raw)/float(len(no_invest_raw))
+		no_invest = no_invest_raw.sample(frac=percentage)
+		invest = invest_raw
+		new_ts = invest.append(no_invest)
+
+		logger.debug("{}: Percentage of profitable investment {}:".format(label,len(invest) / float(len(new_ts))))
+		logger.debug("{}: Percentage of no profitable investment {}:".format(label,len(no_invest) / float(len(new_ts))))
+		logger.info("{}: New number of data points: {}".format(label,new_ts.shape[0]))
+
+		return new_ts
+
 	logger = logging.getLogger(LOGGER_NAME)
 	logger.info("Creating a Random Forest Model")
 	time_series_df = get_time_series_dataframe()
@@ -334,6 +373,9 @@ def create_random_forest_model():
 	time_series_df = strip_unoperating_hours(time_series_df)
 	time_series_df = remove_outliers(time_series_df)
 
+	btc_time_series = undersample(time_series_df, "btc_label")
+	eth_time_series = undersample(time_series_df, "eth_label")
+	xrp_time_series = undersample(time_series_df, "xrp_label")
+	ltc_time_series = undersample(time_series_df, "ltc_label")
 
-	visualize_time_series(time_series_df, "xrp_label")
-	plt.show()
+	

@@ -18,7 +18,7 @@ def main():
 		store_time_series_data()
 	else:
 		# modify when running other custom operatiosdasns
-		twitter_pg.create_random_forest_model()
+		twitter_pg.discover()
 
 def store_time_series_data():
 	""" summarizes twitter data from the last hour """

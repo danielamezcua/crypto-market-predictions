@@ -10,6 +10,13 @@ import logging
 import numpy as np
 import pandas as pd
 from scipy.stats import zscore
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import cross_validate, cross_val_predict
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import plot_confusion_matrix
+from sklearn.preprocessing import StandardScaler
+
+
 
 from scripts.twitter.twitter_mongo import MongoConnectionTweets
 from pymongo import MongoClient
@@ -333,7 +340,7 @@ def get_labels(dataframe):
 	
 	return (btc,eth,xrp,ltc)
 
-def create_random_forest_model():
+def discover():
 	def undersample(time_series, label):
 		logger.info("{}: Initial number of data points: {}. Count of labels {}".format(
 			label, time_series.shape[0], time_series[label].value_counts()
@@ -353,15 +360,13 @@ def create_random_forest_model():
 		logger.info("{}: New number of data points: {}".format(label,new_ts.shape[0]))
 
 		return new_ts
-
+		
 	logger = logging.getLogger(LOGGER_NAME)
-	logger.info("Creating a Random Forest Model")
 	time_series_df = get_time_series_dataframe()
 	min_timestamp = datetime(2020,6,23,0,0,0, tzinfo=timezone.utc).timestamp()
-	max_timestamp = datetime(2020,11,21,0,0,0, tzinfo=timezone.utc).timestamp()
+	max_timestamp = datetime(2020,11,25,0,0,0, tzinfo=timezone.utc).timestamp()
 	time_series_df = filter_dataframe_range_timestamps(time_series_df, min_timestamp, max_timestamp)
 	time_series_df.set_index("timestamp")	
-
 
 	#add labels
 	btc_label, eth_label, xrp_label, ltc_label = get_labels(time_series_df)
@@ -378,4 +383,42 @@ def create_random_forest_model():
 	xrp_time_series = undersample(time_series_df, "xrp_label")
 	ltc_time_series = undersample(time_series_df, "ltc_label")
 
+	label = ["btc_label"]
+	features_sets = [["n_btc"], ["reach_btc"], ["n_btc", "reach_btc"], ["n_btc", "reach_btc","btc_open"]]
+
+	y = btc_time_series.loc[:, label].values.ravel()
+	scoring = ["precision_micro", "recall_micro"]
+
 	
+
+	n_estimators = [int(n) for n in np.logspace(1,3)]
+	fig, axes = plt.subplots(1,2)
+	for features in features_sets:
+		precision_scores = []
+		precision_scores_std = []
+
+		recall_scores = []
+		recall_scores_std = []
+		for n in n_estimators:
+			estimator = RandomForestClassifier(n_estimators = n)
+			# scale data
+			x = btc_time_series.loc[:, features].values
+			sc = StandardScaler()
+			x = sc.fit_transform(x)
+
+			scores = cross_validate(estimator=estimator, cv=5, X=x, y=y, scoring=scoring, return_train_score=True)
+
+			precision_scores.append(np.average(scores["test_precision_micro"]))
+			precision_scores_std.append(np.std(scores["test_precision_micro"]))
+
+			recall_scores.append(np.std(scores["test_recall_micro"]))
+			recall_scores_std.append(np.std(scores["test_recall_micro"]))
+			print(n)
+
+		axes[0].errorbar(n_estimators, precision_scores, precision_scores_std, linestyle="solid", label=str(features))
+		axes[1].errorbar(n_estimators, recall_scores, recall_scores_std, linestyle="solid", label=str(features))
+		fig.show()
+		print(features)
+
+	fig.show()
+

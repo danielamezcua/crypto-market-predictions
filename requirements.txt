@@ -47,7 +47,7 @@ tqdm==4.49.0
 Twisted==20.3.0
 TwitterAPI==2.5.14
 update-checker==0.18.0
-urllib3==1.25.10
+urllib3==1.26.5
 w3lib==1.22.0
 websocket-client==0.57.0
 zope.interface==5.1.0

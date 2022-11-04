@@ -44,7 +44,7 @@ Scrapy==2.3.0
 service-identity==18.1.0
 six==1.15.0
 tqdm==4.49.0
-Twisted==20.3.0
+Twisted==22.10.0
 TwitterAPI==2.5.14
 update-checker==0.18.0
 urllib3==1.25.10
